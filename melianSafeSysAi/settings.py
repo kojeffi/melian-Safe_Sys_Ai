@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 import dj_database_url
+import os
+
 from pathlib import Path
 
 from django.conf.global_settings import DATABASES
@@ -24,12 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1)e=4tz$uq_=kg%)fruc8tk!kri-#yajf=yf*l4$hf8dmuo@wr'
+SECRET_KEY = os.environ.get("SECREET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG","False").lower() =="True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split(" ")
 
 
 # Application definition
@@ -101,8 +103,8 @@ DATABASES = {
 }
 
 
-
-DATABASES["default"] = dj_database_url.parse("postgres://safe_postgresql_user:xo7BlNDwPDk7kOsYOFkKmStCGtMAN0W0@dpg-cob0p18l5elc73b0j9ag-a.oregon-postgres.render.com/safe_postgresql")
+database_url = os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 
 
