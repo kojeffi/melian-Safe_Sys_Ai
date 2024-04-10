@@ -1,0 +1,13 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block content %}
+    <br><br>
+    <div class="container mt-5 text-center" style="background-color: #f8f9fa; padding: 20px; border-radius: 8px;">
+        <p class="mt-4">
+            You've logged out!!! <a href="{% url 'login' %}">Login again</a>
+        </p>
+    </div>
+    <br><br><br>
+
+{% endblock %}

@@ -10,7 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import dj_database_url
 from pathlib import Path
+
+from django.conf.global_settings import DATABASES
+from django.core.checks import database
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,7 +41,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'melianSafeSysAi',
+    'safety_management',
+    'safety',
+    'alerts',
+    'safesys',
+    'realtime',
+    'core',
 ]
+
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Set your authentication backend
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,8 +74,7 @@ ROOT_URLCONF = 'melianSafeSysAi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,18 +87,23 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'melianSafeSysAi.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+
+DATABASES["default"] = dj_database_url.parse("postgres://safe_postgresql_user:xo7BlNDwPDk7kOsYOFkKmStCGtMAN0W0@dpg-cob0p18l5elc73b0j9ag-a.oregon-postgres.render.com/safe_postgresql")
+
 
 
 # Password validation
@@ -123,3 +147,9 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_REDIRECT_URL = 'dashboard-url'
+LOGIN_URL = 'login-url'
+
+LOGOUT_REDIRECT_URL = 'logout-url'

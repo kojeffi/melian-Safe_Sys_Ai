@@ -1,0 +1,15 @@
+<body>
+    <h1>Sensor Data Simulation</h1>
+    <p>{{ message }}</p>
+
+    {% if simulated_data %}
+        <p>Sensor Type: {{ simulated_data.sensor_type }}</p>
+        <p>Sensor Value: {{ simulated_data.value }}</p>
+    {% endif %}
+
+    {% if triggered_alert %}
+        <p>Safety Alert Message: {{ triggered_alert.message }}</p>
+    {% endif %}
+
+    <a href="{% url 'safety:index' %}">Back to Dashboard</a>
+</body>
