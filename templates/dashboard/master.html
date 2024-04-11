@@ -1,0 +1,193 @@
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="{% static 'assets1/' %}" />
+    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+    <title>SafeSysAI</title>
+    <link href="{% static 'dashboard/css/app.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Bundle JS (includes Popper) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="wrapper">
+    <nav id="sidebar" class="sidebar js-sidebar">
+        <div class="sidebar-content js-simplebar" style="background-color: white !important;">
+            <br><br>
+            <a href="{% url 'home-url' %}" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img height="60px" width="60px" src="{% static 'assets1/img/logo-color.svg' %}" class="img-fluid" alt="">
+                <h1 class="text-warning"><i>Safe<b class="text-info text-uppercase">Sys</b>Ai</i></h1>
+            </a>
+            <hr style="height:2px;">
+            <ul class="sidebar-nav" style="background-color: white !important;">
+                <li class="sidebar-item text-info" style="background-color: white !important;">
+                    <a class="sidebar-link text-info" href="" style="background-color: white !important;">
+                        <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link text-info" href="{% url 'safety:safety_index' %}" style="background-color: white !important;">
+                        <span class="align-middle">Risk Assessment</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link text-info" href="{% url 'safesys:safe-url'%}" style="background-color: white !important;">
+                        <span class="align-middle text-info">Real Time Maintenance</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link text-info" href="{% url 'alerts:create_incident' %}" style="background-color: white !important;">
+                        <span class="align-middle">Create Incident</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main">
+        <nav class="navbar navbar-expand navbar-light navbar-bg">
+            <a class="sidebar-toggle js-sidebar-toggle">
+                <i class="hamburger align-self-center"></i>
+            </a>
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav navbar-align">
+                    <li class="nav-item dropdown">
+                        <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown"
+                           data-bs-toggle="dropdown">
+                            <div class="position-relative">
+                                <i class="align-middle" data-feather="bell"></i>
+                                <span class="indicator">4</span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+                             aria-labelledby="alertsDropdown">
+                            <div class="dropdown-menu-header">
+                                4 New Notifications
+                            </div>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <div class="row g-0 align-items-center">
+                                        <div class="col-2">
+                                            <i class="text-danger" data-feather="alert-circle"></i>
+                                        </div>
+                                        <div class="col-10">
+                                            <div class="text-dark">Update completed</div>
+                                            <div class="text-muted small mt-1">Restart server
+                                                12 to complete the update.</div>
+                                            <div class="text-muted small mt-1">30m ago</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
+                            <div class="position-relative">
+                                <i class="align-middle" data-feather="message-square"></i>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
+                            <div class="dropdown-menu-header">
+                                <div class="position-relative">
+                                    4 New Messages
+                                </div>
+                            </div>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <div class="row g-0 align-items-center">
+                                        <div class="col-2">
+                                            <img src="../../static/dashboard/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+                                        </div>
+                                        <div class="col-10 ps-2">
+                                            <div class="text-dark">Vanessa Tucker</div>
+                                            <div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+                                            <div class="text-muted small mt-1">15m ago</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                            <i class="align-middle" data-feather="settings"></i>
+                        </a>
+                        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                            <div class="container">
+                                {{ user.email }}
+                                {% if user.is_authenticated %}
+                                    <div class="user-profile">
+                                        <div class="profile-photo">
+                                            {% if user.profile_photo %}
+                                                <img height="40px" width="40px" class="img-fluid img-responsive rounded-circle" src="{{ user.profile_photo.url }}" alt="{{ user.full_name }}">
+                                            {% else %}
+                                                <!-- Default profile photo if user has not uploaded one -->
+                                                <img height="40px" width="40px" class="img-fluid img-responsive rounded-circle"  src="{% static 'dashboard/img/avatars/avatar-3.jpg' %}" alt="{{ user.full_name }}">
+                                            {% endif %}
+                                        </div>
+                                        <div class="email">
+                                            <p>Email: {{ user.email }}</p>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <p>User not authenticated</p>
+                                {% endif %}
+                            </div>
+
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" href="{% url 'profile-url' %}">
+                                <i class="align-middle me-1" data-feather="user"></i>Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'home-url' %}">Log out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="content">
+        
+        {% block content %}
+
+        {% endblock %}
+         </main>
+        <footer class="footer bg-light text-black">
+            <div class="container-fluid">
+                <div class="row text-muted">
+                    <div class="col-6 text-start">
+                        <p class="mb-0">
+                            <a class="text-muted text-white" href="#header" target="_blank"><strong>SafeSysAI</strong></a> &copy;
+                        </p>
+                    </div>
+                    <div class="col-6 text-end">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a class="text-muted" href="#header" target="_blank">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script src="{% static 'dashboard/js/app.js' %}"></script>
+<!-- Bootstrap Bundle JS (includes Popper) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<!-- Font Awesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>

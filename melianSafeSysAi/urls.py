@@ -16,6 +16,7 @@ urlpatterns = [
     path('quote/', my_views.quote, name='quote-url'),
     path('pricing/', my_views.pricing, name='pricing-url'),
     path('sample/', my_views.sample, name='sample-url'),
+    path('contact/', my_views.contact, name='contact-url'),
     path('servicedetails/', my_views.servicedetails, name='service-details-url'),
     path('services/', my_views.services, name='services-url'),
 ]

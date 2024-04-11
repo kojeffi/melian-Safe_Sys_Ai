@@ -40,6 +40,8 @@ def pricing(request):
 def sample(request):
     return render(request, 'sample-inner-page.html')
 
+def contact(request):
+    return render(request, 'contact.html')
 
 def servicedetails(request):
     return render(request, 'service-details.html')

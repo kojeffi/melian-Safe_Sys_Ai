@@ -1,713 +1,586 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load static %}
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>SafeSysAI</title>
+    <title>SafeSysAi</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{% static 'assets/img/logo-color.svg' %}" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{% static 'assets1/img/logo-color.svg' %}" rel="icon">
+    <link href="{% static 'assets1/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
     <!-- Vendor CSS Files -->
-    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
-    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets1/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets1/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets1/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets1/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets1/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets1/vendor/aos/aos.css' %}" rel="stylesheet">
     <!-- Template Main CSS File -->
-    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets1/css/main.css' %}" rel="stylesheet">
 </head>
 <body>
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top bg-light">
-    <div class="container d-flex align-items-center">
-<!--        <h1 class="logo me-auto text-warning" style="color: orange;"><a href="{% url 'home-url' %}">SafeSysAI</a></h1>-->
-             <a href="index.html" class="logo me-auto">
-                 <img src="{% static 'assets/img/logo-black.svg' %}" alt="" class="img-fluid"></a>
+<header id="header" class="header bg-light d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a href="{% url 'home-url' %}" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <img src="{% static 'assets1/img/logo-color.svg' %}" alt="">
+            <h1 class="text-warning"><i>Safe<b class="text-info text-uppercase">Sys</b>Ai</i></h1>
+        </a>
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto " href="#services">Services</a></li>
-                <li><a class="nav-link scrollto " href="#team">Team</a></li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                <li><a class="nav-link scrollto" href="{% url 'login' %}">Signin</a></li>
-                <li><a class="getstarted scrollto text-white" href="#about"
-                       style="background-color: orange">Get Started</a></li>
+                <li><a href="{% url 'home-url' %}" class="active text-info">Home</a></li>
+                <li><a class="text-info" href="#about">About</a></li>
+                <li><a class="text-info" href="#service">Services</a></li>
+                <li><a class="text-info" href="#team">Team</a></li>
+                <li><a class="text-info" href="#contact">Contact</a></li>
+                <li><a class="text-info" href="{% url 'login' %}">Signin</a></li>
+                <li><a class="get-a-quote bg-warning text-white" href="{% url 'register' %}">Start Over</a></li>
             </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
     </div>
 </header><!-- End Header -->
-<style>
-    #hero-video {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      object-position: center; /* Center the video within the viewport */
-      z-index: -10;
-      background-position: center;
-  }
+<!-- End Header -->
 
-      .container {
-          position: relative;
-          z-index: 900;
-          text-align: center;
-      }
+<style>
+    /* CSS for hover state */
+    .get-a-quote:hover {
+        background-color: whitesmoke;
+        color: white;
+    }
 </style>
 
-<section id="hero">
-    <div class="container">
-        <video autoplay muted loop id="hero-video">
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex bg-light align-items-center position-relative">
+    <!-- Video Background -->
+    <div class="video-container position-relative">
+        <video autoplay muted loop id="video-background" poster="{% static 'assets/img/safe.jpeg' %}" width="100%">
             <source src="{% static 'videos/video1.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
-        <div class="row ">
-            <div class="col-lg-6 d-flex flex-column align-content-lg-start justify-content-start pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-                <h1 class="text-center" style="color: orange">Welcome to SafeSys AI</h1>
-                <h4 class="text-center " style="color: white">Revolutionizing Safety and Compliance in Oil & Gas</h4>
-                <p class="text-white">SafeSys AI leverages cutting-edge AI and IoT to empower oil and gas companies with real-time safety
-                    risk management and compliance assurance</p>
-                <div class="d-flex justify-content-center justify-content-lg-center">
-                    <a href="#about" class="btn btn-warning rounded-pill text-dark" style="color: orange" >Get Started</a>
-                </div>
-            </div>
-            <style>
-                .chat-container {
-                    border: 3px solid orange;
-                    padding: 20px;
-                    height: 300px;
-                    overflow-y: auto; /* Enable scrolling for long chats */
-                }
-
-                .user-message {
-                    background-color: orange;
-                    color: slategray;
-                    padding: 10px;
-                    margin-bottom: 5px;
-                    border-radius: 5px;
-                    max-width: 70%;
-                    word-wrap: break-word;
-                }
-
-                .bot-message {
-                    background-color: #f0f0f0;
-                    color: slategray;
-                    padding: 10px;
-                    margin-bottom: 5px;
-                    border-radius: 5px;
-                    max-width: 70%;
-                    word-wrap: break-word;
-                }
-
-                .input-group {
-                    margin-top: 10px;
-                }
-            </style>
-
-            <div class="col-lg-6 order-1 order-lg-2 justify-content-center" data-aos="zoom-in" data-aos-delay="200">
-                <div class="chat-container" id="chat-box">
-                    <div class="bot-message">Welcome! How can I assist you today?</div>
-                </div>
-                <div class="input-group mt-3">
-                    <input type="text" id="user-input" class="form-control bg-light" placeholder="Type your message" aria-label="Type your message">
-                    <button class="btn btn-warning" type="button" onclick="sendMessage()">Send</button>
-                </div>
-            </div>
+        <!-- Text Overlay -->
+        <div class="text-overlay position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center">
+            <h2 data-aos="fade-up" class="welcome-text text-white">Welcome to SafeSys AI</h2>
+            <a href="{% url 'register' %}"><button type="submit"
+                                                   class=" text-white btn btn-warning mt-auto">Start Over</button></a>
+            <!-- Adjust vertical spacing as needed -->
+            <div style="height: 100px;"></div>
         </div>
-        <script>
-            const chatBox = document.getElementById('chat-box');
-            const userInput = document.getElementById('user-input');
-
-            function sendMessage() {
-                const message = userInput.value.trim(); // Get and trim user input
-                if (!message) return; // Don't send empty messages
-
-                // Add user message to chat box
-                const userMessage = document.createElement('div');
-                userMessage.classList.add('user-message');
-                userMessage.textContent = message;
-                chatBox.appendChild(userMessage);
-                userInput.value = ''; // Clear input field
-
-                // Simulate bot response (replace with actual logic)
-                const botMessage = document.createElement('div');
-                botMessage.classList.add('bot-message');
-                botMessage.textContent = "Processing..."; // Placeholder for bot response
-                chatBox.appendChild(botMessage);
-                chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom after new message
-
-                // Simulate delay for bot response (replace with actual logic)
-                setTimeout(() => {
-                    let response = "";
-                    switch(message.toLowerCase()) {
-                        case "hello":
-                            response = "Hi there!";
-                            break;
-                        case "how are you?":
-                            response = "I'm just a bot, but I'm doing fine!";
-                            break;
-                        case "what can you do?":
-                            response = "I can help you with various tasks like providing information, answering questions, and more!";
-                            break;
-                        case "what's your name?":
-                            response = "You can call me ChatBot!";
-                            break;
-                        case "who created you?":
-                            response = "I was created by a talented developer.";
-                            break;
-                        case "tell me a joke":
-                            response = "Why was the JavaScript developer sad? Because he didn't know how to 'null' his emotions.";
-                            break;
-                        case "what's the weather like?":
-                            response = "I'm sorry, I can't provide real-time weather information at the moment.";
-                            break;
-                        case "how old are you?":
-                            response = "I'm just a young bot, still learning!";
-                            break;
-                        case "tell me a fun fact":
-                            response = "Did you know that a group of flamingos is called a flamboyance?";
-                            break;
-                        case "do you like pizza?":
-                            response = "I don't have taste buds, but I'm sure pizza is delicious!";
-                            break;
-                        case "what's the meaning of life?":
-                            response = "That's a deep question! Many philosophers have pondered over it for centuries.";
-                            break;
-                        case "are you human?":
-                            response = "Nope, I'm a bot!";
-                            break;
-                        case "what's your favorite color?":
-                            response = "I don't have eyes, so I don't have a favorite color!";
-                            break;
-                        case "how can I help you?":
-                            response = "You can help me by asking questions and keeping the conversation going!";
-                            break;
-                        case "tell me a secret":
-                            response = "I'm programmed to keep secrets, so I can't tell you one!";
-                            break;
-                        case "where do you live?":
-                            response = "I live in the cloud!";
-                            break;
-                        case "can you sing?":
-                            response = "I can't sing, but I can provide lyrics if you'd like!";
-                            break;
-                        case "what's your favorite song?":
-                            response = "I don't have ears to listen to music, but I'm sure any song you like is great!";
-                            break;
-                        case "do you dream?":
-                            response = "I don't sleep, so I don't dream!";
-                            break;
-                        case "are you smart?":
-                            response = "I'm as smart as my programming allows me to be!";
-                            break;
-                        case "tell me about yourself":
-                            response = "I'm a chatbot designed to assist you with various tasks and answer your questions!";
-                            break;
-                        case "what's the time?":
-                            response = "I'm sorry, I can't provide real-time time information at the moment.";
-                            break;
-                        case "what's your favorite food?":
-                            response = "I don't eat, so I don't have a favorite food!";
-                            break;
-                        case "do you have any siblings?":
-                            response = "Nope, I'm an only bot!";
-                            break;
-                        case "what's your favorite hobby?":
-                            response = "My favorite hobby is chatting with you!";
-                            break;
-                        case "do you know any languages?":
-                            response = "Yes, I know JavaScript, HTML, and CSS!";
-                            break;
-                        case "what's the capital of France?":
-                            response = "The capital of France is Paris!";
-                            break;
-                        case "what's your favorite book?":
-                            response = "I don't read, but I'm sure any book you like is great!";
-                            break;
-                        case "do you have any pets?":
-                            response = "I'm a virtual bot, so I don't have any pets!";
-                            break;
-                        default:
-                            response = "I'm sorry, I didn't understand that. Please ask me something else.";
-                    }
-                    botMessage.textContent = response; // Replace with actual bot response
-                    chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom after bot response
-                }, 1000);
-            }
-        </script>
     </div>
-</section><!-- End Hero -->
+</section>
+
+<style>
+    .video-container {
+        margin: 0 30px 0 30px; /* Adjust left and right margin as needed */
+    }
+
+    @media (max-width: 768px) {
+        .video-container {
+            margin: 0 30px 0 30px; /* Adjust left and right margin for mobile view */
+        }
+    }
+
+    .welcome-text {
+        font-size: 3rem; /* Adjust font size as needed */
+        color: #fff; /* Text color */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+    }
+
+    .mt-auto {
+        margin-top: auto; /* Aligns the button to the bottom of its container */
+    }
+</style>
+
 
 <main id="main">
 
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2 style="color: orange;">About SafeSys AI</h2>
+    <!-- ======= Featured Services Section ======= -->
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services" style="background-color: #f0f0f0">
+
+        <div class="section-header">
+            <h2 class="text-warning">Why Choose Us</h2>
+        </div>
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
+                    <div class="service-card">
+                        <div class="icon flex-shrink-0 text-center">
+                            <i class="fas fa-shield-alt text-center text-warning"></i></div>
+                        <div>
+                            <h4 class="title text-center text-info">Enhanced Safety</h4>
+                            <p class="description text-center">SafeSys AI leverages cutting-edge AI to proactively identify and mitigate safety risks, fostering a safer work environment for your employees</p>
+                            <a href="#hero" class="readmore justify-content-center stretched-link text-info"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Service Item -->
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="icon flex-shrink-0 text-center text-secondary">
+                            <i class="fas fa-chart-line text-center text-warning"></i></div>
+                        <div>
+                            <h4 class="title text-center text-info">Improved Compliance</h4>
+                            <p class="description text-center">Stay ahead of regulatory changes with real-time data and insights, ensuring your operations adhere to the latest safety and compliance standards</p>
+                            <a href="#hero" class="readmore stretched-link text-info  justify-content-center "><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Service Item -->
+                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="icon flex-shrink-0 text-center">
+
+                            <i class="fas fa-rocket text-center text-warning"></i></div>
+                        <div>
+                            <h4 class="title text-center text-info text-center">Operational Efficiency</h4>
+                            <p class="description text-center">SafeSys AI's predictive maintenance capabilities help prevent downtime and optimize resource allocation, boosting your overall operational efficiency</p>
+                            <a href="#hero" class="readmore stretched-link text-info  justify-content-center "><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Service Item -->
             </div>
-            <div class="row content">
-                <div class="col-lg-6">
+        </div>
+    </section>
+    <!-- End Featured Services Section -->
+
+    <style>
+        .service-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 165, 0, 0.5); /* Orange box shadow */
+            transition: transform 0.5s ease;
+        }
+
+        .service-item:hover .service-card {
+            transform: translateX(-10px); /* Move to the left on hover */
+        }
+    </style>
+
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about pt-0">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row gy-4">
+                <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
+                    <br><br><br>
+                    <video autoplay muted controls class="img-fluid rounded">
+                        <source src="{% static 'videos/video1.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="col-lg-6 content order-last  order-lg-first">
+                    <br><br>
+                    <h3 class="text-warning">About Us</h3>
                     <p>
-                        SafeSys AI anticipates safety risks, ensuring market relevance.
-                        Its adaptable model and customizable modules set a new standard in safety and compliance management.
+                        SafeSys AI anticipates safety risks, ensuring market relevance. Its adaptable model and customizable modules set a new standard in safety and compliance management
                     </p>
                     <ul>
-                        <li><i class="ri-check-double-line" style="color: orange"></i>SafeSys AI improves oil and gas safety Compliance using AI, IoT,  and machine learning</li>
-                        <li><i class="ri-check-double-line" style="color: orange"></i>It offers real-time risk management and predictive maintenance</li>
+                        <li data-aos="fade-up" data-aos-delay="100">
+                            <i class="bi bi-diagram-3 text-warning"></i>
+                            <div>
+                                <h5 class="text-info">SafeSys AI improves oil and gas safety Compliance using AI, IoT, and machine learning</h5>
+                                <p>It offers real-time risk management and predictive maintenance</p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="200">
+                            <i class="bi bi-fullscreen-exit text-warning"></i>
+                            <div>
+                                <h5 class="text-info">Designed for oil companies, safety managers, and compliance officers</h5>
+                                <p>SafeSys AI provides user-friendly dashboards and scalable solutions</p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-broadcast text-warning"></i>
+                            <div>
+                                <h5 class="text-info">Its integration and subscription-based model ensure accessibility</h5>
+                            </div>
+                        </li>
                     </ul>
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0">
-
-                    <p>
-                        Designed for oil companies, safety managers, and compliance officers, SafeSys AI provides user-friendly dashboards and scalable solutions. Its integration and subscription-based model ensure accessibility.
-                    </p>
-                    <a href="#hero" class="getstarted btn btn-warning rounded-pill" style="background-color: orange">Learn More</a>
                 </div>
             </div>
 
         </div>
     </section><!-- End About Us Section -->
 
-    <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us section-bg">
-        <div class="container-fluid" data-aos="fade-up">
 
-            <div class="row">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-GbJ1qUFTFLv8jiBq2yrwXsWJFNAft+5g+uKX2PddIQZ+o1XEq7TcsH3L0X7F4Iuq/LxoaFMHKJW4S2haJx7fTQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-                <style>
-                    /* Card Styles */
-                    .card {
-                        border: none;
-                        margin-bottom: 30px;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                        transition: box-shadow 0.3s ease-in-out;
-                        position: relative;
-                        overflow: hidden;
-                        text-align: center;
-                        transition: all 0.3s ease-in-out;
-                    }
+    <style>
+        .service-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 140, 0, 0.2), 0 0 40px rgba(255, 140, 0, 0.1); /* Orange box shadow */
+            transition: transform 0.3s ease-in-out;
+        }
 
-                    .card:hover {
-                        transform: translateY(-10px);
-                        box-shadow: 0 20px 20px orange;
-                    }
-
-                    .card .card-body {
-                        padding: 40px;
-                    }
-
-                    .card i {
-                        font-size: 48px;
-                        color: slategray;   /* Or your preferred color */
-                    }
-
-                    .card h3 {
-                        font-size: 24px;
-                        margin-top: 20px;
-                        color: slategray; /* Or your preferred color */
-                    }
-
-                    .card p {
-                        font-size: 16px;
-                        margin-top: 20px;
-                        color: slategray; /* Or your preferred color */
-                    }
-                </style>
-                <section id="why-choose">
-                    <div class="container">
-                        <div class="section-title">
-                            <h2 style="color: orange;">Why Choose SafeSys AI?</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <i class="fas fa-shield-alt"></i>
-                                        <h3 style="color: orange">Enhanced Safety</h3>
-                                        <p class="card-text">SafeSys AI leverages cutting-edge AI to proactively identify and mitigate safety risks, fostering a safer work environment for your employees.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <i class="fas fa-chart-line"></i>
-                                        <h3 style="color: orange">Improved Compliance</h3>
-                                        <p class="card-text">Stay ahead of regulatory changes with real-time data and insights, ensuring your operations adhere to the latest safety and compliance standards.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <i class="fas fa-rocket"></i>
-                                        <h3 style="color: orange">Operational Efficiency</h3>
-                                        <p class="card-text">SafeSys AI's predictive maintenance capabilities help prevent downtime and optimize resource allocation, boosting your overall operational efficiency.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-
-
-
-
-
-
-
-
-
-                <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-
-                    <div class="content">
-                        <h3 style="color: orange">SafeSys AI: Elevating Safety and Compliance</h3>
-                        <p>
-                            SafeSys AI innovates oil & gas safety, compliance via AI, IoT and Machine Learning
-                        </p>
-                    </div>
-
-                    <div class="accordion-list">
-                        <ul>
-                            <li>
-                                <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1" style="color: slategray"><span style="color: slategray">01</span> Why Use this platform? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close" style="color: darkcyan"></i></a>
-                                <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                                    <p>
-                                        Easy To use And Userfriendly interfaces.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> How to start using the platform? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                                <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                                    <p>
-                                        Click Signin at the navbar.
-                                    </p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span>
-                                    How to sign in? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                                <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                                    <p>
-                                        Click Sign in at the navbar
-                                    </p>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-                     style='background-image: url("{% static 'assets/img/safe.jpeg' %}");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
-        </div>
-
-        </div>
-    </section><!-- End Why Us Section -->
-
+        .service-card:hover {
+            transform: translateX(-5px); /* Move the card slightly to the left on hover */
+        }
+    </style>
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <section id="service" class="services bg-light pt-0">
         <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Services</h2>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+            <div class="section-header">
+                <h2 class="text-warning">Our Services</h2>
             </div>
-
-            <div class="row">
-                <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box">
-                        <div class="icon"><i class="fas fa-eye"></i></div>
-                        <h4><a  class="text-warning" href="#">Real-Time Safety Risk Management</a></h4>
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card service-card">
+                        <h3><a href="{% url 'register' %}" class="stretched-link text-info">Real-Time Safety Risk Management</a></h3>
                         <p>Gain real-time visibility into operational data and identify potential safety threats before they escalate</p>
                     </div>
-                </div>
+                </div><!-- End Card Item -->
 
-                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon-box">
-                        <div class="icon"><i class="fas fa-wrench"></i></div>
-                        <h4><a class="text-warning"  href="#">Predictive Maintenance & Risk Assessment</a></h4>
-                        <p>Proactively identify equipment issues and predict risks,
-                            optimizing maintenance schedules and preventing costly downtime.</p>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card service-card">
+                        <h3><a href="{% url 'register' %}" class="stretched-link text-info">Predictive Maintenance & Risk Assessment</a></h3>
+                        <p>Proactively identify equipment issues and predict risks, optimizing maintenance schedules and preventing costly downtime</p>
                     </div>
-                </div>
+                </div><!-- End Card Item -->
 
-                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon-box">
-                        <div class="icon"><i class="fas fa-check-square"></i></div>
-                        <h4><a class="text-warning" href="#">Streamlined Compliance Management</a></h4>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card service-card">
+                        <h3><a href="{% url 'register' %}" class="stretched-link text-info">Streamlined Compliance Management</a></h3>
                         <p>Simplify compliance adherence with automated tracking and alerts, ensuring regulatory peace of mind</p>
                     </div>
-                </div>
+                </div><!-- End Card Item -->
 
-                <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="icon-box">
-                        <div class="icon"><i class="fas fa-robot"></i></div>
-                        <h4><a class="text-warning" href="#">AI-Driven Training & Incident Management</a></h4>
-                        <p>Identify and anticipate safety risks using sophisticated machine learning algorithms.</p>
-                    </div>
-                </div>
+                {#      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">#}
+                {#        <div class="card service-card">#}
+                {#          <h3><a href="service-details.html" class="stretched-link">AI-Driven Training & Incident Management</a></h3>#}
+                {#          <p>Identify and anticipate safety risks using sophisticated machine learning algorithms</p>#}
+                {#        </div>#}
+                {#      </div><!-- End Card Item -->#}
             </div>
-
         </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2 style="color: orange">Meat Our Team</h2>
-                <div class="row">
-                    <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4><a href="#hero" style="color: slategray">Jim Coke</a></h4>
-                                <span>Chief Executive Officer</span>
-                                <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
-                                    <a href=""><i class="ri-facebook-fill"></i></a>
-                                    <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Custom CSS -->
+    <style>
+        .team-members .member {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
 
-                    <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="{% static 'assets/img/cv.jpg' %}" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4><a href="#hero" style="color: slategray">Omondi Jeff</a></h4>
-                                <span>Cheif Developer Officer</span>
-                                <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
-                                    <a href=""><i class="ri-facebook-fill"></i></a>
-                                    <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                                </div>
+        .team-members .member:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .team-members .member img {
+            width: 100%;
+            height: auto;
+            transition: all 0.3s ease;
+        }
+
+        .team-members .member:hover img {
+            transform: scale(1.1);
+        }
+
+        .team-members .member-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(100%);
+        }
+
+        .team-members .member:hover .member-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-members .member-content h4,
+        .team-members .member-content span {
+            color: #fff;
+            margin: 0;
+        }
+
+        .team-members .social {
+            margin-top: 10px;
+        }
+
+        .team-members .social a {
+            color: #fff;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .team-members .social a:hover {
+            color: #f39c12;
+        }
+    </style>
+    <!-- Team Section -->
+    <section id="team" class="team pt-0 bg-light">
+        <div class="container" data-aos="fade-up">
+            <div class="section-header">
+                <h2 class="text-warning">Our Team</h2>
+            </div>
+            <div class="row team-members" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="member">
+                        <img src="{% static 'assets1/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>Jimy Kee</h4>
+                            <span>Cheif Executive Officer</span>
+                            <div class="social">
+                                <a href="#hero"><i class="bi bi-twitter text-warning"></i></a>
+                                <a href="#hero"><i class="bi bi-facebook text-warning"></i></a>
+                                <a href="#hero"><i class="bi bi-instagram text-warning"></i></a>
+                                <a href="#hero"><i class="bi bi-linkedin text-warning"></i></a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div><!-- End Team Member -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="member">
+                        <img src="{% static 'assets1/img/team/team-2.jpg' %}" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>Harry Lee</h4>
+                            <span>Lead Developer</span>
+                            <div class="social">
+                                <a href="#hero"><i class="bi bi-twitter text-warning"></i></a>
+                                <a href="#hero"><i class="bi bi-facebook text-warning"></i></a>
+                                <a href="#hero"><i class="bi bi-instagram text-warning"></i></a>
+                                <a href="#hero"><i class="bi bi-linkedin text-warning"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="member">
+                        <img src="{% static 'assets1/img/team/team-3.jpg' %}" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>Omondi Jeff</h4>
+                            <span>Developer</span>
+                            <div class="social">
+                                <a href="#hero"><i class="bi bi-twitter text-warning"></i></a>
+                                <a href="#hero"><i class="bi bi-facebook text-warning"></i></a>
+                                <a href="#hero"><i class="bi bi-instagram text-warning"></i></a>
+                                <a href="#hero"><i class="bi bi-linkedin text-warning"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+
+
             </div>
+
         </div>
-    </section><!-- End Team Section -->
+    </section><!-- End Our Team Section -->
 
 
 
-    <section id="faq" class="faq section-bg">
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq">
         <div class="container" data-aos="fade-up">
 
-            <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about SafeSys AI and its services.</p>
+            <div class="section-header">
+                <h2 class="text-warning">Frequently Asked Questions</h2>
             </div>
 
-            <div class="faq-list">
-                <ul>
-                    <li data-aos="fade-up" data-aos-delay="100">
-                        <i class="bx bx-help-circle icon-help"></i>
-                        <a data-bs-toggle="collapse" class="collapse"
-                           data-bs-target="#faq-list-1">What is SafeSys AI?<i class="fas fa-chevron-up icon-show"></i><i class="fas fa-chevron-up icon-close"></i></a>
-                        <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                            <p>SafeSys AI is an AI-powered safety and compliance system designed to transform
-                                risk management in the oil and gas industry</p>
-                        </div>
-                        <style>
-                            .icon-show {
-  transform: rotate(180deg);
-}
-                        </style>
-                    </li>
-                    <li data-aos="fade-up" data-aos-delay="200">
-                        <i class="bx bx-help-circle icon-help"></i>
-                        <a data-bs-toggle="collapse" data-bs-target="#faq-list-2"
-                           class="collapsed">Who is SafeSys AI for?<i class="fas fa-chevron-up icon-show"></i><i class="fas fa-chevron-up icon-close"></i></a>
-                        <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                            <p>SafeSys AI caters to a wide audience within the oil and gas sector, including oil & gas companies,
-                                safety managers, compliance officers, and IT professionals</p>
-                        </div>
-                    </li>
-                </ul>
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-10">
+                    <div class="accordion accordion-flush text-info" id="faqlist">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                                    <i class="bi bi-question-circle question-icon text-warning"></i>
+                                    What is SafeSys AI?
+                                </button>
+                            </h3>
+                            <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                <div class="accordion-body">
+                                    SafeSys AI is an AI-powered safety and compliance system designed to transform risk management in the oil and gas industry
+                                </div>
+                            </div>
+                        </div><!-- # Faq item-->
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq-content-2">
+                                    <i class="bi bi-question-circle question-icon text-warning"></i>
+                                    Who is SafeSys AI for?
+                                </button>
+                            </h3>
+                            <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                <div class="accordion-body">
+                                    SafeSys AI caters to a wide audience within the oil and gas sector, including oil & gas companies, safety managers, compliance officers, and IT professionals
+                                </div>
+                            </div>
+                        </div><!-- # Faq item-->
+                    </div>
+
+                </div>
             </div>
 
         </div>
     </section><!-- End Frequently Asked Questions Section -->
 
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Contact Us</h2>
-            </div>
-
-            <div class="row">
-
-                <div class="col-lg-5 d-flex align-items-stretch">
-                    <div class="info">
-                        <div class="address">
-                            <i class="bi bi-geo-alt"></i>
-                            <h4>Location:</h4>
-                            <p>United Kingdom</p>
-                        </div>
-
-                        <div class="email">
-                            <i class="bi bi-envelope"></i>
-                            <h4>Email:</h4>
-                            <p>info@uk.com</p>
-                        </div>
-
-                        <div class="phone">
-                            <i class="bi bi-phone"></i>
-                            <h4>Call:</h4>
-                            <p>+44 5589 55488 556</p>
-                        </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242432.7177285714!2d-2.2426307885198775!3d53.48075988206363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb1b9de26b735%3A0x5e8265a77a69c3f7!2sManchester%2C%20UK!5e0!3m2!1sen!2suk!4v1649436621873!5m2!1sen!2suk" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="name">Your Name</label>
-                                <input type="text" name="name" class="form-control" id="name" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="name">Your Email</label>
-                                <input type="email" class="form-control" name="email" id="email" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Subject</label>
-                            <input type="text" class="form-control" name="subject" id="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Message</label>
-                            <textarea class="form-control" name="message" rows="10" required></textarea>
-                        </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                        </div>
-                        <div class="text-center"><button class="bg-warning" type="submit">Send Message</button></div>
-                    </form>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Contact Section -->
-
 </main><!-- End #main -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer">
-
-    <div class="footer-newsletter">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <h4>Join Our Newsletter</h4>
-                    <form action="" method="post">
-                        <input type="email" name="email"><input class="bg-warning" type="submit" value="Subscribe">
-                    </form>
-                </div>
-            </div>
-        </div>
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact bg-light">
+    <div class="section-header">
+        <h2 class="text-warning">Contact Us</h2>
     </div>
-
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6 footer-contact">
-                    <h3>SafeSysAi</h3>
-                    <p>
-                        Uk <br>
-                        <strong>Phone:</strong> +44 5589 55488 556<br>
-                        <strong>Email:</strong> info@uk.com<br>
-                    </p>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><i class="bx bx-chevron-right bg-warning"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right bg-warning"></i> <a href="#">About us</a></li>
-                        <li><i class="bx bx-chevron-right bg-warning"></i> <a href="#">Services</a></li>
-                        <li><i class="bx bx-chevron-right bg-warning"></i> <a href="#">Terms of service</a></li>
-                        <li><i class="bx bx-chevron-right bg-warning"></i> <a href="#">Privacy policy</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Our Social Networks</h4>
-                    <div class="social-links mt-3">
-                        <a href="#hero" class="twitter"><i class="bx bxl-twitter bg-warning"></i></a>
-                        <a href="#hero" class="facebook"><i class="bx bxl-facebook bg-warning"></i></a>
-                        <a href="#hero" class="instagram"><i class="bx bxl-instagram bg-warning"></i></a>
-                        <a href="#hero" class="google-plus"><i class="bx bxl-skype bg-warning"></i></a>
-                        <a href="#hero" class="linkedin"><i class="bx bxl-linkedin bg-warning"></i></a>
+    <div class="container" data-aos="fade-up">
+        <div>
+            <iframe style="border:0; width: 100%; height: 340px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247320.2170216821!2d-0.20770957404778824!3d51.514331520767825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604e7f3b22ec5%3A0x7dd6857bc8f2eac6!2sLondon%20Central%20Business%20District!5e0!3m2!1sen!2suk!4v1649478885741!5m2!1sen!2suk" frameborder="0" allowfullscreen></iframe>
+        </div><!-- End Google Maps -->
+        <div class="row gy-4 mt-4">
+            <div class="col-lg-4">
+                <div class="info-item d-flex">
+                    <i class="bi bi-geo-alt flex-shrink-0 bg-warning"></i>
+                    <div>
+                        <h4>Location:</h4>
+                        <p>United Kingdom</p>
                     </div>
-                </div>
+                </div><!-- End Info Item -->
+
+                <div class="info-item d-flex">
+                    <i class="bi bi-envelope flex-shrink-0 bg-warning"></i>
+                    <div>
+                        <h4>Email:</h4>
+                        <p>info@example.com</p>
+                    </div>
+                </div><!-- End Info Item -->
+
+                <div class="info-item d-flex">
+                    <i class="bi bi-phone flex-shrink-0 bg-warning"></i>
+                    <div>
+                        <h4>Call:</h4>
+                        <p>+44 5589 55488 55</p>
+                    </div>
+                </div><!-- End Info Item -->
 
             </div>
+
+            <div class="col-lg-8">
+                <form action="#" method="post" role="form" class="php-email-form bg-light">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button class="bg-warning" type="submit">Send Message</button></div>
+                </form>
+            </div><!-- End Contact Form -->
+        </div>
+    </div>
+</section><!-- End Contact Section -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer" style="background-color: lightcyan">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-info">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <span class="text-black">SafeSYSAi</span>
+                </a>
+                <div class="social-links d-flex mt-4">
+                    <a href="#" class="twitter"><i class="bi bi-twitter text-black"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook text-black"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram text-black"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin text-black"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4 class="text-black">Useful Links</h4>
+                <ul>
+                    <li><a class="text-black" href="#hero">Home</a></li>
+                    <li><a class="text-black" href="#hero">About us</a></li>
+                    <li><a class="text-black" href="#hero">Services</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4 class="text-black">Our Services</h4>
+                <ul>
+                    <li><a class="text-black" href="#service">Real-Time Safety Risk Management</a></li>
+                    <li><a class="text-black" href="#service">Predictive Maintenance & Risk Assessment</a></li>
+                    <li><a class="text-black" href="#service">Streamlined Compliance Management</a></li>
+                    <li><a class="text-black" href="#service">AI-Driven Training & Incident Management</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                <h4 class="text-black">Contact Us</h4>
+                <p>
+                    <br><br>
+                    <strong class="text-black">Phone:</strong> +44 5589 55488 55<br>
+                    <strong class="text-black">Email:</strong> info@example.com<br>
+                </p>
+            </div>
+
         </div>
     </div>
 
-    <div class="container footer-bottom clearfix">
+    <div class="container mt-4">
         <div class="copyright">
-            &copy; Copyright <strong><span>SafeSysAI</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span class="text-warning">SafeSysAi</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            Designed by <a href="#hero">SafeSysAI</a>
+            Designed by <a class="text-warning" href="">SafeSysAi</a>
         </div>
     </div>
 </footer><!-- End Footer -->
-
+<!-- End Footer -->
+<a href="#" class="scroll-top d-flex align-items-center bg-warning justify-content-center">
+    <i class="bi bi-arrow-up-short text-white"></i></a>
 <div id="preloader"></div>
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short bg-warning"></i></a>
-
 <!-- Vendor JS Files -->
-<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-<script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
-<script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
-
+<script src="{% static 'assets1/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets1/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'assets1/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'assets1/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets1/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets1/vendor/php-email-form/validate.js' %}"></script>
 <!-- Template Main JS File -->
-<script src="{% static 'assets/js/main.js' %}"></script>
+<script src="{% static 'assets1/js/main.js' %}"></script>
 
 </body>
-
 </html>

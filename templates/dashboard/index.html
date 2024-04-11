@@ -1,639 +1,114 @@
-<head>
-    {% load static %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
-    <meta name="author" content="AdminKit">
-    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="{% static '/img/logo-color.png' %}" />
-    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
-    <title>SafeSysAI</title>
-    <link href="{% static 'dashboard/css/app.css' %}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Bundle JS (includes Popper) -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</head>
-</head>
-<body>
-<div class="wrapper">
-    <nav id="sidebar" class="sidebar js-sidebar">
-        <div class="sidebar-content js-simplebar">
-            <a class="sidebar-brand" href="#">
-                <img class="img-fluid" height="80px" width="100%" src="{% static 'assets/img/logo-color.png' %}" alt="">
-            </a>
-            <ul class="sidebar-nav">
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="">
-                        <span class="align-middle">Dashboard</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{% url 'safety:safety_index' %}">
-                        <span class="align-middle">Risk Assessment</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{% url 'safesys:safe-url'%}">
-                        <span class="align-middle">Training</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{% url 'alerts:create_incident' %}">
-                        <span class="align-middle">Create Incident</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="main">
-        <nav class="navbar navbar-expand navbar-light navbar-bg">
-            <a class="sidebar-toggle js-sidebar-toggle">
-                <i class="hamburger align-self-center"></i>
-            </a>
+{% extends 'dashboard/master.html' %}
+{% load static %}
 
-            <div class="navbar-collapse collapse">
-                <ul class="navbar-nav navbar-align">
-                    <li class="nav-item dropdown">
-                        <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
-                            <div class="position-relative">
-                                <i class="align-middle" data-feather="bell"></i>
-                                <span class="indicator">4</span>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
-                            <div class="dropdown-menu-header">
-                                4 New Notifications
-                            </div>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <i class="text-danger" data-feather="alert-circle"></i>
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="text-dark">Update completed</div>
-                                            <div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
-                                            <div class="text-muted small mt-1">30m ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <i class="text-warning" data-feather="bell"></i>
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="text-dark">Lorem ipsum</div>
-                                            <div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</div>
-                                            <div class="text-muted small mt-1">2h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <i class="text-primary" data-feather="home"></i>
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="text-dark">Login from 192.186.1.8</div>
-                                            <div class="text-muted small mt-1">5h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <i class="text-success" data-feather="user-plus"></i>
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="text-dark">New connection</div>
-                                            <div class="text-muted small mt-1">Christina accepted your request.</div>
-                                            <div class="text-muted small mt-1">14h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="dropdown-menu-footer">
-                                <a href="#" class="text-muted">Show all notifications</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
-                            <div class="position-relative">
-                                <i class="align-middle" data-feather="message-square"></i>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
-                            <div class="dropdown-menu-header">
-                                <div class="position-relative">
-                                    4 New Messages
-                                </div>
-                            </div>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <img src="../../static/dashboard/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
-                                        </div>
-                                        <div class="col-10 ps-2">
-                                            <div class="text-dark">Vanessa Tucker</div>
-                                            <div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
-                                            <div class="text-muted small mt-1">15m ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <img src="../../static/dashboard/img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="William Harris">
-                                        </div>
-                                        <div class="col-10 ps-2">
-                                            <div class="text-dark">William Harris</div>
-                                            <div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
-                                            <div class="text-muted small mt-1">2h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <img src="../../static/dashboard/img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Christina Mason">
-                                        </div>
-                                        <div class="col-10 ps-2">
-                                            <div class="text-dark">Christina Mason</div>
-                                            <div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
-                                            <div class="text-muted small mt-1">4h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <img src="../../static/dashboard/img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
-                                        </div>
-                                        <div class="col-10 ps-2">
-                                            <div class="text-dark">Sharon Lessman</div>
-                                            <div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
-                                            <div class="text-muted small mt-1">5h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="dropdown-menu-footer">
-                                <a href="#" class="text-muted">Show all messages</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                            <i class="align-middle" data-feather="settings"></i>
-                        </a>
-                        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                            <div class="container">
-                                {% if user.is_authenticated %}
-                                <div class="user-profile">
-                                    <div class="profile-photo">
-                                        {% if user.profile_photo %}
-                                        <img height="40px" width="40px" class="img-fluid img-responsive rounded-circle" src="{{ user.profile_photo.url }}" alt="{{ user.full_name }}">
-                                        {% else %}
-                                        <!-- Default profile photo if user has not uploaded one -->
-                                        <img height="40px" width="40px" class="img-fluid img-responsive rounded-circle"  src="{% static 'dashboard/img/avatars/avatar-3.jpg' %}" alt="{{ user.full_name }}">
-                                        {% endif %}
-                                    </div>
-                                    <div class="email">
-                                        <p>Email: {{ user.email }}</p>
-                                    </div>
-                                </div>
-                                {% else %}
-                                <p>User not authenticated</p>
-                                {% endif %}
-                            </div>
+{% block content %}
+    <style>
+        /* Reset default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="{% url 'profile-url' %}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'home-url' %}">Log out</a>
-                        </div>
-                    </li>
-                </ul>
+        /* Custom Styles */
+        .hero {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .feature:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+
+    <h1 class="hero text-warning">Dashboard</h1>
+
+    <section class="features">
+        <a href="{% url 'realtime:real-url' %}" class="text-decoration-none">
+            <div class="feature bg-light text-dark">
+                <i class="fas fa-shield-alt fa-3x mb-3 text-warning"></i>
+                <h3 class="text-info">Real-Time Threat Detection</h3>
+                <p>Stay ahead of potential risks with our intelligent alert system.</p>
             </div>
-        </nav>
-        <main class="content">
-            <style>
-                /* Reset default styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        </a>
+        <a href="{% url 'safesys:safe-url' %}" class="text-decoration-none">
+            <div class="feature bg-light text-dark">
+                <i class="fas fa-tools fa-3x mb-3 text-warning"></i>
+                <h3 class="text-info">Predictive Maintenance</h3>
+                <p>Leverage machine learning to forecast equipment failures and prevent downtime.</p>
+            </div>
+        </a>
+        <a href="{% url 'realtime:real-url' %}" class="text-decoration-none">
+            <div class="feature bg-light text-dark">
+                <i class="fas fa-clipboard-check fa-3x mb-3 text-warning"></i>
+                <h3 class="text-info">Compliance Management</h3>
+                <p>Ensure adherence to regulations with automated compliance checks.</p>
+            </div>
+        </a>
+    </section>
 
+    <br><br><br>
 
-.hero {
-    background-color: #f4f4f4;
-    padding: 2rem;
-    text-align: center;
-}
+ 
+    <h1 class="hero text-warning">Alerts</h1>
 
-.features {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.feature {
-    text-align: center;
-}
-
-.feature h3 {
-    margin-top: 1rem;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-}
-
-footer p {
-    margin: 0;
-}
-
-            </style>
-            <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-            <!-- Font Awesome -->
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-            <style>
-                a{
-                text-decoration:none;
-                }
-                .feature {
-                  border-radius: 10px;
-                  padding: 20px;
-                  margin-bottom: 20px;
-                  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                  transition: box-shadow 0.3s;
-                }
-
-                .feature:hover {
-                  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-                }
-
-                .feature h3 {
-                  margin-top: 20px;
-                }
-            </style>
-            <section class="features">
-                <a href="{% url 'realtime:real-url' %}">
-                    <div class="feature">
-                        <i class="fas fa-shield-alt fa-3x mb-3"></i>
-                        <h3>Real-Time Threat Detection</h3>
-                        <p>Stay ahead of potential risks with our intelligent alert system.</p>
-                    </div>
-                </a>
-                 <a href="{% url 'realtime:real-url' %}">
-                <div class="feature">
-                    <i class="fas fa-tools fa-3x mb-3"></i>
-                    <h3>Predictive Maintenance</h3>
-                    <p>Leverage machine learning to forecast equipment failures and prevent downtime.</p>
-                </div>
-                 </a>
-                 <a href="{% url 'realtime:real-url' %}">
-                <div class="feature">
-                    <i class="fas fa-clipboard-check fa-3x mb-3"></i>
-                    <h3>Compliance Management</h3>
-                    <p>Ensure adherence to regulations with automated compliance checks.</p>
-                </div>
-                 </a>
-            </section>
-
-            <!-- Bootstrap Bundle JS (includes Popper) -->
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-            <!-- Font Awesome -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-            <br><br><br>
-            <h1 class="text-danger">Alerts</h1>
-            <div class="table-responsive">
-                <table class="table table-bordered table-hover">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th>Description</th>
-                        <th>Date</th>
-                        <th>Location</th>
-                        <th>Severity</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for incident in incidents %}
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Severity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for incident in incidents %}
                     <tr>
                         <td>{{ incident.description }}</td>
                         <td>{{ incident.date }}</td>
                         <td>{{ incident.location }}</td>
                         <td>{{ incident.severity }}</td>
                     </tr>
-                    {% empty %}
+                {% empty %}
                     <tr>
                         <td colspan="4">No incidents found.</td>
                     </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            <div class="d-flex justify-content-center">
-                <a class="btn btn-warning rounded-pill" href="{% url 'alerts:create_incident' %}">Create Incident</a>
-            </div>
-<!--            <div class="analytics-section">-->
-<!--                <h2>Real-time Analytics</h2>-->
-<!--                <div id="analytics-data">&lt;!&ndash; Analytics data will be dynamically updated here &ndash;&gt;</div>-->
-<!--                &lt;!&ndash; Include this script in your HTML template &ndash;&gt;-->
-<!--                &lt;!&ndash; Display analytics data in your HTML template &ndash;&gt;-->
-<!--                <h2>Real-Time Analytics</h2> &lt;!&ndash; This is duplicated &ndash;&gt;-->
-<!--                <div>Total Incidents: <span id="total-incidents">0</span></div>-->
-<!--                <div>High Severity Count: <span id="high-severity-count">0</span></div>-->
-<!--                <div>Medium Severity Count: <span id="medium-severity-count">0</span></div>-->
-<!--                <div>Low Severity Count: <span id="low-severity-count">0</span></div>-->
-
-<!--                <script>-->
-<!--                    function fetchRealTimeAnalytics() {-->
-<!--                        fetch('/alerts/real_time_analytics')-->
-<!--                            .then(response => response.json())-->
-<!--                            .then(data => {-->
-<!--                                // Update the frontend with analytics data-->
-<!--                                document.getElementById('total-incidents').innerText = data.total_incidents;-->
-<!--                                document.getElementById('high-severity-count').innerText = data.high_severity_count;-->
-<!--                                document.getElementById('medium-severity-count').innerText = data.medium_severity_count;-->
-<!--                                document.getElementById('low-severity-count').innerText = data.low_severity_count;-->
-<!--                            })-->
-<!--                            .catch(error => console.error('Error fetching real-time analytics:', error));-->
-<!--                    }-->
-
-<!--                    // Fetch real-time analytics initially and then at regular intervals-->
-<!--                    fetchRealTimeAnalytics();-->
-<!--                    setInterval(fetchRealTimeAnalytics, 5000); // Update every 5 seconds (adjust as needed)-->
-<!--                </script>-->
-<!--            </div>-->
-
-        </main>
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row text-muted">
-                    <div class="col-6 text-start">
-                        <p class="mb-0">
-                            <a class="text-muted" href="#header" target="_blank"><strong>SafeSysAI</strong></a> &copy;
-                        </p>
-                    </div>
-                    <div class="col-6 text-end">
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <a class="text-muted" href="#header" target="_blank">Support</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-muted" href="#header" target="_blank">Help Center</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-muted" href="#header" target="_blank">Privacy</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-muted" href="#header" target="_blank">Terms</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-</div>
-<script src="{% static 'dashboard/js/app.js' %}"></script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
-        var gradient = ctx.createLinearGradient(0, 0, 0, 225);
-        gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
-        gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
-        // Line chart
-        new Chart(document.getElementById("chartjs-dashboard-line"), {
-            type: "line",
-            data: {
-                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                datasets: [{
-                    label: "Sales ($)",
-                    fill: true,
-                    backgroundColor: gradient,
-                    borderColor: window.theme.primary,
-                    data: [
-                        2115,
-                        1562,
-                        1584,
-                        1892,
-                        1587,
-                        1923,
-                        2566,
-                        2448,
-                        2805,
-                        3438,
-                        2917,
-                        3327
-                    ]
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                legend: {
-                    display: false
-                },
-                tooltips: {
-                    intersect: false
-                },
-                hover: {
-                    intersect: true
-                },
-                plugins: {
-                    filler: {
-                        propagate: false
-                    }
-                },
-                scales: {
-                    xAxes: [{
-                        reverse: true,
-                        gridLines: {
-                            color: "rgba(0,0,0,0.0)"
-                        }
-                    }],
-                    yAxes: [{
-                        ticks: {
-                            stepSize: 1000
-                        },
-                        display: true,
-                        borderDash: [3, 3],
-                        gridLines: {
-                            color: "rgba(0,0,0,0.0)"
-                        }
-                    }]
-                }
-            }
-        });
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Pie chart
-        new Chart(document.getElementById("chartjs-dashboard-pie"), {
-            type: "pie",
-            data: {
-                labels: ["Chrome", "Firefox", "IE"],
-                datasets: [{
-                    data: [4306, 3801, 1689],
-                    backgroundColor: [
-                        window.theme.primary,
-                        window.theme.warning,
-                        window.theme.danger
-                    ],
-                    borderWidth: 5
-                }]
-            },
-            options: {
-                responsive: !window.MSInputMethodContext,
-                maintainAspectRatio: false,
-                legend: {
-                    display: false
-                },
-                cutoutPercentage: 75
-            }
-        });
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Bar chart
-        new Chart(document.getElementById("chartjs-dashboard-bar"), {
-            type: "bar",
-            data: {
-                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                datasets: [{
-                    label: "This year",
-                    backgroundColor: window.theme.primary,
-                    borderColor: window.theme.primary,
-                    hoverBackgroundColor: window.theme.primary,
-                    hoverBorderColor: window.theme.primary,
-                    data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
-                    barPercentage: .75,
-                    categoryPercentage: .5
-                }]
-            },
-            options: {
-                maintainAspectRatio: false,
-                legend: {
-                    display: false
-                },
-                scales: {
-                    yAxes: [{
-                        gridLines: {
-                            display: false
-                        },
-                        stacked: false,
-                        ticks: {
-                            stepSize: 20
-                        }
-                    }],
-                    xAxes: [{
-                        stacked: false,
-                        gridLines: {
-                            color: "transparent"
-                        }
-                    }]
-                }
-            }
-        });
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var markers = [{
-            coords: [31.230391, 121.473701],
-            name: "Shanghai"
-        },
-            {
-                coords: [28.704060, 77.102493],
-                name: "Delhi"
-            },
-            {
-                coords: [6.524379, 3.379206],
-                name: "Lagos"
-            },
-            {
-                coords: [35.689487, 139.691711],
-                name: "Tokyo"
-            },
-            {
-                coords: [23.129110, 113.264381],
-                name: "Guangzhou"
-            },
-            {
-                coords: [40.7127837, -74.0059413],
-                name: "New York"
-            },
-            {
-                coords: [34.052235, -118.243683],
-                name: "Los Angeles"
-            },
-            {
-                coords: [41.878113, -87.629799],
-                name: "Chicago"
-            },
-            {
-                coords: [51.507351, -0.127758],
-                name: "London"
-            },
-            {
-                coords: [40.416775, -3.703790],
-                name: "Madrid "
-            }
-        ];
-        var map = new jsVectorMap({
-            map: "world",
-            selector: "#world_map",
-            zoomButtons: true,
-            markers: markers,
-            markerStyle: {
-                initial: {
-                    r: 9,
-                    strokeWidth: 7,
-                    stokeOpacity: .4,
-                    fill: window.theme.primary
-                },
-                hover: {
-                    fill: window.theme.primary,
-                    stroke: window.theme.primary
-                }
-            },
-            zoomOnScroll: false
-        });
-        window.addEventListener("resize", () => {
-            map.updateSize();
-        });
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
-        var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
-        document.getElementById("datetimepicker-dashboard").flatpickr({
-            inline: true,
-            prevArrow: "<span title=\"Previous month\">&laquo;</span>",
-            nextArrow: "<span title=\"Next month\">&raquo;</span>",
-            defaultDate: defaultDate
-        });
-    });
-</script>
-
-</body>
-
-</html>
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-warning rounded-pill" href="{% url 'alerts:alert-url' %}">Create Incident</a>
+    </div>
+{% endblock %}
