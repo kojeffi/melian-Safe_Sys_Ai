@@ -106,7 +106,7 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: #f0f0f0;
+  background: #dfd0d0;
 }
 
 #header .logo {
@@ -124,7 +124,7 @@ h6 {
 }
 
 #header .logo img {
-  height: 80px;
+  height: 40px;
   width: 200px;
 }
 

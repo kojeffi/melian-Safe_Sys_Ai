@@ -6,7 +6,7 @@ from .forms import SafetyIncidentForm
 
 def alerts(request):
     incidents = SafetyIncident.objects.all()
-    return render(request, 'alerts/index.html', {'incidents': incidents})
+    return render(request, 'dashbord/index.html', {'incidents': incidents})
 
 
 def create_incident(request):
@@ -17,7 +17,7 @@ def create_incident(request):
             return redirect('alerts:alert-url')
     else:
         form = SafetyIncidentForm()
-    return render(request, 'alerts/create_incident.html', {'form': form})
+    return render(request, 'dashbord/create_incident.html', {'form': form})
 
 
 # alerts/views.py

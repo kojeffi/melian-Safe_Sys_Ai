@@ -265,7 +265,7 @@ section {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
-    transition-delay: 1s !important;
+    transition-delay: 0s !important;
   }
 }
 
@@ -1689,8 +1689,8 @@ section {
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 50vh;
-  background-color: #f0f0f0;
+  max-height:200vh;
+  background-color: var(--color-secondary);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1698,23 +1698,12 @@ section {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.hero video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-
 .hero h2 {
   margin-bottom: 20px;
   padding: 0;
   font-size: 48px;
   font-weight: 700;
-  color: slategray;
+  color: #fff;
 }
 
 @media (max-width: 575px) {
@@ -1753,12 +1742,12 @@ section {
 }
 
 .hero form .btn-primary {
-  background-color: #ffffff;
+  background-color: var(--color-primary);
   padding: 15px 30px;
 }
 
 .hero form .btn-primary:hover {
-  background-color: #f0f0f0;
+  background-color: #2756ff;
 }
 
 .hero .stats-item {
@@ -1781,7 +1770,7 @@ section {
   display: block;
   width: 20px;
   height: 3px;
-  background: #f0f0f0;
+  background: var(--color-primary);
   left: 0;
   right: 0;
   bottom: 0;
@@ -1795,7 +1784,6 @@ section {
   font-size: 15px;
   font-weight: 600;
 }
-
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

@@ -14,7 +14,7 @@ def register(request):
             messages.error(request, 'Registration failed. Please correct the errors below.')
     else:
         form = RegistrationForm()
-    return render(request, 'registration.html', {'form': form})
+    return render(request, 'auth/signup.html', {'form': form})
 
 def login(request):
     if request.method == 'POST':
@@ -29,7 +29,7 @@ def login(request):
             messages.error(request, 'Invalid email or password. Please try again.')
     else:
         form = LoginForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'auth/signin.html', {'form': form})
 
 def logout(request):
     return render(request, 'index.html')
@@ -37,7 +37,7 @@ def logout(request):
 
 def dashboard(request):
     user = request.user  # Assuming user is authenticated
-    return render(request, 'dashboard/index.html',{'user': user})
+    return render(request, 'dashbord/index.html',{'user': user})
 
 from django.shortcuts import render
 

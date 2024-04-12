@@ -7,7 +7,7 @@ class RegistrationForm(forms.ModelForm):
 
     class Meta:
         model = CustomUser  # Update to use your custom user model
-        fields = ['full_name', 'email', 'password', 'confirm_password', 'profile_photo']
+        fields = ['full_name', 'email', 'password', 'confirm_password']
 
 
 class LoginForm(forms.Form):

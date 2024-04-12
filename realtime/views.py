@@ -31,4 +31,4 @@ def real(request):
         'compliance_regulation_form': compliance_regulation_form,
         'equipment_maintenance_form': equipment_maintenance_form,
     }
-    return render(request, 'dashboard/realtime.html', context)
+    return render(request, 'dashbord/realtime.html', context)
