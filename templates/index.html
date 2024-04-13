@@ -30,7 +30,7 @@
 </head>
 <body>
 <!-- ======= Header ======= -->
-<header id="header" class="header d-flex bg-light align-items-center fixed-top">
+<header id="header" class="header d-flex align-items-center fixed-top" style="background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
         <a href="{% url 'home-url' %}" class="logo d-flex align-items-center">
             <!-- Uncomment the line below if you also wish to use an image logo -->
@@ -41,18 +41,19 @@
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="{% url 'home-url' %}" class="active text-info">Home</a></li>
-                <li><a class="text-info" href="#about">About</a></li>
-                <li><a class="text-info" href="#service">Services</a></li>
-                <li><a class="text-info" href="#team">Team</a></li>
-                <li><a class="text-info" href="#contact">Contact</a></li>
-                <li><a class="text-info" href="{% url 'login' %}">Signin</a></li>
-                <li><a class="get-a-quote bg-warning text-white" href="{% url 'register' %}">Start Over</a></li>
+                <li><a href="{% url 'home-url' %}" class="active text-black">Home</a></li>
+                <li><a class="text-black" href="#about">About</a></li>
+                <li><a class="text-black" href="#service">Services</a></li>
+                <li><a class="text-black" href="#team">Team</a></li>
+                <li><a class="text-black" href="#contact">Contact</a></li>
+                <li><a class="text-black" href="{% url 'login' %}">Signin</a></li>
+                <li><a class="get-a-quote bg-warning text-black" href="{% url 'register' %}">Start Over</a></li>
             </ul>
         </nav><!-- .navbar -->
     </div>
 </header><!-- End Header -->
-<!-- End Header -->
+
+
 
 <style>
     /* CSS for hover state */
@@ -66,8 +67,8 @@
     #hero-video {
         position: absolute;
         top: 0;
-        left: 40%;
-        transform: translateX(-40%);
+        left: 30%;
+        transform: translateX(-30%);
         width: 100vw;
         height: calc(100vh - 10px); /* Adjust the margin as needed */
         object-fit: cover;
@@ -168,23 +169,24 @@
     }
 </style>
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="hero bg-light d-flex align-items-center">
+<section id="hero" class="hero bg-light d-flex align-items-center" style="padding-top:30px">
     <div class="container">
         <!-- Background video -->
         <video autoplay muted loop id="hero-video">
             <source src="{% static 'videos/video1.mp4' %}" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
+             <br><br><br>
         <div class="row gy-4 d-flex justify-content-between">
             <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <!-- Text content -->
                 <br><br><br>
-                <h2 data-aos="fade-up">Welcome to SafeSys AI</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Revolutionizing Safety and Compliance in Oil & Gas</p>
+                <h2 data-aos="fade-up" class="text-warning">Welcome to SafeSys AI</h2>
+                Revolutionizing Safety and Compliance in Oil & Gas<br>
                 <p class="text-white">SafeSys AI leverages cutting-edge AI and IoT to empower oil and gas companies with real-time safety
                     risk management and compliance assurance</p>
                 <a href="{% url 'register' %}"><button type="submit"
-                                                       class=" text-white btn btn-warning mt-auto">Start Over</button></a>
+                                                       class=" text-black btn btn-warning mt-auto">Start Over</button></a>
                 <!-- Adjust vertical spacing as needed -->
                 <div style="height: 100px;"></div>
                 <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">

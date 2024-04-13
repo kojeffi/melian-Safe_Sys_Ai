@@ -95,13 +95,10 @@ h6 {
   opacity: 1;
 }
 
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
 #header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 15px 0;
+  padding: 10px 0; /* Adjust the padding here */
 }
 
 #header.header-scrolled,
@@ -127,6 +124,7 @@ h6 {
   height: 40px;
   width: 200px;
 }
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -158,7 +156,7 @@ h6 {
   padding: 10px 0 10px 30px;
   font-size: 15px;
   font-weight: 800;
-   color: slategray;
+  color: #333;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -380,7 +378,7 @@ h6 {
   width: 100%;
   height: 100vh;
   background: #f9f9fa;
-  padding-left: -40px;
+  padding-left: 40px;
 }
 
 #hero .container {
