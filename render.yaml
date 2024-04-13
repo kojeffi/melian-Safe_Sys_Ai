@@ -16,4 +16,3 @@ services:
         value: "postgres://safe_postgresql_user:xo7BlNDwPDk7kOsYOFkKmStCGtMAN0W0@dpg-cob0p18l5elc73b0j9ag-a/safe_postgresql"
       - key: SECRET_KEY
         value: "django-insecure-f_sv8v8vwlhbqax&q8w7qhl*onuh)j!*c!)m9v@_m74cd9#$q)"
-      # Add other environment variables as needed
