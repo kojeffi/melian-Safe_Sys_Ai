@@ -167,3 +167,11 @@ LOGIN_REDIRECT_URL = 'dashboard-url'
 LOGIN_URL = 'login-url'
 
 LOGOUT_REDIRECT_URL = 'logout-url'
+
+# Email settings for Gmail SMTP
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Gmail SMTP server
+EMAIL_PORT = 587  # TLS port for Gmail SMTP
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'omondijeff88@gmail.com'  # Your Gmail email address
+EMAIL_HOST_PASSWORD = 'ddkk mbap tbre lfpf'  # Your Gmail email password

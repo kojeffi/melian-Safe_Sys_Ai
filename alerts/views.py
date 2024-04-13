@@ -6,7 +6,7 @@ from .forms import SafetyIncidentForm
 
 def alerts(request):
     incidents = SafetyIncident.objects.all()
-    return render(request, 'dashbord/index.html', {'incidents': incidents})
+    return render(request, 'dashbord/create_incident.html', {'incidents': incidents})
 
 
 def create_incident(request):

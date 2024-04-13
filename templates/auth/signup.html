@@ -47,7 +47,8 @@
                     <!--begin::Logo-->
                     <a class="py-2 py-lg-20" href="{% url 'home-url' %}">
                         <!-- Uncomment the line below if you also wish to use an image logo -->
-                        <img height="60px" width="60px" src="{% static 'assets1/img/logo-color.svg' %}" class="img-fluid" alt="">
+                        <img height="60px" width="60px" src="{% static 'assets1/img/logo-color.svg' %}"
+                             class="img-fluid" alt="">
                         <h1 class="text-white"><i>Safe<b class="text-info text-uppercase">Sys</b>Ai</i></h1>
                     </a>
                     <!--end::Logo-->
@@ -105,10 +106,10 @@
                             <label for="confirm_password" class="form-label">Confirm Password</label>
                             <input type="password" class="form-control" id="confirm_password" name="confirm_password">
                         </div>
-                        <button type="submit" class="btn btn-primary form-control">Sign Up</button>
-                        <p class="mt-3">Already have an account? <a href="{% url 'login' %}">Sign In</a></p>
+                        <button type="submit" class="btn btn-warning form-control">Sign Up</button>
+                        <p class="mt-3">Already have an account? <a class="text-warning" href="{% url 'login' %}">Sign In</a></p>
                         <br>
-                        <p class="mt-3">Go Back Home <a href="{% url 'home-url' %}">Homepage</a></p>
+                        <p class="mt-3">Go Back Home <a class="text-warning" href="{% url 'home-url' %}">Homepage</a></p>
                         
                     </form>
                     <!--end::Form-->

@@ -176,12 +176,12 @@
             <source src="{% static 'videos/video1.mp4' %}" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
-             <br><br><br>
+        <br><br><br>
         <div class="row gy-4 d-flex justify-content-between">
             <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <!-- Text content -->
                 <br><br><br>
-                <h2 data-aos="fade-up" class="text-warning">Welcome to SafeSys AI</h2>
+                <h3 data-aos="fade-up" class="text-warning">Welcome to SafeSys AI</h3>
                 Revolutionizing Safety and Compliance in Oil & Gas<br>
                 <p class="text-white">SafeSys AI leverages cutting-edge AI and IoT to empower oil and gas companies with real-time safety
                     risk management and compliance assurance</p>
@@ -266,7 +266,7 @@
                         <div>
                             <h4 class="title text-center text-info">Enhanced Safety</h4>
                             <p class="description text-center">SafeSys AI leverages cutting-edge AI to proactively identify and mitigate safety risks, fostering a safer work environment for your employees</p>
-                            <a href="#hero" class="readmore justify-content-center stretched-link text-info"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+                            <a href="#hero" class="readmore justify-content-center stretched-link text-black"><span>Learn More</span><i class="bi bi-arrow-right text-black"></i></a>
                         </div>
                     </div>
                 </div>
@@ -278,7 +278,7 @@
                         <div>
                             <h4 class="title text-center text-info">Improved Compliance</h4>
                             <p class="description text-center">Stay ahead of regulatory changes with real-time data and insights, ensuring your operations adhere to the latest safety and compliance standards</p>
-                            <a href="#hero" class="readmore stretched-link text-info  justify-content-center "><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+                            <a href="#hero" class="readmore stretched-link text-info  justify-content-center text-black"><span>Learn More</span><i class="bi bi-arrow-right text-black"></i></a>
                         </div>
                     </div>
                 </div>
@@ -291,7 +291,7 @@
                         <div>
                             <h4 class="title text-center text-info text-center">Operational Efficiency</h4>
                             <p class="description text-center">SafeSys AI's predictive maintenance capabilities help prevent downtime and optimize resource allocation, boosting your overall operational efficiency</p>
-                            <a href="#hero" class="readmore stretched-link text-info  justify-content-center "><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+                            <a href="#hero" class="readmore stretched-link text-info  justify-content-center text-black"><span>Learn More</span><i class="bi bi-arrow-right text-black"></i></a>
                         </div>
                     </div>
                 </div>
@@ -628,7 +628,14 @@
             </div>
 
             <div class="col-lg-8">
-                <form action="#" method="post" role="form" class="php-email-form bg-light">
+                <div class="alert alert-success" role="alert" id="success-message" style="display: none;">
+                    Your message has been sent. Thank you!
+                </div>
+
+
+                <h2 class="text-center text-warning">Drop Your Message Here</h2>
+                <form action="{% url 'contact' %}" method="post" role="form" class="php-email-form bg-light">
+                    {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -650,6 +657,26 @@
                     </div>
                     <div class="text-center"><button class="bg-warning" type="submit">Send Message</button></div>
                 </form>
+
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const form = document.querySelector('.php-email-form');
+                        const successMessage = document.getElementById('success-message');
+
+                        form.addEventListener('submit', function(event) {
+                            event.preventDefault();
+
+                            // Here you can add code to submit the form via AJAX if needed.
+                            // After successful submission, display the success message.
+                            // For simplicity, I'm just showing/hiding the message without AJAX.
+                            successMessage.style.display = 'block';
+                        });
+                    });
+                </script>
+
+
+
             </div><!-- End Contact Form -->
         </div>
     </div>

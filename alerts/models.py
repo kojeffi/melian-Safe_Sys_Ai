@@ -8,7 +8,6 @@ class SafetyIncident(models.Model):
     severity = models.CharField(max_length=20)
     # Add more fields as necessary
 
-
 # alerts/models.py
 
 class IncidentAnalytics(models.Model):
