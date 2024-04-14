@@ -139,7 +139,7 @@
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
                             <!--begin::Menu separator-->
                             <!-- dashbord/index.html -->
-                            <h1>Welcome, {{ user.get_full_name }}</h1>
+                            <h1>Welcome, {{ user.email }}</h1>
                             <div class="separator my-2"></div>
                             <!--end::Menu separator-->
                             <!--begin::Menu item-->
@@ -162,20 +162,19 @@
             <!--end::Separator-->
         </div>
         <!--end::Header-->
-
-
+        
 
         <!--begin::Wrapper-->
         <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
             <!--begin::Sidebar-->
             <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true"
-                 data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, 
-                 lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" 
+                 data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true,
+                 lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px"
                  data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
                 <!--begin::Main-->
-                <div class="d-flex flex-column justify-content-between h-100 
-                hover-scroll-overlay-y my-2 d-flex flex-column" id="kt_app_sidebar_main" data-kt-scroll="true" 
-                     data-kt-scroll-activate="true" data-kt-scroll-height="auto" 
+                <div class="d-flex flex-column justify-content-between h-100
+                hover-scroll-overlay-y my-2 d-flex flex-column" id="kt_app_sidebar_main" data-kt-scroll="true"
+                     data-kt-scroll-activate="true" data-kt-scroll-height="auto"
                      data-kt-scroll-dependencies="#kt_app_header" data-kt-scroll-wrappers="#kt_app_main" data-kt-scroll-offset="5px">
                     <!--begin::Sidebar menu-->
                     <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="flex-column-fluid menu menu-sub-indention menu-column menu-rounded menu-active-bg mb-7">
@@ -195,12 +194,12 @@
 										<span class="menu-arrow"></span>
 									</span>
                             <!--end:Menu link-->
-                            <!--begin:Menu sub-->
+                         <!--begin:Menu sub-->
                             <div class="menu-sub menu-sub-accordion">
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link active" href="../dist/index.html">
+                                    <a class="menu-link active" href="#">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -212,11 +211,11 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{% url 'realtime:real-url' %}" data-kt-page="pro">
+                                    <a class="menu-link" href="{% url 'realtime:anomaly_detection' %}" data-kt-page="pro">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-                                        <span class="menu-title">Real Time Maintenance
+                                        <span class="menu-title">Anomaly Detection
 												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1"
                                                       data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
                                     </a>
@@ -226,7 +225,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{% url 'alerts:alert-url' %}" data-kt-page="pro">
+                                    <a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -240,7 +239,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{% url 'alerts:alert-url' %}" data-kt-page="pro">
+                                    <a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -251,11 +250,8 @@
                                     <!--end:Menu link-->
                                 </div>
                                 <!--end:Menu item-->
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                  
-                                </div>
-                                <!--end:Menu item-->
+                               
+                                
                             </div>
                             <!--end:Menu sub-->
                         </div>
@@ -285,11 +281,7 @@
                                     <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bolder fs-1 lh-0">Dashboard</h1>
                                     <!--end::Title-->
                                 </div>
-
                                 <!--end::Page title-->
-                                <!--begin::Actions-->
-                                <a href="#" class="btn btn-sm btn-success ms-3 px-4 py-3" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create Incident</a>
-                                <!--end::Actions-->
                             </div>
                             <!--end::Toolbar wrapper-->
                         </div>
@@ -362,7 +354,7 @@
             }
         </style>
         <section class="features">
-            <a href="{% url 'realtime:real-url' %}" class="text-decoration-none">
+            <a href="{% url 'realtime:anomaly_detection' %}" class="text-decoration-none">
                 <div class="feature bg-light text-dark">
                     <i class="fas fa-shield-alt fa-3x mb-3 text-warning"></i>
                     <h3 class="text-info">Real-Time <br>Threat Detection</h3>
@@ -376,7 +368,7 @@
                     <p>Leverage machine learning to forecast <br>equipment failures and prevent downtime.</p>
                 </div>
             </a>
-            <a href="{% url 'realtime:real-url' %}" class="text-decoration-none">
+            <a href="{% url 'realtime:predictive_maintenance' %}" class="text-decoration-none">
                 <div class="feature bg-light text-dark">
                     <i class="fas fa-clipboard-check fa-3x mb-3 text-warning"></i>
                     <h3 class="text-info">Compliance Management</h3>
@@ -385,7 +377,7 @@
             </a>
 
             <br><br><br>
-            
+
         </section>
     </div>
 </div>

@@ -23,3 +23,7 @@ class EquipmentMaintenance(models.Model):
     maintenance_description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class AnomalyResult:
+    pass
