@@ -45,9 +45,10 @@
                 <li><a class="text-black" href="#about">About</a></li>
                 <li><a class="text-black" href="#service">Services</a></li>
                 <li><a class="text-black" href="#team">Team</a></li>
+                <li><a class="text-black" href="{% url 'register-url' %}">Signup</a></li>
+                <li><a class="text-black" href="{% url 'login-url' %}">Signin</a></li>
                 <li><a class="text-black" href="#contact">Contact</a></li>
-                <li><a class="text-black" href="{% url 'login' %}">Signin</a></li>
-                <li><a class="get-a-quote bg-warning text-black" href="{% url 'register' %}">Start Over</a></li>
+                <li><a class="get-a-quote bg-warning text-black" href="{% url 'register-url' %}">Start Over</a></li>
             </ul>
         </nav><!-- .navbar -->
     </div>
@@ -185,7 +186,7 @@
                 Revolutionizing Safety and Compliance in Oil & Gas<br>
                 <p class="text-white">SafeSys AI leverages cutting-edge AI and IoT to empower oil and gas companies with real-time safety
                     risk management and compliance assurance</p>
-                <a href="{% url 'register' %}"><button type="submit"
+                <a href="{% url 'register-url' %}"><button type="submit"
                                                        class=" text-black btn btn-warning mt-auto">Start Over</button></a>
                 <!-- Adjust vertical spacing as needed -->
                 <div style="height: 100px;"></div>
@@ -385,21 +386,21 @@
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card service-card">
-                        <h3><a href="{% url 'register' %}" class="stretched-link text-info">Real-Time Safety Risk Management</a></h3>
+                        <h3><a href="{% url 'register-url' %}" class="stretched-link text-info">Real-Time Safety Risk Management</a></h3>
                         <p>Gain real-time visibility into operational data and identify potential safety threats before they escalate</p>
                     </div>
                 </div><!-- End Card Item -->
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card service-card">
-                        <h3><a href="{% url 'register' %}" class="stretched-link text-info">Predictive Maintenance & Risk Assessment</a></h3>
+                        <h3><a href="{% url 'register-url' %}" class="stretched-link text-info">Predictive Maintenance & Risk Assessment</a></h3>
                         <p>Proactively identify equipment issues and predict risks, optimizing maintenance schedules and preventing costly downtime</p>
                     </div>
                 </div><!-- End Card Item -->
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card service-card">
-                        <h3><a href="{% url 'register' %}" class="stretched-link text-info">Streamlined Compliance Management</a></h3>
+                        <h3><a href="{% url 'register-url' %}" class="stretched-link text-info">Streamlined Compliance Management</a></h3>
                         <p>Simplify compliance adherence with automated tracking and alerts, ensuring regulatory peace of mind</p>
                     </div>
                 </div><!-- End Card Item -->

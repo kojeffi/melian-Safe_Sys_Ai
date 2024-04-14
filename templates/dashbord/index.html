@@ -139,8 +139,19 @@
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
                             <!--begin::Menu separator-->
                             <!-- dashbord/index.html -->
-                            <h1>Welcome, {{ user.email }}</h1>
+                            <h2>Welcome, {{ user.username }}!</h2>
+                            <p>Email: {{ user.email }}</p>
                             <div class="separator my-2"></div>
+{#                            <div class="container">#}
+{#                                <h2>Edit Profile</h2>#}
+{#                                <form method="post" enctype="multipart/form-data">#}
+{#                                    {% csrf_token %}#}
+{#                                    {{ form.as_p }}#}
+{#                                    <button type="submit" class="btn btn-primary">Save Changes</button>#}
+{#                                </form>#}
+{#                            </div>#}
+{#                            <div class="separator my-2"></div>#}
+{#                            <a href="{% url 'profile-url' %}">Edit profile</a>#}
                             <!--end::Menu separator-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
@@ -162,7 +173,7 @@
             <!--end::Separator-->
         </div>
         <!--end::Header-->
-        
+
 
         <!--begin::Wrapper-->
         <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
@@ -194,7 +205,7 @@
 										<span class="menu-arrow"></span>
 									</span>
                             <!--end:Menu link-->
-                         <!--begin:Menu sub-->
+                            <!--begin:Menu sub-->
                             <div class="menu-sub menu-sub-accordion">
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
@@ -250,8 +261,8 @@
                                     <!--end:Menu link-->
                                 </div>
                                 <!--end:Menu item-->
-                               
-                                
+
+
                             </div>
                             <!--end:Menu sub-->
                         </div>
@@ -300,88 +311,88 @@
                                     <!--begin::Chart widget 8-->
                                     <div class="card card-flush h-xl-100">
                                         <!--begin::Header-->
-                                       <!--begin::Header-->
-<div class="card-header pt-5">
-    <!--begin::Toolbar-->
-    <div class="card-toolbar">
-        <!-- Custom Styles -->
-        <style>
-            /* Reset default styles */
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-            }
+                                        <!--begin::Header-->
+                                        <div class="card-header pt-5">
+                                            <!--begin::Toolbar-->
+                                            <div class="card-toolbar">
+                                                <!-- Custom Styles -->
+                                                <style>
+                                                    /* Reset default styles */
+                                                    * {
+                                                        box-sizing: border-box;
+                                                        margin: 0;
+                                                        padding: 0;
+                                                    }
 
-            /* Custom Styles */
-            .features {
-                display: flex;
-                flex-wrap: wrap; /* Wrap features on smaller screens */
-                justify-content: center;
-                gap: 2rem;
-                margin-top: 2rem;
-            }
+                                                    /* Custom Styles */
+                                                    .features {
+                                                        display: flex;
+                                                        flex-wrap: wrap; /* Wrap features on smaller screens */
+                                                        justify-content: center;
+                                                        gap: 2rem;
+                                                        margin-top: 2rem;
+                                                    }
 
-            .feature {
-                flex: 1 1 300px; /* Ensure equal width for features */
-                text-align: center;
-                border-radius: 10px;
-                padding: 20px;
-                margin-bottom: 20px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: box-shadow 0.3s;
-            }
+                                                    .feature {
+                                                        flex: 1 1 300px; /* Ensure equal width for features */
+                                                        text-align: center;
+                                                        border-radius: 10px;
+                                                        padding: 20px;
+                                                        margin-bottom: 20px;
+                                                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                                        transition: box-shadow 0.3s;
+                                                    }
 
-            .feature:hover {
-                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-            }
+                                                    .feature:hover {
+                                                        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+                                                    }
 
-            footer {
-                background-color: #333;
-                color: #fff;
-                text-align: center;
-                padding: 1rem;
-            }
+                                                    footer {
+                                                        background-color: #333;
+                                                        color: #fff;
+                                                        text-align: center;
+                                                        padding: 1rem;
+                                                    }
 
-            footer p {
-                margin: 0;
-            }
+                                                    footer p {
+                                                        margin: 0;
+                                                    }
 
-            @media (max-width: 768px) {
-                .feature {
-                    flex-basis: calc(50% - 2rem); /* Two features per row on smaller screens */
-                }
-            }
-        </style>
-        <section class="features">
-            <a href="{% url 'realtime:anomaly_detection' %}" class="text-decoration-none">
-                <div class="feature bg-light text-dark">
-                    <i class="fas fa-shield-alt fa-3x mb-3 text-warning"></i>
-                    <h3 class="text-info">Real-Time <br>Threat Detection</h3>
-                    <p>Stay ahead of potential <br>risks with our intelligent alert system.</p>
-                </div>
-            </a>
-            <a href="#" class="text-decoration-none">
-                <div class="feature bg-light text-dark">
-                    <i class="fas fa-tools fa-3x mb-3 text-warning"></i>
-                    <h3 class="text-info">Predictive<br> Maintenance</h3>
-                    <p>Leverage machine learning to forecast <br>equipment failures and prevent downtime.</p>
-                </div>
-            </a>
-            <a href="{% url 'realtime:predictive_maintenance' %}" class="text-decoration-none">
-                <div class="feature bg-light text-dark">
-                    <i class="fas fa-clipboard-check fa-3x mb-3 text-warning"></i>
-                    <h3 class="text-info">Compliance Management</h3>
-                    <p>Ensure adherence to<br>regulations with <br>automated compliance checks.</p>
-                </div>
-            </a>
+                                                    @media (max-width: 768px) {
+                                                        .feature {
+                                                            flex-basis: calc(50% - 2rem); /* Two features per row on smaller screens */
+                                                        }
+                                                    }
+                                                </style>
+                                                <section class="features">
+                                                    <a href="{% url 'realtime:anomaly_detection' %}" class="text-decoration-none">
+                                                        <div class="feature bg-light text-dark">
+                                                            <i class="fas fa-shield-alt fa-3x mb-3 text-warning"></i>
+                                                            <h3 class="text-info">Real-Time <br>Threat Detection</h3>
+                                                            <p>Stay ahead of potential <br>risks with our intelligent alert system.</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="text-decoration-none">
+                                                        <div class="feature bg-light text-dark">
+                                                            <i class="fas fa-tools fa-3x mb-3 text-warning"></i>
+                                                            <h3 class="text-info">Predictive<br> Maintenance</h3>
+                                                            <p>Leverage machine learning to forecast <br>equipment failures and prevent downtime.</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="{% url 'realtime:predictive_maintenance' %}" class="text-decoration-none">
+                                                        <div class="feature bg-light text-dark">
+                                                            <i class="fas fa-clipboard-check fa-3x mb-3 text-warning"></i>
+                                                            <h3 class="text-info">Compliance Management</h3>
+                                                            <p>Ensure adherence to<br>regulations with <br>automated compliance checks.</p>
+                                                        </div>
+                                                    </a>
 
-            <br><br><br>
+                                                    <br><br><br>
 
-        </section>
-    </div>
-</div>
-<!--end::Toolbar-->
+                                                </section>
+                                            </div>
+                                        </div>
+                                        <!--end::Toolbar-->
 
                                         <!--end::Toolbar-->
                                     </div>

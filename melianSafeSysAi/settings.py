@@ -46,7 +46,13 @@ INSTALLED_APPS = [
     'melianSafeSysAi',
     'alerts',
     'realtime',
+    'user_app',
+    'widget_tweaks',
+    'crispy_forms',
+
 ]
+
+cRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Set your authentication backend
