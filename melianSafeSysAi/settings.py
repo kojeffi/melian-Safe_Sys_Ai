@@ -49,8 +49,10 @@ INSTALLED_APPS = [
     'user_app',
     'widget_tweaks',
     'crispy_forms',
-
+    'django_bootstrap5',
 ]
+
+BOOTSTRAP5_FORM_RENDERER = 'django.forms.renderers.BuiltinRendering'
 
 cRISPY_TEMPLATE_PACK = 'bootstrap4'
 

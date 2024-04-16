@@ -1,4 +1,3 @@
-# forms.py
 from django import forms
 from .models import SafetyRisk, ComplianceRegulation, EquipmentMaintenance
 
@@ -16,4 +15,3 @@ class EquipmentMaintenanceForm(forms.ModelForm):
     class Meta:
         model = EquipmentMaintenance
         fields = ['equipment_name', 'maintenance_schedule', 'maintenance_description']
-

@@ -203,22 +203,92 @@
                 </div>
             </div>
             <!-- Chatbot container -->
-            <div id="chatbot-container" class="chatbot-container">
-                <!-- Chatbot header -->
-                <div class="chatbot-header">
-                    <span class="chatbot-title">SafeSys AI Chatbot</span>
-                    <button class="chatbot-close-btn" onclick="toggleChatbot()">Close</button>
-                </div>
-                <!-- Chatbot messages -->
-                <div id="chatbot-messages" class="chatbot-messages">
-                    <!-- Chatbot messages will be displayed here -->
-                </div>
-                <!-- Chatbot input -->
-                <div class="chatbot-input">
-                    <input type="text" id="chatbot-input-field" placeholder="Type your message...">
-                    <button onclick="sendMessage()">Send</button>
-                </div>
-            </div>
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSys AI Chatbot</title>
+    <!-- Add your CSS styles here -->
+    <style>
+        /* Add your CSS styles here */
+        .message {
+            /* Add your styles for chat messages */
+        }
+        .user {
+            /* Add your styles for user messages */
+        }
+        .bot {
+            /* Add your styles for bot messages */
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbot-container" class="chatbot-container">
+        <!-- Chatbot header -->
+        <div class="chatbot-header">
+            <span class="chatbot-title">SafeSys AI Chatbot</span>
+            <button class="chatbot-close-btn" onclick="toggleChatbot()">Close</button>
+        </div>
+        <!-- Chatbot messages -->
+        <div id="chatbot-messages" class="chatbot-messages">
+            <!-- Chatbot messages will be displayed here -->
+        </div>
+        <!-- Chatbot input -->
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input-field" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Define predefined responses
+        const responses = {
+            "hello": "Hello! How can I assist you today?",
+            "how are you": "I'm just a chatbot, but thanks for asking!",
+            "what is your name": "I'm SafeSys AI Chatbot.",
+            // Add more predefined responses as needed
+        };
+
+        // Function to toggle the chatbot container
+        function toggleChatbot() {
+            var chatbotContainer = document.getElementById('chatbot-container');
+            chatbotContainer.classList.toggle('hidden');
+        }
+
+        // Function to send a message
+        function sendMessage() {
+            var inputField = document.getElementById('chatbot-input-field');
+            var message = inputField.value.trim().toLowerCase();
+
+            // Display user message
+            displayMessage(message, 'user');
+
+            // Check if the message has a predefined response
+            if (responses.hasOwnProperty(message)) {
+                var response = responses[message];
+                displayMessage(response, 'bot');
+            } else {
+                // If no predefined response, display a default message
+                displayMessage("I'm sorry, I don't understand that.", 'bot');
+            }
+
+            // Clear input field
+            inputField.value = '';
+        }
+
+        // Function to display a message in the chatbot
+        function displayMessage(message, sender) {
+            var messagesContainer = document.getElementById('chatbot-messages');
+            var messageElement = document.createElement('div');
+            messageElement.classList.add('message', sender);
+            messageElement.textContent = message;
+            messagesContainer.appendChild(messageElement);
+        }
+    </script>
+</body>
+</html>
+
         </div>
     </div>
 </section>
@@ -255,7 +325,6 @@
 </script>
 
 {# start of cookies#}
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     .cookie-banner {
       position: fixed;
