@@ -1,0 +1,80 @@
+{% extends 'dashbord/master.html' %}
+
+{% block content %}
+    {% load static %}
+    {% load django_bootstrap5 %}
+    <!-- begin::Main -->
+    <div class="app-main flex-column bg-light flex-row-fluid" id="kt_app_main">
+        <!-- begin::Content wrapper -->
+        <div class="d-flex flex-column flex-column-fluid">
+            <!-- begin::Toolbar -->
+            <div id="kt_app_toolbar" class="app-toolbar py-5">
+                <!-- begin::Toolbar container -->
+                <div id="kt_app_toolbar_container" class="app-container container-fluid">
+                    <!-- begin::Toolbar wrapper -->
+                    <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
+                        <!-- begin::Page title -->
+                        <div class="page-title">
+                            <!-- begin::Title -->
+                            <h1 class="page-heading text-dark fw-bolder fs-2 lh-1">Update Profile</h1>
+                            <!-- end::Title -->
+                        </div>
+                        <!-- end::Page title -->
+                    </div>
+                    <!-- end::Toolbar wrapper -->
+                </div>
+                <!-- end::Toolbar container -->
+            </div>
+            <!-- end::Toolbar -->
+            <!-- begin::Content -->
+            <div id="kt_app_content" class="app-content flex-column-fluid">
+                <!-- begin::Content container -->
+                <div id="kt_app_content_container" class="app-container container-fluid">
+                    <!-- begin::Details View -->
+                    <div class="card mb-5 mb-xl-10">
+                        <!-- begin::Card header -->
+                        <div class="card-header">
+                            <!-- Profile Form -->
+                            <form method="post" enctype="multipart/form-data" class="p-5">
+                                {% csrf_token %}
+                                {% bootstrap_form form %}
+                                <button class="btn btn-primary rounded-pill mt-3">Update Profile</button>
+                            </form>
+                            <!-- End of Profile Form -->
+                        </div>
+                        <!-- end::Card header -->
+                    </div>
+                    <!-- end::Details View -->
+                </div>
+                <!-- end::Content container -->
+            </div>
+            <!-- end::Content -->
+        </div>
+        <!-- end::Content wrapper -->
+
+        <!-- begin::Footer -->
+        <div id="kt_app_footer" class="app-footer align-items-center justify-content-center justify-content-md-between flex-column flex-md-row py-3">
+            <!-- begin::Copyright -->
+            <div class="text-dark">
+                <span class="text-muted fw-semibold me-1">2023&copy;</span>
+                <a href="#" target="_blank" class="text-gray-800 text-hover-primary">SafeSysAi</a>
+            </div>
+            <!-- end::Copyright -->
+            <!-- begin::Menu -->
+            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold">
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">About</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">Support</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" target="_blank" class="menu-link px-2">Purchase</a>
+                </li>
+            </ul>
+            <!-- end::Menu -->
+        </div>
+        <!-- end::Footer -->
+    </div>
+    <!-- end::Main -->
+{% endblock %}

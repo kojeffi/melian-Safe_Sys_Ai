@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeSys AI Dashboard</title>
+       {% load static %}
+    {% load django_bootstrap5 %}
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to SafeSys AI Dashboard</h1>
+        
+        <!-- Forms for data input -->
+        <h2>Safety Incidents</h2>
+        <form method="post" class="mb-3">
+            {% csrf_token %}
+            {% bootstrap_form safety_incident_form %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <h2>Compliance Regulations</h2>
+        <form method="post" class="mb-3">
+            {% csrf_token %}
+            {% bootstrap_form compliance_regulation_form %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <h2>Equipment Maintenance</h2>
+        <form method="post" class="mb-3">
+            {% csrf_token %}
+            {% bootstrap_form equipment_maintenance_form %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!-- Display existing data -->
+        <h2>Existing Data</h2>
+        <ul>
+            {% for incident in safety_incidents %}
+            <li>{{ incident.timestamp }} - {{ incident.description }}</li>
+            {% endfor %}
+            {% for regulation in compliance_regulations %}
+            <li>{{ regulation.regulation_number }} - {{ regulation.description }}</li>
+            {% endfor %}
+            {% for maintenance in equipment_maintenance %}
+            <li>{{ maintenance.equipment_name }} - {{ maintenance.maintenance_date }} - {{ maintenance.maintenance_description }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

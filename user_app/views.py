@@ -1,21 +1,48 @@
+# views.py
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from .forms import CustomUserCreationForm, UserProfileForm
+from .forms import UserProfileForm
+from .models import Profile
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import CustomUserCreationForm, UserProfileForm
+
 
 def register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
+            user = form.save()
             login(request, user)
-            return redirect('dashboard-url')
+            return redirect('login-url')
     else:
         form = CustomUserCreationForm()
     return render(request, 'user_app/register.html', {'form': form})
+
+@login_required
+def dashboard(request):
+    profile = request.user.profile
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+    else:
+        form = UserProfileForm(instance=profile)
+    return render(request, 'dashbord/index.html', {'form': form})
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('profile-url')
+    else:
+        form = UserProfileForm()
+    return render(request, 'dashbord/index.html', {'form': form})
+
 
 def user_login(request):
     if request.method == 'POST':
@@ -36,14 +63,21 @@ def dashboard(request):
 
 @login_required
 def profile(request):
+    user = request.user
+    try:
+        profile = user.profile
+    except Profile.DoesNotExist:
+        profile = Profile.objects.create(user=user)
+
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        form = UserProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
-            return redirect('dashboard')
+            return redirect('profile-url')
     else:
-        form = UserProfileForm(instance=request.user.profile)
-    return render(request, 'user_app/profile.html', {'form': form})
+        form = UserProfileForm(instance=profile)
+    return render(request, 'dashbord/overview.html', {'form': form})
+
 
 
 from django.shortcuts import render
