@@ -35,54 +35,59 @@
                             <!-- begin::Row -->
                             <div class="row gx-5 gx-xl-10">
                                 <!-- begin::Col -->
-                                <div class="col-xxl-6 mb-5 mb-xl-10">
-                                    <!-- begin::Chart widget 8 -->
-                                    <div class="card card-flush h-xl-100">
-                                        <!-- begin::Header -->
-                                        <div class="card-header pt-5">
-                                            <!-- begin::Header -->
-                                            <div class="card-header pt-5">
-                                                <!-- begin::Toolbar -->
-                                                <div class="card-toolbar">
-                                                    <!-- Upload Form -->
-                                                    <style>
-                                                        /* Custom CSS for forms */
-                                                        .form-card {
-                                                            background-color: #fff;
-                                                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                                                            border-radius: 8px;
-                                                            padding: 20px;
-                                                            margin-bottom: 20px;
-                                                        }
-                                                        /* Add your custom font family here */
-                                                        body {
-                                                            font-family: 'Arial', sans-serif; /* Example font family */
-                                                        }
-                                                    </style>
-                                                    <form method="post" enctype="multipart/form-data">
-                                                        {% csrf_token %}
-                                                         <div class="mb-3">
-                                                        {% bootstrap_form form %}
-                                                         </div>
-                                                        <div class="mb-3">
-                                                            <label for="fileInput" class="form-label">Choose File</label>
-                                                            <input class="form-control" type="file" id="fileInput" name="file">
-                                                        </div>
-                                                        <button type="submit" class="btn btn-warning">Upload File and Detect Anomalies</button>
+                                <div class="col-xxl-12 mb-5 mb-xl-10">
+                                               <div class="card-toolbar">
+    <!-- Upload Form -->
+    <style>
+        /* Custom CSS for forms */
+        .form-card {
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
 
-                                                    </form>
-                                                    <!-- Anomaly Detection Results -->
-                                                   
-                                                    {% if anomaly_results %}
-                                                        
-                                                        <ul>
-                                                            {% for result in anomaly_results %}
-                                                                <li>{{ result.risk_name }} - {{ result.risk_description }}</li>
-                                                            {% endfor %}
-                                                        </ul>
-                                                    {% endif %}
-                                                </div>
-                                                <!-- end::Toolbar -->
+        /* Hover effect for the card */
+        .form-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add your custom font family here */
+        body {
+            font-family: 'Arial', sans-serif; /* Example font family */
+        }
+    </style>
+    <div class="form-card bg-light">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                {% bootstrap_form form %}
+            </div>
+            <div class="mb-3">
+                <label for="fileInput" class="form-label">Choose File</label>
+                <input class="form-control" type="file" id="fileInput" name="file">
+            </div>
+            <button type="submit" class="btn btn-warning">Upload File and Detect Anomalies</button>
+        </form>
+    </div>
+    <!-- Anomaly Detection Results -->
+    {% if anomaly_results %}
+    <hr>
+    <div class="form-card">
+        <h2>Anomaly Detection Results</h2>
+        <ul>
+            {% for result in anomaly_results %}
+            <li>{{ result.risk_name }} - {{ result.risk_description }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+<!-- end::Toolbar -->
+
                                             </div>
                                             <!-- end::Header -->
                                         </div>

@@ -139,20 +139,7 @@ else { themeMode = defaultThemeMode; } }
                         <!--end::Search-->
                     </div>
                     <!--begin::User menu-->
-                    <div class="app-navbar-item ms-3 ms-lg-4 me-lg-2" id="kt_header_user_menu_toggle">
-                        <a href="{% url 'dashboard' %}">
-                            <h1 class="text-danger">
-                                <i class="fas fa-bell text-warning" style="font-size: 20px"></i>
-                                <span style="margin-left: -25px;margin-top: -20px">{{ alert_count }}</span>
-                            </h1>
-                        </a>
-                    </div>
-                    <script>
-                        // Function to display alerts
-                        function showAlert(message) {
-                            alert(message);
-                        }
-                    </script>
+                 
                     <div class="app-navbar-item ms-3 ms-lg-4 me-lg-2" id="kt_header_user_menu_toggle">
                         <!--begin::Menu wrapper-->
                         <div class="cursor-pointer symbol symbol-30px symbol-lg-40px"
@@ -183,7 +170,7 @@ else { themeMode = defaultThemeMode; } }
                                             <img src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
                                         {% endif %}
                                         <!--end::Avatar-->
-                                        <p>{{ user.profile.full_name }}</p>
+                                        <p>{{ user.profile.username }}</p>
                                         <p>{{ user.profile.email }}</p>
                                     </div>
                                 </div>
@@ -412,22 +399,6 @@ else { themeMode = defaultThemeMode; } }
                     <i class="fas fa-bell"></i>
                 </span>
                                         <span class="menu-title">Create incident</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="{% url 'dashboard-url' %}">
-                <span class="menu-icon">
-                    <i class="fas fa-file"></i>
-                </span>
-                                        <span class="menu-title">Reports</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="{% url 'dashboard-url' %}">
-                <span class="menu-icon">
-                    <i class="fas fa-book"></i>
-                </span>
-                                        <span class="menu-title">Compliance</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>

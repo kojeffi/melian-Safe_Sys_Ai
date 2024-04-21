@@ -4,124 +4,96 @@
     {% load static %}
     {% load django_bootstrap5 %}
 
-            <!--begin::Main-->
-            <div class="app-main flex-column bg-light flex-row-fluid" id="kt_app_main">
-                <!--begin::Content wrapper-->
-                <div class="d-flex flex-column flex-column-fluid">
-                    <!--begin::Toolbar-->
-                    <div id="kt_app_toolbar" class="app-toolbar pt-5">
-                        <!--begin::Toolbar container-->
-                        <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
-                            <!--begin::Toolbar wrapper-->
-                            <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
-                                <!--begin::Page title-->
-                                <div class="page-title d-flex flex-column gap-1 me-3 mb-2">
-                                    <!--begin::Title-->
-                                    <h1 class="page-heading d-flex flex-column bg-warning 
+    <!--begin::Main-->
+    <div class="app-main flex-column bg-light flex-row-fluid" id="kt_app_main">
+        <!--begin::Content wrapper-->
+        <div class="d-flex flex-column flex-column-fluid">
+            <!--begin::Toolbar-->
+            <div id="kt_app_toolbar" class="app-toolbar pt-5">
+                <!--begin::Toolbar container-->
+                <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                    <!--begin::Toolbar wrapper-->
+                    <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
+                        <!--begin::Page title-->
+                        <div class="page-title d-flex flex-column gap-1 me-3 mb-2">
+                            <!--begin::Title-->
+                            <h1 class="page-heading d-flex flex-column bg-warning 
                                     justify-content-center text-dark fw-bolder fs-1 lh-0">Equipment Maintenance</h1>
-                                    <!--end::Title-->
-                                </div>
-
-                                <!--end::Page title-->
-                            </div>
-                            <!--end::Toolbar wrapper-->
+                            <!--end::Title-->
                         </div>
-                        <!--end::Toolbar container-->
+
+                        <!--end::Page title-->
                     </div>
-                    <!--end::Toolbar-->
-
-                    <!--begin::Content-->
-                    <div id="kt_app_content" class="app-content flex-column-fluid">
-                        <!--begin::Content container-->
-                        <div id="kt_app_content_container" class="app-container container-fluid">
-                            <!--begin::Row-->
-                            <div class="row gx-5 gx-xl-10">
-                                <!--begin::Col-->
-                                <div class="col-xxl-6 mb-5 mb-xl-10">
-                                    <!--begin::Chart widget 8-->
-                                    <div class="card card-flush h-xl-100">
-                                        <!--begin::Header-->
-                                        <div class="card-header pt-5">
-                                            <!--begin::Header-->
-                                            <div class="card-header pt-5">
-
-                                                <!--begin::Toolbar-->
-                                                <div class="card-toolbar">
-                                                     <style>
-        /* Custom CSS for forms */
-        .form-card {
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        /* Add your custom font family here */
-        body {
-            font-family: 'Arial', sans-serif; /* Example font family */
-        }
-    </style>
-
-                                                    <form method="post" enctype="multipart/form-data">
-                                                        {% csrf_token %}
-                                                        <div class="mb-3">
-                                                         {% bootstrap_form form %}
-                                                       </div>
-                                                        <div class="mb-3">
-                                                            <label for="fileInput" class="form-label">Choose File</label>
-                                                            <input class="form-control" type="file" id="fileInput" name="file">
-                                                        </div>
-                                                        <button type="submit" class="btn btn-warning">Upload File and Detect Anomalies</button>
-                                                    </form>
-                                                    {% if maintenance_results %}
-                                                        <h2>Predictive Maintenance Results</h2>
-                                                        <ul>
-                                                            {% for result in maintenance_results %}
-                                                                <li>{{ result.equipment_name }} - {{ result.maintenance_description }}</li>
-                                                            {% endfor %}
-                                                        </ul>
-                                                    {% endif %}
-                                                    <hr>
-                                                   
-                                                    </div>
-                                                    <!--end::Content-->
-                                                </div>
-                                                <!--end::Header-->
-
-                                            </div>
-                                            <!--end::Header-->
-                                        </div>
-                                        <!--end::Content container-->
-                                
-                                    </div>
-                                    <!--end::Content wrapper-->
-                                    <!--begin::Footer-->
-                                    <div id="kt_app_footer" class="app-footer align-items-center justify-content-center justify-content-md-between flex-column flex-md-row py-3">
-                                        <!--begin::Copyright-->
-                                        <div class="text-dark order-2 order-md-1">
-                                            <span class="text-muted fw-semibold me-1">2024&copy;</span>
-                                            <a href="{% url 'home-url' %}" target="_blank" class="text-gray-800 text-hover-primary">SafeSysAi</a>
-                                        </div>
-                                        <!--end::Copyright-->
-                                        <!--begin::Menu-->
-                                        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                                            <li class="menu-item">
-                                                <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">About</a>
-                                            </li>
-                                            <li class="menu-item">
-                                                <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">Support</a>
-                                            </li>
-                                        </ul>
-                                        <!--end::Menu-->
-                                    </div>
-                                    <!--end::Footer-->
-                                </div>
-                                <!--end:::Main-->
-                            </div>
-                            <!--end::Wrapper-->
-                        </div>
-                        <!--end::Page-->
-                    </div>
-                    <!--end::App-->
+                    <!--end::Toolbar wrapper-->
                 </div>
-       {% endblock %}
+                <!--end::Toolbar container-->
+            </div>
+            <!--end::Toolbar-->
+
+            <!--begin::Content-->
+            <div id="kt_app_content" class="app-content flex-column-fluid">
+                <!--begin::Content container-->
+                <div id="kt_app_content_container" class="app-container container-fluid">
+                    <!--begin::Row-->
+                    <div class="row gx-5 gx-xl-10">
+                        <!--begin::Col-->
+                        <div class="col-xxl-12 mb-5 mb-xl-10">
+                                        <div class="card-toolbar bg-light">
+                                            <style>
+                                                /* Custom CSS for forms */
+                                                .form-card {
+                                                    background-color: #F0F0F0;
+                                                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                                    border-radius: 8px;
+                                                    padding: 20px;
+                                                    margin-bottom: 20px;
+                                                    transition: transform 0.3s ease-in-out;
+                                                }
+                                                /* Add your custom font family here */
+                                                body {
+                                                    font-family: 'Arial', sans-serif; /* Example font family */
+                                                }
+                                                /* Hover effect */
+                                                .form-card:hover {
+                                                    transform: translateY(-5px);
+                                                    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+                                                }
+                                            </style>
+
+                                            <div class="form-card">
+                                                <form method="post" enctype="multipart/form-data">
+                                                    {% csrf_token %}
+                                                    <div class="mb-3">
+                                                        {% bootstrap_form form %}
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="fileInput" class="form-label">Choose File</label>
+                                                        <input class="form-control" type="file" id="fileInput" name="file">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-warning">Upload File and Detect Anomalies</button>
+                                                </form>
+                                                {% if maintenance_results %}
+                                                    <hr>
+                                                    <h2 class="mt-4">Predictive Maintenance Results</h2>
+                                                    <ul>
+                                                        {% for result in maintenance_results %}
+                                                            <li>{{ result.equipment_name }} - {{ result.maintenance_description }}</li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Header-->
+
+                                </div>
+                                <!--end::Header-->
+                            </div>
+                            <!--end::Content container-->
+                        <!--end::Content wrapper-->
+            </div>
+            </div>
+        </div>
+{% endblock %}

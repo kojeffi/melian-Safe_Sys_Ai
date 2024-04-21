@@ -47,115 +47,132 @@
 
                                         <!--begin::Toolbar-->
                                         <div class="card-toolbar">
-                                            {% load static %}
-                                            {% load django_bootstrap5 %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 rounded">
+                <div class="card mb-3 border-0">
+                    <div class="card-body bg-light">
+                        <h2 class="card-title">Safety Incidents</h2>
+                        <form method="post" class="mb-3">
+                            {% csrf_token %}
+                            {% bootstrap_form safety_incident_form %}
+                            <button type="submit" class="btn btn-warning">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 rounded">
+                <div class="card mb-3 border-0">
+                    <div class="card-body bg-light">
+                        <h2 class="card-title">Compliance Regulations</h2>
+                        <form method="post" class="mb-3">
+                            {% csrf_token %}
+                            {% bootstrap_form compliance_regulation_form %}
+                            <button type="submit" class="btn btn-warning">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 rounded">
+                <div class="card mb-3 border-0">
+                    <div class="card-body bg-light">
+                        <h2 class="card-title">Equipment Maintenance</h2>
+                        <form method="post" class="mb-3">
+                            {% csrf_token %}
+                            {% bootstrap_form equipment_maintenance_form %}
+                            <button type="submit" class="btn btn-warning">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                                            <div class="container">
-                                                <!-- Forms for data input -->
-                                                <h2>Safety Incidents</h2>
-                                                <form method="post" class="mb-3">
-                                                    {% csrf_token %}
-                                                    {% bootstrap_form safety_incident_form %}
-                                                    <button type="submit" class="btn btn-warning">Submit</button>
-                                                </form>
-                                                <br><br><br><br>
-                                                <h2>Compliance Regulations</h2>
-                                                <form method="post" class="mb-3">
-                                                    {% csrf_token %}
-                                                    {% bootstrap_form compliance_regulation_form %}
-                                                    <button type="submit" class="btn btn-warning">Submit</button>
-                                                </form>
-                                                <br><br><br><br>
-                                                <h2>Equipment Maintenance</h2>
-                                                <form method="post" class="mb-3">
-                                                    {% csrf_token %}
-                                                    {% bootstrap_form equipment_maintenance_form %}
-                                                    <button type="submit" class="btn btn-warning">Submit</button>
-                                                </form>
-                                                <br><br><br><br>
-                                                <!-- Display existing data -->
-                                                <h2>Existing Data</h2>
-                                                <table class="table table-hover">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>Timestamp / Regulation Number</th>
-                                                        <th>Description / Maintenance Details</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <h3 class="text-danger">Number of Alerts: {{ alert_count }}</h3>
-                                                    <script>
-                                                        // Function to display alerts
-                                                        function showAlert(message) {
-                                                            alert(message);
-                                                        }
-                                                    </script>
+        <!-- Display existing data -->
+        <div class="row">
+            <div class="col-md-12 rounded ">
+                <div class="card border-0 shadow">
+                    <div class="card-body bg-light ">
+                        <h2 class="card-title">Existing Data</h2>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp / Regulation Number</th>
+                                    <th>Description / Maintenance Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <h3 class="text-danger">Number of Alerts: {{ alert_count }}</h3>
+                                {% for incident in safety_incidents %}
+                                <tr>
+                                    <td>{{ incident.timestamp }}</td>
+                                    <td>{{ incident.description }}</td>
+                                </tr>
+                                {% endfor %}
+                                {% for regulation in compliance_regulations %}
+                                <tr>
+                                    <td>{{ regulation.regulation_number }}</td>
+                                    <td>{{ regulation.description }}</td>
+                                </tr>
+                                {% endfor %}
+                                {% for maintenance in equipment_maintenance %}
+                                <tr>
+                                    <td>{{ maintenance.equipment_name }}</td>
+                                    <td>{{ maintenance.maintenance_date }} - {{ maintenance.maintenance_description }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                                                    <br><br>
-                                                    {% for incident in safety_incidents %}
-                                                        <tr>
-                                                            <td>{{ incident.timestamp }}</td>
-                                                            <td>{{ incident.description }}</td>
-                                                        </tr>
-                                                    {% endfor %}
-                                                    {% for regulation in compliance_regulations %}
-                                                        <tr>
-                                                            <td>{{ regulation.regulation_number }}</td>
-                                                            <td>{{ regulation.description }}</td>
-                                                        </tr>
-                                                    {% endfor %}
-                                                    {% for maintenance in equipment_maintenance %}
-                                                        <tr>
-                                                            <td>{{ maintenance.equipment_name }}</td>
-                                                            <td>{{ maintenance.maintenance_date }} - {{ maintenance.maintenance_description }}</td>
-                                                        </tr>
-                                                    {% endfor %}
-                                                    </tbody>
-                                                </table>
-                                                <style>
-                                                    /* Add hover effect to table rows */
-                                                    .table-hover tbody tr:hover {
-                                                        background-color: #f5f5f5;
-                                                        cursor: pointer;
-                                                    }
-                                                    /* Add hover effect to table rows */
-                                                    .table-hover tbody tr:hover {
-                                                        background-color: #f5f5f5;
-                                                        cursor: pointer;
-                                                    }
+<style>
+    /* Add hover effect to cards */
+    .card:hover {
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-5px);
+    }
 
-                                                    /* Style for the table border */
-                                                    .table {
-                                                        border-collapse: collapse;
-                                                        width: 100%;
-                                                    }
+    /* Add different colors to cards */
+    .bg-light {
+        background-color: #f8f9fa;
+    }
 
-                                                    /* Style for table header */
-                                                    .table thead th {
-                                                        border: 1px solid #ddd;
-                                                        padding: 8px;
-                                                        text-align: left;
-                                                    }
+    /* Add hover effect to table rows */
+    .table-hover tbody tr:hover {
+        background-color: #f5f5f5;
+        cursor: pointer;
+    }
 
-                                                    /* Style for table body */
-                                                    .table tbody td {
-                                                        border: 1px solid #ddd;
-                                                        padding: 8px;
-                                                        text-align: left;
-                                                    }
+    /* Style for the table border */
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-                                                    /* Alternate row color */
-                                                    .table tbody tr:nth-child(even) {
-                                                        background-color: #f2f2f2;
-                                                    }
+    /* Style for table header */
+    .table thead th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
 
-                                                </style>
+    /* Style for table body */
+    .table tbody td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
 
-                                            </div>
+    /* Alternate row color */
+    .table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
 
-
-                                            <!--end::Content-->
-                                        </div>
                                         <!--end::Header-->
 
                                     </div>
