@@ -1,0 +1,92 @@
+{% extends 'dashbord/master.html' %}
+{% block content %}
+    {% load static %}
+    {% load django_bootstrap5 %}
+    <!-- begin::Main -->
+    <div class="app-main bg-light" id="kt_app_main">
+        <!-- begin::Content wrapper -->
+        <div class="d-flex flex-column flex-column-fluid">
+            <!-- begin::Toolbar -->
+            <div id="kt_app_toolbar" class="app-toolbar pt-5">
+                <!-- begin::Toolbar container -->
+                <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                    <!-- begin::Toolbar wrapper -->
+                    <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
+                        <!-- begin::Page title -->
+                        <div class="page-title d-flex flex-column gap-1 me-3 mb-2">
+                            <!-- begin::Title -->
+                            <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bolder text-warning fs-1 lh-0">{{ resource.title }}</h1>
+                            <!-- end::Title -->
+                        </div>
+                        <!-- end::Page title -->
+                    </div>
+                    <!-- end::Toolbar wrapper -->
+                </div>
+                <!-- end::Toolbar container -->
+            </div>
+            <!-- end::Toolbar -->
+
+            <!-- begin::Content -->
+            <div id="kt_app_content" class="app-content flex-column-fluid">
+                <!-- begin::Content container -->
+                <div id="kt_app_content_container" class="app-container container-fluid">
+                    <!-- begin::Row -->
+                    <div class="row gx-5 gx-xl-10 justify-content-center">
+                        <!-- begin::Col -->
+                        <div class="col-xxl-6 mb-5 mb-xl-10">
+                            <div class="card card-flush bg-light p-3 p-md-5">
+                                <!-- begin::Header -->
+                                <div class="card-header">
+                                    <!-- begin::Toolbar -->
+                                    <div class="card-toolbar">
+                                        <!-- end::Toolbar -->
+                                    </div>
+                                    <!-- end::Header -->
+                                </div>
+                                <!-- begin::Body -->
+                                <div class="card-body">
+                                    <style>
+                                        /* Your custom styles here */
+                                    </style>
+                                    <div class="container">
+                                        <p><strong>Description:</strong> {{ resource.description }}</p>
+                                        <p><strong>Category:</strong> {{ resource.category }}</p>
+                                        <p><strong>URL:</strong> <a href="{{ resource.url }}" target="_blank">{{ resource.url }}</a></p>
+                                        <a href="{% url 'training_resources' %}" class="btn btn-primary">Back to Training Resources</a>
+                                    </div>
+                                </div>
+                                <!-- end::Body -->
+                            </div>
+                        </div>
+                        <!-- end::Col -->
+                    </div>
+                    <!-- end::Row -->
+                </div>
+                <!-- end::Content container -->
+            </div>
+            <!-- end::Content -->
+        </div>
+        <!-- end::Content wrapper -->
+    </div>
+    <!-- end::Main -->
+    <!-- begin::Footer -->
+    <div id="kt_app_footer" class="app-footer align-items-center justify-content-center justify-content-md-between flex-column flex-md-row py-3">
+        <!-- begin::Copyright -->
+        <div class="text-dark order-2 order-md-1">
+            <span class="text-muted fw-semibold me-1">2024&copy;</span>
+            <a href="{% url 'home-url' %}" target="_blank" class="text-gray-800 text-hover-primary">SafeSysAi</a>
+        </div>
+        <!-- end::Copyright -->
+        <!-- begin::Menu -->
+        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+            <li class="menu-item">
+                <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">About</a>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">Support</a>
+            </li>
+        </ul>
+        <!-- end::Menu -->
+    </div>
+    <!-- end::Footer -->
+{% endblock %}

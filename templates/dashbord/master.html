@@ -139,6 +139,13 @@ else { themeMode = defaultThemeMode; } }
                         <!--end::Search-->
                     </div>
                 
+                
+                {% if user.is_authenticated %}
+{#    <a href="{% url 'logout-url' %}">Logout</a>#}
+{% else %}
+    <a href="{% url 'login-url' %}">Login</a>
+{% endif %}
+                
                          <!--begin::Notification-->
         <div class="d-flex align-items-center">
             <button class="btn btn-icon btn-active-light-warning  me-3">
@@ -146,6 +153,8 @@ else { themeMode = defaultThemeMode; } }
                  
             </button>
         </div>
+                
+                
         <!--end::Notification-->
                     <!--begin::User menu-->
                  
@@ -405,6 +414,15 @@ else { themeMode = defaultThemeMode; } }
                     <i class="fas fa-bell text-warning" style="font-size: 16px"></i>
                 </span>
                                         <span class="menu-title" style="font-size: 16px">Create incident</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                    
+                                        <!--begin:Menu link-->
+                                    <a class="menu-link" href="{% url 'training_resources' %}">
+                <span class="menu-icon">
+                    <i class="fas fa-bell text-warning" style="font-size: 16px"></i>
+                </span>
+                                        <span class="menu-title" style="font-size: 16px">Training Resources</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>

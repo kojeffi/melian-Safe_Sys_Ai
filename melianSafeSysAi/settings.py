@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", '').split(" ")
 
 
 # Application definition
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_bootstrap5',
     'dashboard',
+    'employee_training',
 ]
 
 BOOTSTRAP5_FORM_RENDERER = 'django.forms.renderers.BuiltinRendering'
@@ -184,3 +185,6 @@ EMAIL_PORT = 587  # TLS port for Gmail SMTP
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'omondijeff88@gmail.com'  # Your Gmail email address
 EMAIL_HOST_PASSWORD = 'ddkk mbap tbre lfpf'  # Your Gmail email password
+
+
+

@@ -1,0 +1,172 @@
+{% extends 'dashbord/master.html' %}
+{% block content %}
+    {% load static %}
+    {% load django_bootstrap5 %}
+    <!-- begin::Main -->
+    <div class="app-main bg-light" id="kt_app_main">
+        <!-- begin::Content wrapper -->
+        <div class="d-flex flex-column flex-column-fluid">
+            <!-- begin::Toolbar -->
+            <div id="kt_app_toolbar" class="app-toolbar pt-5">
+                <!-- begin::Toolbar container -->
+                <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                    <!-- begin::Toolbar wrapper -->
+                    <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
+                        <!-- begin::Page title -->
+                        <div class="page-title d-flex flex-column gap-1 me-3 mb-2">
+                            <!-- begin::Title -->
+                            <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bolder text-warning fs-1 lh-0">Safety Training Resources</h1>
+                            <!-- end::Title -->
+                        </div>
+                        <!-- end::Page title -->
+                    </div>
+                    <!-- end::Toolbar wrapper -->
+                </div>
+                <!-- end::Toolbar container -->
+            </div>
+            <!-- end::Toolbar -->
+
+            <!-- begin::Content -->
+            <div id="kt_app_content" class="app-content flex-column-fluid">
+                <!-- begin::Content container -->
+                <div id="kt_app_content_container" class="app-container container-fluid">
+                    <!-- begin::Row -->
+                    <div class="row gx-5 gx-xl-10 justify-content-center">
+                        <!-- begin::Col -->
+                        <div class="col-xxl-6 mb-5 mb-xl-10">
+                            <div class="card card-flush bg-light p-5">
+                                <!-- begin::Header -->
+                                <div class="card-header">
+                                    <!-- begin::Toolbar -->
+                                    <div class="card-toolbar">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        .category {
+            margin-bottom: 30px;
+        }
+        .resource {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+        }
+        .resource h3 {
+            margin-top: 0;
+        }
+        .description {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .access-link {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .access-link:hover {
+            text-decoration: underline;
+        }
+        .completed-status {
+            font-weight: bold;
+            color: #28a745; /* Green color for completed resources */
+        }
+        .mark-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .mark-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <div class="container">
+        <ul>
+            {% for category in categories %}
+            <li class="category">
+                <h2>{{ category.name }}</h2>
+                <ul>
+                    {% for resource in resources %}
+                    {% if resource.category == category %}
+                    <li class="resource">
+                        <h3><a href="{% url 'resource_detail' resource.id %}">{{ resource.title }}</a></h3>
+                        <p class="description">{{ resource.description }}</p>
+                        <a href="{{ resource.url }}" class="access-link" target="_blank">Access Training</a>
+                        {% if resource in completed_resources %}
+                        <p class="completed-status">Completed</p>
+                        {% else %}
+                        <form action="{% url 'mark_completed' resource.id %}" method="post">
+                            {% csrf_token %}
+                            <button class="mark-button" type="submit">Mark as Completed</button>
+                        </form>
+                        {% endif %}
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+                                    <!-- end::Toolbar -->
+                                </div>
+                                <!-- end::Header -->
+                            </div>
+                        </div>
+                        <!-- end::Col -->
+                    </div>
+                    <!-- end::Row -->
+                </div>
+                <!-- end::Content container -->
+            </div>
+            <!-- end::Content -->
+        </div>
+        <!-- end::Content wrapper -->
+    </div>
+    <!-- end::Main -->
+    <!-- begin::Footer -->
+    <div id="kt_app_footer" class="app-footer align-items-center justify-content-center justify-content-md-between flex-column flex-md-row py-3">
+        <!-- begin::Copyright -->
+        <div class="text-dark order-2 order-md-1">
+            <span class="text-muted fw-semibold me-1">2024&copy;</span>
+            <a href="{% url 'home-url' %}" target="_blank" class="text-gray-800 text-hover-primary">SafeSysAi</a>
+        </div>
+        <!-- end::Copyright -->
+        <!-- begin::Menu -->
+        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+            <li class="menu-item">
+                <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">About</a>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">Support</a>
+            </li>
+        </ul>
+        <!-- end::Menu -->
+    </div>
+    <!-- end::Footer -->
+{% endblock %}
