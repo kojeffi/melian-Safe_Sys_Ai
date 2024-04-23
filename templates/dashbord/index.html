@@ -2,162 +2,76 @@
 {% block content %}
     {% load static %}
     {% load django_bootstrap5 %}
-    
-        <!--begin::Main-->
-            <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                <!--begin::Content wrapper-->
-                <div class="d-flex flex-column flex-column-fluid">
-                    <!--begin::Toolbar-->
-                    <div id="kt_app_toolbar" class="app-toolbar pt-5">
-                        <!--begin::Toolbar container-->
-                        <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
-                            <!--begin::Toolbar wrapper-->
-                            <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
-                                <!--begin::Page title-->
-                                <div class="page-title d-flex flex-column gap-1 me-3 mb-2">
-                                    <!--begin::Title-->
-                                    <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bolder fs-1 lh-0">Dashboard</h1>
-                                    <!--end::Title-->
-                                </div>
-                                <!--end::Page title-->
-                            </div>
-                            <!--end::Toolbar wrapper-->
-                        </div>
-                        <!--end::Toolbar container-->
-                    </div>
-                    <!--end::Toolbar-->
 
-                    <!--begin::Content-->
-                    <div id="kt_app_content" class="app-content flex-column-fluid">
-                        <!--begin::Content container-->
-                        <div id="kt_app_content_container" class="app-container container-fluid">
-                            <!--begin::Row-->
-                            <div class="row gx-5 gx-xl-10">
-                                <!--begin::Col-->
-                                <div class="col-xxl-6 mb-5 mb-xl-10">
-                                    <!--begin::Chart widget 8-->
-                                    <div class="card card-flush h-xl-100">
-                                        <!--begin::Header-->
-                                        <!--begin::Header-->
-                                        <div class="card-header pt-5">
-                                            <!--begin::Toolbar-->
-                                            <div class="card-toolbar">
-                                                <!-- Custom Styles -->
-                                                <style>
-                                                    /* Reset default styles */
-                                                    * {
-                                                        box-sizing: border-box;
-                                                        margin: 0;
-                                                        padding: 0;
-                                                    }
-
-                                                    /* Custom Styles */
-                                                    .features {
-                                                        display: flex;
-                                                        flex-wrap: wrap; /* Wrap features on smaller screens */
-                                                        justify-content: center;
-                                                        gap: 2rem;
-                                                        margin-top: 2rem;
-                                                    }
-
-                                                    .feature {
-                                                        flex: 1 1 300px; /* Ensure equal width for features */
-                                                        text-align: center;
-                                                        border-radius: 10px;
-                                                        padding: 20px;
-                                                        margin-bottom: 20px;
-                                                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                                                        transition: box-shadow 0.3s;
-                                                    }
-
-                                                    .feature:hover {
-                                                        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-                                                    }
-
-                                                    footer {
-                                                        background-color: #333;
-                                                        color: #fff;
-                                                        text-align: center;
-                                                        padding: 1rem;
-                                                    }
-
-                                                    footer p {
-                                                        margin: 0;
-                                                    }
-
-                                                    @media (max-width: 768px) {
-                                                        .feature {
-                                                            flex-basis: calc(50% - 2rem); /* Two features per row on smaller screens */
-                                                        }
-                                                    }
-                                                </style>
-                                                <section class="features">
-                                                    <a href="{% url 'realtime:anomaly_detection' %}" class="text-decoration-none">
-                                                        <div class="feature bg-light text-dark">
-                                                            <i class="fas fa-shield-alt fa-3x mb-3 text-warning" style="font-size: 40px"></i>
-                                                            <h3 class="text-black">Real Time Anomaly Detection</h3>
-                                                            <p>Stay ahead of potential <br>risks with our intelligent alert system.</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="{% url 'realtime:predictive_maintenance' %}" class="text-decoration-none">
-                                                        <div class="feature bg-light text-dark">
-                                                            <i class="fas fa-tools fa-3x mb-3 text-warning" style="font-size: 40px"></i>
-                                                            <h3 class="text-black">Predictive Maintenance</h3>
-                                                            <p>Leverage machine learning to forecast <br>equipment failures and prevent downtime.</p>
-                                                        </div>
-                                                    </a>
-                                                    <a href="{% url 'dashboard' %}" class="text-decoration-none">
-                                                        <div class="feature bg-light text-dark">
-                                                            <i class="fas fa-clipboard-check fa-3x mb-3 text-warning" style="font-size: 40px"></i>
-                                                            <h3 class="text-black">Compliance Management</h3>
-                                                            <p>Ensure adherence to regulations with <br>automated compliance checks.</p>
-                                                        </div>
-                                                    </a>
-                                                    <br><br><br>
-
-                                                </section>
-                                            </div>
-                                        </div>
-                                        <!--end::Toolbar-->
-
-                                        <!--end::Toolbar-->
-                                    </div>
-                                    <!--end::Header-->
-
-                                </div>
-                                <!--end::Content container-->
-                            </div>
-                            <!--end::Content-->
-                        </div>
-                        <!--end::Content wrapper-->
-                        <!--begin::Footer-->
-                        <div id="kt_app_footer" class="app-footer align-items-center justify-content-center justify-content-md-between flex-column flex-md-row py-3">
-                            <!--begin::Copyright-->
-                            <div class="text-dark order-2 order-md-1">
-                                <span class="text-muted fw-semibold me-1">2024&copy;</span>
-                                <a href="{% url 'home-url' %}" target="_blank" class="text-gray-800 text-hover-primary">SafeSysAi</a>
-                            </div>
-                            <!--end::Copyright-->
-                            <!--begin::Menu-->
-                            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                                <li class="menu-item">
-                                    <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">About</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">Support</a>
-                                </li>
-                            </ul>
-                            <!--end::Menu-->
-                        </div>
-                        <!--end::Footer-->
-                    </div>
-                    <!--end:::Main-->
-                    
-                    
-                    
+    <!-- Main Content -->
+    <div class="app-main">
+        <div class="container-fluid">
+            <!-- Toolbar -->
+            <div id="kt_app_toolbar" class="app-toolbar py-5">
+                <div class="container-fluid">
+                    <!-- Page Title -->
+                    <h1 class="page-heading text-dark fw-bold fs-3">Dashboard</h1>
                 </div>
-                <!--end::Wrapper-->
             </div>
-            <!--end::Page-->
-    
+
+            <!-- Content -->
+            <div id="kt_app_content" class="app-content">
+                <div class="container-fluid">
+                    <!-- Features Section -->
+                    <section class="features row justify-content-center gap-4 mt-5">
+                        <!-- Real Time Anomaly Detection -->
+                        <a href="{% url 'realtime:anomaly_detection' %}" class="text-decoration-none col-lg-4 col-md-6 col-sm-12">
+                            <div class="feature card bg-light text-dark border-0 p-4">
+                                <i class="fas fa-shield-alt fa-3x mb-3 text-warning"></i>
+                                <h3 class="fs-4 fw-bold">Real Time Anomaly Detection</h3>
+                                <p class="fs-6">Stay ahead of potential risks with our intelligent alert system.</p>
+                            </div>
+                        </a>
+                        <!-- Predictive Maintenance -->
+                        <a href="{% url 'realtime:predictive_maintenance' %}" class="text-decoration-none col-lg-4 col-md-6 col-sm-12">
+                            <div class="feature card bg-light text-dark border-0 p-4">
+                                <i class="fas fa-tools fa-3x mb-3 text-warning"></i>
+                                <h3 class="fs-4 fw-bold">Predictive Maintenance</h3>
+                                <p class="fs-6">Leverage machine learning to forecast equipment failures and prevent downtime.</p>
+                            </div>
+                        </a>
+                        <!-- Compliance Management -->
+                        <a href="{% url 'dashboard' %}" class="text-decoration-none col-lg-4 col-md-6 col-sm-12">
+                            <div class="feature card bg-light text-dark border-0 p-4">
+                                <i class="fas fa-clipboard-check fa-3x mb-3 text-warning"></i>
+                                <h3 class="fs-4 fw-bold">Compliance Management</h3>
+                                <p class="fs-6">Ensure adherence to regulations with automated compliance checks.</p>
+                            </div>
+                        </a>
+                          <!-- Compliance Management -->
+                        <a href="{% url 'dashboard' %}" class="text-decoration-none col-lg-4 col-md-6 col-sm-12">
+                            <div class="feature card bg-light text-dark border-0 p-4">
+                                <i class="fas fa-clipboard-check fa-3x mb-3 text-warning"></i>
+                                <h3 class="fs-4 fw-bold">safety incidences</h3>
+                                <p class="fs-6">Ensure adherence to regulations with automated compliance checks.</p>
+                            </div>
+                        </a>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="kt_app_footer" class="app-footer py-4">
+                <div class="container-fluid">
+                    <div class="text-center text-dark">
+                        <span class="text-muted fw-semibold me-1">2024&copy;</span>
+                        <a href="{% url 'home-url' %}" target="_blank" class="text-gray-800 text-hover-primary">SafeSysAi</a>
+                    </div>
+                    <ul class="menu menu-gray-600 menu-hover-primary text-center mt-3">
+                        <li class="menu-item">
+                            <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">About</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">Support</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
 {% endblock %}

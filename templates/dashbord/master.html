@@ -138,6 +138,15 @@ else { themeMode = defaultThemeMode; } }
                         </div>
                         <!--end::Search-->
                     </div>
+                
+                         <!--begin::Notification-->
+        <div class="d-flex align-items-center">
+            <button class="btn btn-icon btn-active-light-warning  me-3">
+                <i class="fas fa-bell icon-sm text-warning" style="font-size: 30px">{{ alert_count }}</i>
+                 
+            </button>
+        </div>
+        <!--end::Notification-->
                     <!--begin::User menu-->
                  
                     <div class="app-navbar-item ms-3 ms-lg-4 me-lg-2" id="kt_header_user_menu_toggle">
@@ -324,81 +333,78 @@ else { themeMode = defaultThemeMode; } }
                             <!--begin:Menu link-->
                             <span class="menu-link">
 										<span class="menu-icon">
-											<i class="ki-duotone ki-element-11 fs-1">
+											<i class="ki-duotone ki-element-11 text-warning fs-1" style="font-size: 16px">
 												<span class="path1"></span>
 												<span class="path2"></span>
 												<span class="path3"></span>
 												<span class="path4"></span>
 											</i>
 										</span>
-										<span class="menu-title">Dashboards</span>
-										<span class="menu-arrow"></span>
+										<span class="menu-title" style="font-size: 16px">Dashboards</span>
+										<span class="menu-arrow" style="font-size: 16px"></span>
 									</span>
                             <!--end:Menu link-->
-                            </span>
                             <!--end:Menu link-->
 
                             <!--begin:Menu sub-->
                             <div class="menu-sub menu-sub-accordion">
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
-                                    <!--begin:Menu link-->
+                                       <!--begin:Menu link-->
                                     <a class="menu-link" href="{% url 'dashboard-url' %}">
-                <span class="menu-bullet">
+                <span class="menu-icon">
+                    <i class="fas fa-home text-warning" style="font-size: 16px"></i>
                 </span>
-                                        <span class="menu-icon">
-                    <i class="fas fa-home"></i>
-                </span>
-                                        <span class="menu-title">Home</span>
+                                        <span class="menu-title" style="font-size: 16px">Home</span>
                                     </a>
                                     <!--end:Menu link-->
                                     <!--begin:Menu link-->
                                     <a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}">
                 <span class="menu-icon">
-                    <i class="fas fa-bar-chart"></i>
+                    <i class="fas fa-bar-chart text-warning" style="font-size: 16px"></i>
                 </span>
-                                        <span class="menu-title">Real Time Monitoring</span>
+                                        <span class="menu-title" style="font-size: 16px">Real Time Monitoring</span>
                                     </a>
                                     <!--end:Menu link-->
                                     <!-- Add other menu links here -->
                                     <!--begin:Menu link-->
                                     <a class="menu-link" href="{% url 'dashboard' %}">
                 <span class="menu-icon">
-                    <i class="fas fa-shield"></i>
+                    <i class="fas fa-shield text-warning" style="font-size: 16px"></i>
                 </span>
-                                        <span class="menu-title">Safety Incident</span>
+                                        <span class="menu-title" style="font-size: 16px">Safety Incident</span>
                                     </a>
                                     <!--end:Menu link-->
                                     <!--begin:Menu link-->
                                     <a class="menu-link" href="{% url 'dashboard' %}">
                 <span class="menu-icon">
-                    <i class="fas fa-kitchen-set"></i>
+                    <i class="fas fa-kitchen-set text-warning" style="font-size: 16px"></i>
                 </span>
-                                        <span class="menu-title">Equipment maintenance</span>
+                                        <span class="menu-title" style="font-size: 16px">Equipment maintenance</span>
                                     </a>
                                     <!--end:Menu link-->
                                     <!--begin:Menu link-->
                                     <a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}">
                 <span class="menu-icon">
-                    <i class="fas fa-suitcase"></i>
+                    <i class="fas fa-suitcase text-warning" style="font-size: 16px"></i>
                 </span>
-                                        <span class="menu-title">Compliance Regulation</span>
+                                        <span class="menu-title" style="font-size: 16px">Compliance Regulation</span>
                                     </a>
                                     <!--end:Menu link-->
                                     <!--begin:Menu link-->
                                     <a class="menu-link" href="{% url 'realtime:anomaly_detection' %}">
                 <span class="menu-icon">
-                    <i class="fas fa-flag"></i>
+                    <i class="fas fa-flag text-warning" style="font-size: 16px"></i>
                 </span>
-                                        <span class="menu-title">Anomaly detection</span>
+                                        <span class="menu-title" style="font-size: 16px">Anomaly detection</span>
                                     </a>
                                     <!--end:Menu link-->
                                     <!--begin:Menu link-->
                                     <a class="menu-link" href="{% url 'alerts:create_incident' %}">
                 <span class="menu-icon">
-                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-bell text-warning" style="font-size: 16px"></i>
                 </span>
-                                        <span class="menu-title">Create incident</span>
+                                        <span class="menu-title" style="font-size: 16px">Create incident</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -415,13 +421,13 @@ else { themeMode = defaultThemeMode; } }
                         <!--begin:Menu link-->
                         <span class="menu-link">
 										<span class="menu-icon">
-											<i class="ki-duotone ki-some-files fs-1">
+											<i class="ki-duotone ki-some-files text-warning fs-1" style="font-size: 16px">
 												<span class="path1"></span>
 												<span class="path2"></span>
 											</i>
 										</span>
-										<span class="menu-title">Pages</span>
-										<span class="menu-arrow"></span>
+										<span class="menu-title" style="font-size: 16px">Pages</span>
+										<span class="menu-arrow" style="font-size: 16px"></span>
 									</span>
                         <!--end:Menu link-->
                         <!--begin:Menu sub-->
@@ -433,8 +439,8 @@ else { themeMode = defaultThemeMode; } }
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title">User Profile</span>
-												<span class="menu-arrow"></span>
+												<span class="menu-title" style="font-size:16px">User Profile</span>
+												<span class="menu-arrow text-warning" style="font-size:16px"></span>
 											</span>
                                 <!--end:Menu link-->
                                 <!--begin:Menu sub-->

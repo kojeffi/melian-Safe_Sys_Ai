@@ -184,6 +184,3 @@ EMAIL_PORT = 587  # TLS port for Gmail SMTP
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'omondijeff88@gmail.com'  # Your Gmail email address
 EMAIL_HOST_PASSWORD = 'ddkk mbap tbre lfpf'  # Your Gmail email password
-
-
-
