@@ -4,8 +4,8 @@
     {% load django_bootstrap5 %}
 
     <!-- Main Content -->
-    <div class="app-main">
-        <div class="container-fluid">
+    <div class="app-main rounded">
+        <div class="container-fluid" >
             <!-- Toolbar -->
             <div id="kt_app_toolbar" class="app-toolbar py-5">
                 <div class="container-fluid">
@@ -54,24 +54,6 @@
                     </section>
                 </div>
             </div>
-
-            <!-- Footer -->
-            <footer id="kt_app_footer" class="app-footer py-4">
-                <div class="container-fluid">
-                    <div class="text-center text-dark">
-                        <span class="text-muted fw-semibold me-1">2024&copy;</span>
-                        <a href="{% url 'home-url' %}" target="_blank" class="text-gray-800 text-hover-primary">SafeSysAi</a>
-                    </div>
-                    <ul class="menu menu-gray-600 menu-hover-primary text-center mt-3">
-                        <li class="menu-item">
-                            <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">About</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">Support</a>
-                        </li>
-                    </ul>
-                </div>
-            </footer>
         </div>
     </div>
 {% endblock %}
