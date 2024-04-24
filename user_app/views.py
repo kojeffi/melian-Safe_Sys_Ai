@@ -33,6 +33,14 @@ def dashboard(request):
     return render(request, 'dashbord/index.html', {'form': form})
 
 @login_required
+def dashboard(request):
+    user = request.user
+    username = user.username
+    email = user.email
+    return render(request, 'dashbord/index.html', {'username': username, 'email': email})
+
+
+@login_required
 def change_password(request):
     if request.method == 'POST':
         form = UserProfileForm(request.POST)

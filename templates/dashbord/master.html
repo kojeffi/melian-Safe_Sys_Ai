@@ -139,13 +139,6 @@ else { themeMode = defaultThemeMode; } }
                         <!--end::Search-->
                     </div>
                 
-                
-                {% if user.is_authenticated %}
-{#    <a href="{% url 'logout-url' %}">Logout</a>#}
-{% else %}
-    <a href="{% url 'login-url' %}">Login</a>
-{% endif %}
-                
                          <!--begin::Notification-->
         <div class="d-flex align-items-center">
             <button class="btn btn-icon btn-active-light-warning  me-3">
@@ -188,8 +181,8 @@ else { themeMode = defaultThemeMode; } }
                                             <img src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
                                         {% endif %}
                                         <!--end::Avatar-->
-                                        <p>{{ user.profile.username }}</p>
-                                        <p>{{ user.profile.email }}</p>
+                                        <p>{{ user.username }}</p>
+                                        <p>{{ user.email }}</p>
                                     </div>
                                 </div>
                             </div>
