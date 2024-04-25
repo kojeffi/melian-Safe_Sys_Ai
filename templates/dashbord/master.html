@@ -86,15 +86,10 @@ else { themeMode = defaultThemeMode; } }
                 <!--begin::Navbar-->
                 <div class="app-navbar flex-grow-1 justify-content-end" id="kt_app_header_navbar">
                     <div class="app-navbar-item d-flex align-items-stretch flex-lg-grow-1 me-2 me-lg-0">
-
                         <!--begin::Search-->
-                        <div id="kt_header_search" class="header-search d-flex align-items-center w-lg-350px"
-                             data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter"
-                             data-kt-search-layout="menu" data-kt-search-responsive="true" data-kt-menu-trigger="auto"
-                             data-kt-menu-permanent="true" data-kt-menu-placement="bottom-start">
+                        <div id="kt_header_search" class="header-search d-flex align-items-center w-lg-350px" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-search-responsive="true" data-kt-menu-trigger="auto" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-start">
                             <!--begin::Tablet and mobile search toggle-->
-                            <div data-kt-search-element="toggle" class="search-toggle-mobile d-flex d-lg-none
-									align-items-center">
+                            <div data-kt-search-element="toggle" class="search-toggle-mobile d-flex d-lg-none align-items-center">
                                 <div class="d-flex">
                                     <i class="ki-duotone ki-magnifier fs-1 fs-1">
                                         <span class="path1"></span>
@@ -104,14 +99,12 @@ else { themeMode = defaultThemeMode; } }
                             </div>
                             <!--end::Tablet and mobile search toggle-->
                             <!--begin::Form(use d-none d-lg-block classes for responsive search)-->
-                            <form data-kt-search-element="form" class="d-none d-lg-block w-100 position-relative mb-5
-									 mb-lg-0" autocomplete="off">
+                            <form data-kt-search-element="form" class="d-none d-lg-block w-100 position-relative mb-5 mb-lg-0" autocomplete="off">
                                 <!--begin::Hidden input(Added to disable form autocomplete)-->
                                 <input type="hidden" />
                                 <!--end::Hidden input-->
                                 <!--begin::Icon-->
-                                <i class="ki-duotone ki-magnifier search-icon fs-2 text-gray-500 position-absolute
-										top-50 translate-middle-y ms-5">
+                                <i class="ki-duotone ki-magnifier search-icon fs-2 text-gray-500 position-absolute top-50 translate-middle-y ms-5">
                                     <span class="path1"></span>
                                     <span class="path2"></span>
                                 </i>
@@ -134,21 +127,82 @@ else { themeMode = defaultThemeMode; } }
                                 <!--end::Reset-->
                             </form>
                             <!--end::Form-->
-
+                            <!--begin::Menu-->
+                            <div data-kt-search-element="content" class="menu menu-sub menu-sub-dropdown py-7 px-7 overflow-hidden w-300px w-md-350px">
+                                <!--begin::Wrapper-->
+                                <div data-kt-search-element="wrapper">
+                                    <!--begin::Recently viewed-->
+                                    <div data-kt-search-element="results" class="d-none">
+                                        <!--begin::Items-->
+                                        <div class="scroll-y mh-200px mh-lg-350px">
+                                            <!--begin::Category title-->
+                                            <h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">Users</h3>
+                                            <!--end::Category title-->
+                                            <!--begin::Item-->
+                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                            
+                                                <!--begin::Title-->
+                                                <div class="d-flex flex-column justify-content-start fw-semibold">
+                                                    <span class="fs-6 fw-semibold">Training Resources</span>
+                                                </div>
+                                                <!--end::Title-->
+                                            </a>
+                                            <!--end::Item-->
+                                            
+                                        </div>
+                                        <!--end::Items-->
+                                    </div>
+                                    <!--end::Recently viewed-->
+                                    <!--begin::Recently viewed-->
+                                    <div class="" data-kt-search-element="main">
+                                      
+                                        <!--begin::Items-->
+                                        <div class="scroll-y mh-200px mh-lg-325px">
+                                            <!--begin::Item-->
+                                            <div class="d-flex align-items-center mb-5">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-40px me-4">
+															<span class="symbol-label bg-light">
+																<i class="ki-duotone ki-laptop fs-2 text-warning">
+																	<span class="path1"></span>
+																	<span class="path2"></span>
+																</i>
+															</span>
+                                                </div>
+                                                <!--end::Symbol-->
+                                                <!--begin::Title-->
+                                                <div class="d-flex flex-column">
+                                                    <a href="{% url 'training_resources' %}" class="fs-6 text-gray-800 text-hover-warning fw-semibold">Training Resources</a>
+                                                </div>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Item-->
+                                            
+                                        </div>
+                                        <!--end::Items-->
+                                    </div>
+                                    <!--end::Recently viewed-->
+                                </div>
+                                <!--end::Wrapper-->
+                            
+                            </div>
+                            <!--end::Menu-->
                         </div>
                         <!--end::Search-->
+                        
+
                     </div>
 
-                         <!--begin::Notification-->
-        <div class="d-flex align-items-center">
-            <button class="btn btn-icon btn-active-light-warning  me-3">
-                <i class="fas fa-bell icon-sm text-warning" style="font-size: 30px">{{ alert_count }}</i>
+                    <!--begin::Notification-->
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-icon btn-active-light-warning  me-3">
+                            <i class="fas fa-bell icon-sm text-warning" style="font-size: 30px">{{ alert_count }}</i>
 
-            </button>
-        </div>
+                        </button>
+                    </div>
 
 
-        <!--end::Notification-->
+                    <!--end::Notification-->
                     <!--begin::User menu-->
 
                     <div class="app-navbar-item ms-3 ms-lg-4 me-lg-2" id="kt_header_user_menu_toggle">
@@ -320,19 +374,19 @@ else { themeMode = defaultThemeMode; } }
     <!--end::Header-->
     <!--begin::Wrapper-->
     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
-    
-    <!--begin::Sidebar-->
-					<div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
-						<!--begin::Main-->
-						<div class="d-flex flex-column justify-content-between h-100 hover-scroll-overlay-y my-2 d-flex flex-column" id="kt_app_sidebar_main" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_header" data-kt-scroll-wrappers="#kt_app_main" data-kt-scroll-offset="5px">
-							<!--begin::Sidebar menu-->
-							<div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="flex-column-fluid menu menu-sub-indention menu-column menu-rounded menu-active-bg mb-7">
-								<!--begin:Menu item-->
-								<div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
-									<!--begin:Menu link-->
-									<span class="menu-link">
+
+        <!--begin::Sidebar-->
+        <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+            <!--begin::Main-->
+            <div class="d-flex flex-column justify-content-between h-100 hover-scroll-overlay-y my-2 d-flex flex-column" id="kt_app_sidebar_main" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_header" data-kt-scroll-wrappers="#kt_app_main" data-kt-scroll-offset="5px">
+                <!--begin::Sidebar menu-->
+                <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="flex-column-fluid menu menu-sub-indention menu-column menu-rounded menu-active-bg mb-7">
+                    <!--begin:Menu item-->
+                    <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                        <!--begin:Menu link-->
+                        <span class="menu-link">
 										<span class="menu-icon">
-											<i class="ki-duotone ki-element-11 fs-1">
+											<i class="ki-duotone ki-element-11 text-warning fs-1">
 												<span class="path1"></span>
 												<span class="path2"></span>
 												<span class="path3"></span>
@@ -340,125 +394,125 @@ else { themeMode = defaultThemeMode; } }
 											</i>
 										</span>
 										<span class="menu-title">Dashboards</span>
-										<span class="menu-arrow"></span>
+										<span class="menu-arrow text-warning"></span>
 									</span>
-									<!--end:Menu link-->
-									<!--begin:Menu sub-->
-									<div class="menu-sub menu-sub-accordion">
-										<!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link active" href="{% url 'dashboard-url' %}">
+                        <!--end:Menu link-->
+                        <!--begin:Menu sub-->
+                        <div class="menu-sub menu-sub-accordion">
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link active" href="{% url 'dashboard-url' %}">
 												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
+													<span class="bullet bullet-dot bg-warning"></span>
 												</span>
-												<span class="menu-title">Home</span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-										<!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
+                                    <span class="menu-title">Home</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
 												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
+													<span class="bullet bullet-dot bg-warning"></span>
 												</span>
-												<span class="menu-title">Real Time Monitoring
+                                    <span class="menu-title">Real Time Monitoring
 												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-										<!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="{% url 'dashboard' %}" data-kt-page="pro">
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{% url 'dashboard' %}" data-kt-page="pro">
 												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
+													<span class="bullet bullet-dot bg-warning"></span>
 												</span>
-												<span class="menu-title">Safety Incident
+                                    <span class="menu-title">Safety Incident
 												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-										<!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="{% url 'dashboard' %}" data-kt-page="pro">
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{% url 'dashboard' %}" data-kt-page="pro">
 												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
+													<span class="bullet bullet-dot bg-warning"></span>
 												</span>
-												<span class="menu-title">Equipment Maintenance
+                                    <span class="menu-title">Equipment Maintenance
 												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-										<!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
 												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
+													<span class="bullet bullet-dot bg-warning"></span>
 												</span>
-												<span class="menu-title">Compliance Regulation
+                                    <span class="menu-title">Compliance Regulation
 												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-                                        <!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="{% url 'realtime:anomaly_detection' %}" data-kt-page="pro">
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{% url 'realtime:anomaly_detection' %}" data-kt-page="pro">
 												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
+													<span class="bullet bullet-dot bg-warning"></span>
 												</span>
-												<span class="menu-title">Anomaly Detection
+                                    <span class="menu-title">Anomaly Detection
 												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-                                        
-                                        <!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="{% url 'alerts:create_incident' %}" data-kt-page="pro">
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{% url 'alerts:create_incident' %}" data-kt-page="pro">
 												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
+													<span class="bullet bullet-dot bg-warning"></span>
 												</span>
-												<span class="menu-title">Create Incident
+                                    <span class="menu-title">Create Incident
 												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-                                        <!--begin:Menu item-->
-										<div class="menu-item">
-											<!--begin:Menu link-->
-											<a class="menu-link" href="{% url 'training_resources' %}" data-kt-page="pro">
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link" href="{% url 'training_resources' %}" data-kt-page="pro">
 												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
+													<span class="bullet bullet-dot bg-warning"></span>
 												</span>
-												<span class="menu-title">Training Resources
+                                    <span class="menu-title">Training Resources
 												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-											</a>
-											<!--end:Menu link-->
-										</div>
-										<!--end:Menu item-->
-									</div>
-									<!--end:Menu sub-->
-								</div>
-								<!--end:Menu item-->
-								<!--begin:Menu item-->
-								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<!--begin:Menu link-->
-									<span class="menu-link">
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                        </div>
+                        <!--end:Menu sub-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <!--begin:Menu link-->
+                        <span class="menu-link">
 										<span class="menu-icon">
-											<i class="ki-duotone ki-some-files fs-1">
+											<i class="ki-duotone ki-some-files fs-1 text-warning">
 												<span class="path1"></span>
 												<span class="path2"></span>
 											</i>
@@ -466,231 +520,89 @@ else { themeMode = defaultThemeMode; } }
 										<span class="menu-title">Pages</span>
 										<span class="menu-arrow"></span>
 									</span>
-									<!--end:Menu link-->
-									<!--begin:Menu sub-->
-									<div class="menu-sub menu-sub-accordion">
-										<!--begin:Menu item-->
-										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-											<!--begin:Menu link-->
-											<span class="menu-link">
+                        <!--end:Menu link-->
+                        <!--begin:Menu sub-->
+                        <div class="menu-sub menu-sub-accordion">
+                            <!--begin:Menu item-->
+                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <!--begin:Menu link-->
+                                <span class="menu-link">
 												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
+													<span class="bullet bullet-dot bg-warning"></span>
 												</span>
 												<span class="menu-title">User Profile</span>
 												<span class="menu-arrow"></span>
 											</span>
-											<!--end:Menu link-->
-											<!--begin:Menu sub-->
-											<div class="menu-sub menu-sub-accordion">
-												<!--begin:Menu item-->
-												<div class="menu-item">
-													<!--begin:Menu link-->
-													<a class="menu-link" href="{% url 'profile-url' %}">
+                                <!--end:Menu link-->
+                                <!--begin:Menu sub-->
+                                <div class="menu-sub menu-sub-accordion">
+                                    <!--begin:Menu item-->
+                                    <div class="menu-item">
+                                        <!--begin:Menu link-->
+                                        <a class="menu-link" href="{% url 'profile-url' %}">
 														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
+															<span class="bullet bullet-dot bg-warning"></span>
 														</span>
-														<span class="menu-title">My Profile</span>
-													</a>
-													<!--end:Menu link-->
-												</div>
-												<!--end:Menu item-->
-                                                
-											</div>
-											<!--end:Menu sub-->
-										</div>
-										<!--end:Menu item-->
-                                        
-									</div>
-									<!--end:Menu sub-->
-								</div>
-								<!--end:Menu item-->
-								
-							</div>
-							<!--end::Sidebar menu-->
-							<!--begin::Footer-->
-							<div class="app-sidebar-project-default app-sidebar-project-minimize text-center min-h-lg-400px flex-column-auto d-flex flex-column justify-content-end" id="kt_app_sidebar_footer">
-								<!--begin::Title-->
-								<h2 class="fw-bold text-gray-800">Welcome to SafeSysAi</h2>
-								<!--end::Title-->
-								<div class="text-center mb-lg-5 pb-lg-3">
-									<a href="{% url 'dashboard-url' %}" class="btn btn-sm btn-dark" data-bs-toggle="modal" 
-                                       data-bs-target="#kt_modal_create_account">Get Started</a>
-								</div>
-							</div>
-							<!--end::Footer-->
-						</div>
-						<!--end::Main-->
-					</div>
-					<!--end::Sidebar-->
-                    
-    
-{#        <!--begin::Sidebar-->#}
-{#        <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">#}
-{#            <!--begin::Main-->#}
-{#            <div class="d-flex flex-column justify-content-between h-100 hover-scroll-overlay-y my-2 d-flex flex-column" id="kt_app_sidebar_main" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_header" data-kt-scroll-wrappers="#kt_app_main" data-kt-scroll-offset="5px">#}
-{#                <!--begin::Sidebar menu-->#}
-{#                <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="flex-column-fluid menu menu-sub-indention menu-column menu-rounded menu-active-bg mb-7">#}
-{#                    <!--begin:Menu item-->#}
-{#                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">#}
-{#                        <!--begin:Menu link-->#}
-{#                        <!--begin:Menu item-->#}
-{#                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">#}
-{#                            <!--begin:Menu link-->#}
-{#                            <!--begin:Menu link-->#}
-{#                            <span class="menu-link">#}
-{#										<span class="menu-icon">#}
-{#											<i class="ki-duotone ki-element-11 text-warning fs-1" style="font-size: 16px">#}
-{#												<span class="path1"></span>#}
-{#												<span class="path2"></span>#}
-{#												<span class="path3"></span>#}
-{#												<span class="path4"></span>#}
-{#											</i>#}
-{#										</span>#}
-{#										<span class="menu-title" style="font-size: 16px">Dashboards</span>#}
-{#										<span class="menu-arrow" style="font-size: 16px"></span>#}
-{#									</span>#}
-{#                            <!--end:Menu link-->#}
-{#                            <!--end:Menu link-->#}
-{##}
-{#                            <!--begin:Menu sub-->#}
-{#                            <div class="menu-sub menu-sub-accordion">#}
-{#                                <!--begin:Menu item-->#}
-{#                                <div class="menu-item">#}
-{#                                       <!--begin:Menu link-->#}
-{#                                    <a class="menu-link" href="{% url 'dashboard-url' %}">#}
-{#                <span class="menu-icon">#}
-{#                    <i class="fas fa-home text-warning" style="font-size: 16px"></i>#}
-{#                </span>#}
-{#                                        <span class="menu-title" style="font-size: 16px">Home</span>#}
-{#                                    </a>#}
-{#                                    <!--end:Menu link-->#}
-{#                                    <!--begin:Menu link-->#}
-{#                                    <a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}">#}
-{#                <span class="menu-icon">#}
-{#                    <i class="fas fa-bar-chart text-warning" style="font-size: 16px"></i>#}
-{#                </span>#}
-{#                                        <span class="menu-title" style="font-size: 16px">Real Time Monitoring</span>#}
-{#                                    </a>#}
-{#                                    <!--end:Menu link-->#}
-{#                                    <!-- Add other menu links here -->#}
-{#                                    <!--begin:Menu link-->#}
-{#                                    <a class="menu-link" href="{% url 'dashboard' %}">#}
-{#                <span class="menu-icon">#}
-{#                    <i class="fas fa-shield text-warning" style="font-size: 16px"></i>#}
-{#                </span>#}
-{#                                        <span class="menu-title" style="font-size: 16px">Safety Incident</span>#}
-{#                                    </a>#}
-{#                                    <!--end:Menu link-->#}
-{#                                    <!--begin:Menu link-->#}
-{#                                    <a class="menu-link" href="{% url 'dashboard' %}">#}
-{#                <span class="menu-icon">#}
-{#                    <i class="fas fa-kitchen-set text-warning" style="font-size: 16px"></i>#}
-{#                </span>#}
-{#                                        <span class="menu-title" style="font-size: 16px">Equipment maintenance</span>#}
-{#                                    </a>#}
-{#                                    <!--end:Menu link-->#}
-{#                                    <!--begin:Menu link-->#}
-{#                                    <a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}">#}
-{#                <span class="menu-icon">#}
-{#                    <i class="fas fa-suitcase text-warning" style="font-size: 16px"></i>#}
-{#                </span>#}
-{#                                        <span class="menu-title" style="font-size: 16px">Compliance Regulation</span>#}
-{#                                    </a>#}
-{#                                    <!--end:Menu link-->#}
-{#                                    <!--begin:Menu link-->#}
-{#                                    <a class="menu-link" href="{% url 'realtime:anomaly_detection' %}">#}
-{#                <span class="menu-icon">#}
-{#                    <i class="fas fa-flag text-warning" style="font-size: 16px"></i>#}
-{#                </span>#}
-{#                                        <span class="menu-title" style="font-size: 16px">Anomaly detection</span>#}
-{#                                    </a>#}
-{#                                    <!--end:Menu link-->#}
-{#                                    <!--begin:Menu link-->#}
-{#                                    <a class="menu-link" href="{% url 'alerts:create_incident' %}">#}
-{#                <span class="menu-icon">#}
-{#                    <i class="fas fa-bell text-warning" style="font-size: 16px"></i>#}
-{#                </span>#}
-{#                                        <span class="menu-title" style="font-size: 16px">Create incident</span>#}
-{#                                    </a>#}
-{#                                    <!--end:Menu link-->#}
-{##}
-{#                                        <!--begin:Menu link-->#}
-{#                                    <a class="menu-link" href="{% url 'training_resources' %}">#}
-{#                <span class="menu-icon">#}
-{#                    <i class="fas fa-bell text-warning" style="font-size: 16px"></i>#}
-{#                </span>#}
-{#                                        <span class="menu-title" style="font-size: 16px">Training Resources</span>#}
-{#                                    </a>#}
-{#                                    <!--end:Menu link-->#}
-{#                                </div>#}
-{#                                <!--end:Menu item-->#}
-{#                            </div>#}
-{#                            <!--end:Menu sub-->#}
-{#                        </div>#}
-{##}
-{#                    </div>#}
-{#                    <!--end:Menu item-->#}
-{##}
-{#                    <!--begin:Menu item-->#}
-{#                    <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">#}
-{#                        <!--begin:Menu link-->#}
-{#                        <span class="menu-link">#}
-{#										<span class="menu-icon">#}
-{#											<i class="ki-duotone ki-some-files text-warning fs-1" style="font-size: 16px">#}
-{#												<span class="path1"></span>#}
-{#												<span class="path2"></span>#}
-{#											</i>#}
-{#										</span>#}
-{#										<span class="menu-title" style="font-size: 16px">Pages</span>#}
-{#										<span class="menu-arrow" style="font-size: 16px"></span>#}
-{#									</span>#}
-{#                        <!--end:Menu link-->#}
-{#                        <!--begin:Menu sub-->#}
-{#                        <div class="menu-sub menu-sub-accordion">#}
-{#                            <!--begin:Menu item-->#}
-{#                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">#}
-{#                                <!--begin:Menu link-->#}
-{#                                <span class="menu-link">#}
-{#												<span class="menu-bullet">#}
-{#													<span class="bullet bullet-dot"></span>#}
-{#												</span>#}
-{#												<span class="menu-title" style="font-size:16px">User Profile</span>#}
-{#												<span class="menu-arrow text-warning" style="font-size:16px"></span>#}
-{#											</span>#}
-{#                                <!--end:Menu link-->#}
-{#                                <!--begin:Menu sub-->#}
-{#                                <div class="menu-sub menu-sub-accordion">#}
-{#                                    <!--begin:Menu item-->#}
-{#                                    <div class="menu-item">#}
-{#                                        <!--begin:Menu link-->#}
-{#                                        <a class="menu-link" href="{% url 'profile-url' %}">#}
-{#														<span class="menu-bullet">#}
-{#															<span class="bullet bullet-dot"></span>#}
-{#														</span>#}
-{#                                            <span class="menu-title">My Profile</span>#}
-{#                                        </a>#}
-{#                                        <!--end:Menu link-->#}
-{#                                    </div>#}
-{#                                    <!--end:Menu item-->#}
-{#                                </div>#}
-{#                                <!--end:Menu sub-->#}
-{#                            </div>#}
-{#                            <!--end:Menu item-->#}
-{##}
-{#                        </div>#}
-{#                        <!--end:Menu sub-->#}
-{#                    </div>#}
-{#                    <!--end:Menu item-->#}
-{#                </div>#}
-{#                <!--end::Sidebar menu-->#}
-{##}
-{##}
-{#            </div>#}
-{#            <!--end::Main-->#}
-{#        </div>#}
-{#        <!--end::Sidebar-->#}
-    
-    
+                                            <span class="menu-title">My Profile</span>
+                                        </a>
+                                        <!--end:Menu link-->
+                                    </div>
+                                    <!--end:Menu item-->
+
+                                </div>
+                                <!--end:Menu sub-->
+                            </div>
+                            <!--end:Menu item-->
+
+                        </div>
+                        <!--end:Menu sub-->
+                    </div>
+                    <!--end:Menu item-->
+
+                </div>
+                <!--end::Sidebar menu-->
+                <!--begin::Footer-->
+                <div class="app-sidebar-project-default app-sidebar-project-minimize text-center min-h-lg-400px flex-column-auto d-flex flex-column justify-content-end" id="kt_app_sidebar_footer">
+                    <!--begin::Title-->
+                    <h2 class="fw-bold text-gray-800">Welcome to SafeSysAi</h2>
+                    <!--end::Title-->
+                    <div class="text-center mb-lg-5 pb-lg-3">
+                        <a href="{% url 'dashboard-url' %}" class="btn btn-sm btn-warning rounded-pill" data-bs-toggle="modal"
+                           data-bs-target="#kt_modal_create_account">Get Started</a>
+                    </div>
+                </div>
+                <!--end::Footer-->
+            </div>
+            <!--end::Main-->
+        </div>
+        <!--end::Sidebar-->
+        <!--begin::Main-->
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <!--begin::Content wrapper-->
+            <div class="d-flex flex-column flex-column-fluid">
+                <!--begin::Toolbar-->
+                <div id="kt_app_toolbar" class="app-toolbar pt-5">
+                    <!--begin::Toolbar container-->
+                    <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                        <!--begin::Toolbar wrapper-->
+                        <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
+                            <!--begin::Page title-->
+                            <div class="page-title d-flex flex-column gap-1 me-3 mb-2">
+                            </div>
+                            <!--end::Page title-->
+                            <!--begin::Actions-->
+                            <a href="{% url 'alerts:create_incident' %}" class="btn btn-sm btn-warning ms-3 px-4 py-3">Create Incident</a>
+                            <!--end::Actions-->
+                        </div>
+                        <!--end::Toolbar wrapper-->
+                    </div>
+                    <!--end::Toolbar container-->
+                </div>
+                <!--end::Toolbar-->
+            </div>
+            <!--end::Content wrapper-->
+        </div>
+        <!--end:::Main-->
 
         {% block content %}
 
@@ -700,25 +612,25 @@ else { themeMode = defaultThemeMode; } }
     <!--end::Wrapper-->
 </div>
 <!--begin::Footer-->
-                            <div id="kt_app_footer" class="app-footer align-items-center justify-content-center justify-content-md-between flex-column flex-md-row py-3">
-                                <!--begin::Copyright-->
-                                <div class="text-dark order-2 order-md-1">
-                                    <span class="text-muted fw-semibold me-1">2024&copy;</span>
-                                    <a href="{% url 'home-url' %}" target="_blank" class="text-gray-800 text-hover-primary">SafeSysAi</a>
-                                </div>
-                                <!--end::Copyright-->
-                                <!--begin::Menu-->
-                                <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                                    <li class="menu-item">
-                                        <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">About</a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">Support</a>
-                                    </li>
-                                </ul>
-                                <!--end::Menu-->
-                            </div>
-                            <!--end::Footer-->
+<div id="kt_app_footer" class="app-footer align-items-center justify-content-center justify-content-md-between flex-column flex-md-row py-3">
+    <!--begin::Copyright-->
+    <div class="text-dark order-2 order-md-1">
+        <span class="text-muted fw-semibold me-1">2024&copy;</span>
+        <a href="{% url 'home-url' %}" target="_blank" class="text-gray-800 text-hover-primary">SafeSysAi</a>
+    </div>
+    <!--end::Copyright-->
+    <!--begin::Menu-->
+    <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+        <li class="menu-item">
+            <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">About</a>
+        </li>
+        <li class="menu-item">
+            <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2">Support</a>
+        </li>
+    </ul>
+    <!--end::Menu-->
+</div>
+<!--end::Footer-->
 <!--end::Page-->
 <!--end::App-->
 

@@ -2,20 +2,30 @@
 {% block content %}
     {% load static %}
     {% load django_bootstrap5 %}
-    <!-- Main Content -->
-    <div class="app-main rounded">
-        <div class="container-fluid" >
-            <!-- Toolbar -->
-            <div id="kt_app_toolbar" class="app-toolbar py-5">
-                <div class="container-fluid">
-                    <!-- Page Title -->
-                    <h1 class="page-heading text-dark fw-bold fs-3">Dashboard</h1>
-                </div>
-            </div>
-            <!-- Content -->
-            <div id="kt_app_content" class="app-content">
-                <div class="container-fluid">
-                    <!-- Features Section -->
+
+    	<!--begin::Content-->
+							<div id="kt_app_content" class="app-content flex-column-fluid">
+								<!--begin::Content container-->
+								<div id="kt_app_content_container" class="app-container container-fluid">
+									<!--begin::Row-->
+									<div class="row gx-5 gx-xl-10">
+										<!--begin::Col-->
+										<div class="col-xxl-6 mb-5 mb-xl-10">
+											<!--begin::Chart widget 8-->
+											<div class="card card-flush h-xl-100">
+												<!--begin::Header-->
+												<div class="card-header pt-5">
+													<!--begin::Title-->
+													<h3 class="card-title align-items-start flex-column">
+														<span class="card-label fw-bold text-dark">Dashbaords</span>
+													</h3>
+													<!--end::Title-->
+												
+												</div>
+												<!--end::Header-->
+												<!--begin::Body-->
+												<div class="card-body pt-6">
+                                                    
                     <section class="features row justify-content-center gap-4 mt-5">
                         <!-- Real Time Anomaly Detection -->
                         <a href="{% url 'realtime:anomaly_detection' %}" class="text-decoration-none col-lg-4 col-md-6 col-sm-12">
