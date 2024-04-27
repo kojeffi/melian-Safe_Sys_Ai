@@ -1,6 +1,6 @@
-
 # models.py
 from django.db import models
+
 
 class SafetyRisk(models.Model):
     risk_name = models.CharField(max_length=255)
@@ -10,12 +10,14 @@ class SafetyRisk(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
 class ComplianceRegulation(models.Model):
     regulation_name = models.CharField(max_length=255)
     regulation_description = models.TextField()
     regulation_category = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
 
 class EquipmentMaintenance(models.Model):
     equipment_name = models.CharField(max_length=255)
@@ -26,4 +28,4 @@ class EquipmentMaintenance(models.Model):
 
 
 class AnomalyResult:
-    pass
+    objects = None

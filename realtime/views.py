@@ -91,12 +91,9 @@ def predictive_maintenance(request):
                 return render(request, 'dashbord/predict.html', {'form': form, 'error_message': error_message})
     else:
         form = EquipmentMaintenanceForm()
-
     # Debugging: Print form data
     print("Form:", form)
-
     return render(request, 'dashbord/predict.html', {'form': form})
-
 
 def anomaly_results_api(request):
     if request.method == 'POST':
@@ -108,13 +105,11 @@ def anomaly_results_api(request):
         return JsonResponse(list(anomaly_results), safe=False)
 
 
-
-
-
 # views.py
 from django.shortcuts import render, redirect
 from .forms import SafetyRiskForm, ComplianceRegulationForm, EquipmentMaintenanceForm
 from .models import SafetyRisk, ComplianceRegulation, EquipmentMaintenance
+
 
 def real(request):
     safety_risks = SafetyRisk.objects.all()

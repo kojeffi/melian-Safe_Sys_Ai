@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{% static 'assets1/img/logo-color4.png' %}" rel="icon">
+    <link href="{% static 'dashbord/assets/favicon.png' %}" class="img-fluid" rel="icon">
     <link href="{% static 'assets1/img/logo-color4.png' %}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -30,30 +30,107 @@
 </head>
 <body>
 <!-- ======= Header ======= -->
-<header id="header" class="header d-flex align-items-center fixed-top" style="background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+<header id="header" class="header d-flex align-items-center fixed-top" style="background-color: #f0f0f0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
         <a href="{% url 'home-url' %}" class="logo d-flex align-items-center">
             <!-- Ensure the image logo is displayed -->
-            <img height="30px" width="60px" src="{% static 'assets1/img/logo-color4.png' %}" alt="SafeSys AI Logo" style="max-width: 300vw; max-height: 100px;">  
-            <img height="30px" width="150px" src="{% static 'assets1/img/logo-black9.png' %}" alt="SafeSys AI Logo" style="max-width: 300vw; max-height: 100px;">
-            <!-- Optionally, include a text logo alongside the image logo -->
+            <img height="40px" width="150px" src="{% static 'dashbord/assets/logo.png' %}" alt="SafeSys AI Logo" style="max-width: 300vw; max-height: 100px;">
         </a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="{% url 'home-url' %}" class="active text-black">Home</a></li>
-                <li><a class="text-black" href="#about">About</a></li>
-                <li><a class="text-black" href="#service">Services</a></li>
-                <li><a class="text-black" href="#team">Team</a></li>
-                <li><a class="text-black" href="{% url 'register-url' %}">Signup</a></li>
-                <li><a class="text-black" href="{% url 'login-url' %}">Signin</a></li>
-                <li><a class="text-black" href="#contact">Contact</a></li>
-                <li><a class="get-a-quote bg-warning text-black" href="{% url 'register-url' %}">Get Started</a></li>
+                <li><a href="{% url 'home-url' %}" class="">Home</a></li>
+                <li><a class="" href="#about">About</a></li>
+                <li><a class="" href="#featured-services">Features</a></li>
+                <li><a class="" href="#service">Services</a></li>
+                <li><a class="" href="#team">Team</a></li>
+                <li><a class="" href="#faq">FQAS</a></li>
+                <li><a class="" href="#contact">Contact</a></li>
+                <li><a class="" href="{% url 'login-url' %}">Signin</a></li>
+                <a class="get-a-quote bg-warning mt-auto" href="{% url 'register-url' %}">Get Started</a>
             </ul>
+
         </nav><!-- .navbar -->
     </div>
 </header><!-- End Header -->
+<script>
+    // Get all the navigation links
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    // Function to highlight the active link
+    function highlightNavLink() {
+        // Get the current scroll position
+        const scrollPosition = window.scrollY;
+
+        // Iterate over each section and check if it's in view
+        document.querySelectorAll('section').forEach((section) => {
+            const sectionTop = section.offsetTop - 50; // Adjusted for header height
+            const sectionHeight = section.clientHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                // Add 'active' class to the corresponding navigation link
+                navLinks.forEach((link) => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    // Add scroll event listener to highlight active navigation link
+    window.addEventListener('scroll', highlightNavLink);
+</script>
+
+
+<style>
+    /* Your existing CSS */
+    nav ul li a.active {
+        text-decoration: underline; /* Add underline */
+        color: orange; /* Change color to orange */
+        height: 3px;
+    }
+    /* CSS for the active navigation link */
+    nav ul li a.active {
+        text-decoration: underline; /* Add underline */
+        color: orange; /* Change color to orange */
+    }
+
+    /* CSS for hover state */
+    nav ul li a:hover {
+        text-decoration: none; /* Remove default underline */
+        color: orange; /* Change color to orange */
+        position: relative; /* Add relative positioning */
+    }
+
+    nav ul li a:hover::after {
+        content: ""; /* Add pseudo-element for underline */
+        position: absolute; /* Set absolute positioning */
+        left: 18px; /* Align with the left edge of the link */
+        right:-18px;
+        bottom: 5px; /* Adjust the distance from the link */
+        width: 100%; /* Extend the underline across the link */
+        height: 3px; /* Set the thickness of the underline */
+        background-color: orange; /* Set the color of the underline */
+    }
+
+    /* Additional styles for a more professional look */
+    nav ul li a {
+        text-decoration: none; /* Remove underline by default */
+        transition: color 0.3s ease; /* Smooth transition for color change */
+        padding-bottom: -2px; /* Add padding to create space for the underline */
+    }
+
+    nav ul li a:hover:not(.active) {
+        color: #333333; /* Darken color slightly on hover for non-active links */
+    }
+</style>
+
+
+
 
 
 <style>
@@ -80,99 +157,13 @@
         position: relative;
         z-index: 1;
     }
-    /* Chatbot icon styles */
-    .chatbot-icon {
-        background-color: orange; /* Orange color for the icon */
-        width: 70px;
-        height: 70px;
-        margin-right: 30px;
-        border-radius: 50%;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        cursor: pointer;
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .chatbot-icon img {
-        width: 80%;
-        height: auto;
-    }
-
-    /* Chatbot container styles */
-    .chatbot-container {
-        display: none;
-        position: fixed;
-        bottom: 100px;
-        right: 20px;
-        width: 300px;
-        height: 400px;
-        background-color: #fff;
-        border-radius: 10px;
-        border: 1px solid #ccc;
-        z-index: 9999;
-    }
-
-    .chatbot-header {
-        padding: 10px;
-        background-color: orange;
-        color: #fff;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-
-    .chatbot-title {
-        font-weight: bold;
-    }
-
-    .chatbot-close-btn {
-        background: none;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        outline: none;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
-
-    .chatbot-messages {
-        height: 300px;
-        overflow-y: auto;
-        padding: 10px;
-    }
-
-    .chatbot-input {
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .chatbot-input input {
-        flex: 1;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-right: 10px;
-    }
-
-    .chatbot-input button {
-        padding: 8px 15px;
-        background-color: orange;
-        border: none;
-        color: #fff;
-        border-radius: 5px;
-        cursor: pointer;
-    }
     .welcome-text{
         font-weight: 1000;
 
     }
 </style>
+
+
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero bg-light d-flex align-items-center" style="padding-top:30px">
     <div class="container">
@@ -186,152 +177,141 @@
             <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <!-- Text content -->
                 <br><br><br>
-                <h3 data-aos="fade-up" class="text-warning welcome-text"><b>Welcome to SafeSys AI</b></h3>
-                <b>Revolutionising Safety and Compliance in Oil & Gas</b>
-                <p class="text-white  welcome-text"><b>SafeSys AI leverages cutting-edge AI and IoT to empower oil and gas companies with real-time safety
+                <h3 data-aos="fade-up" class="text-info welcome-text" style="font-weight: 800"><b>Welcome to SafeSys AI</b></h3>
+                <b class="text-warning"  style="font-weight: 800">Revolutionising Safety and Compliance in Oil & Gas</b>
+                <p class="text-warning"  style="font-weight: 800"><b>SafeSys AI leverages cutting-edge AI and IoT to empower oil and gas companies with real-time safety
                     risk management and compliance assurance</b></p>
-
-                <a href="{% url 'register-url' %}"><button type="submit"
-                                                           class=" text-black btn btn-warning mt-auto">Get Started</button></a>
+                <a href="{% url 'register-url' %}"><button type="submit" class=" text-black btn btn-warning mt-auto">Get Started</button></a>
                 <!-- Adjust vertical spacing as needed -->
                 <div style="height: 100px;"></div>
-                <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
-                    <!-- Statistics -->
-                    <!-- Add your statistics items here -->
-                </div>
-            </div>
-        <style>
-        /* CSS styles */
-        .chatbot-icon {
+  
+
+    <style>
+        
+        .container1 {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            cursor: pointer;
-            z-index: 9999;
-            transition: transform 0.3s ease-in-out; /* Add animation for chatbot icon */
+            right: 20px; /* Adjust as needed */
+            bottom: 20px; /* Adjust as needed */
+            max-width: 600px;
+            margin: 100px auto;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            transform: translateY(100%);
         }
 
-        .chatbot-icon.active {
-            transform: rotate(45deg); /* Rotate the chatbot icon when active */
+        .container1.active {
+            transform: translateY(0);
         }
 
-        .chatbot-label {
-            display: block;
+        .header1 {
+            background-color: orange;
+            color: #fff;
+            padding: 15px;
             text-align: center;
-            font-size: 12px;
-            margin-top: 5px;
-            color: #555;
+            border-radius: 10px 10px 0 0;
+           
         }
-
-        .chatbot-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            background-color: #d1c6c6;
-            border: 1px solid orange;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 9998;
-            display: none; /* Hidden by default */
-            animation: slideIn 0.3s ease forwards; /* Add animation for chatbot container */
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px); /* Slide in from bottom */
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .chatbot-header {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-            background-color: #f5f5f5;
-        }
-
-        .chatbot-title {
-            font-weight: bold;
-        }
-
-        .chatbot-close-btn {
-            float: right;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .chatbot-messages {
-            max-height: 200px;
+        
+        .messages-container {
+            max-height: 300px;
             overflow-y: auto;
             padding: 10px;
+             padding-top: 60px;
         }
-
-        .chatbot-input {
-            padding: 10px;
-            border-top: 1px solid #ccc;
-        }
-
+        
         .message {
-            margin-bottom: 10px;
+            margin: 5px 0;
+        }
+        
+        .user-message {
+            text-align: right;
+            color: #007bff;
+        }
+        
+        .bot-message {
+            text-align: left;
+            color: #28a745;
+        }
+        
+        .footer {
+            background-color: transparent;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .input-container {
+            display: flex;
+            margin-top: 10px;
+        }
+        
+        .user-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        
+        .send-button {
+            padding: 10px 20px;
+            background-color: orange;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            outline: none;
+            margin-left: 10px;
+        }
+        
+        .send-button:hover {
+            background-color: #0056b3;
         }
 
-        .user {
-            text-align: right;
+        /* Adjust the z-index to ensure the button is on top of the chatbot */
+        #toggle-chatbot {
+            position: fixed;
+            right: 20px; /* Adjust as needed */
+            bottom: 20px; /* Adjust as needed */
+            z-index: 9999;
         }
     </style>
-<div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-    <!-- Chatbot icon -->
-    <br><br><br><br><br><br>
-    <div id="chatbot-icon" class="chatbot-icon" onclick="toggleChatbot()">
-        <img class="rounded-circle" src="{% static 'cha.jpg' %}" alt="Chatbot Icon">
-        <span class="chatbot-label"><p class="text-white" style="font-weight:500">Click Here!! AI Assistant</p></span>
-    </div>
-</div>
+    <!-- Toggle button for chatbot -->
+    <button class="send-button btn btn-success" id="toggle-chatbot">Toggle Chatbot</button>
 
-<!-- Chatbot container -->
-<div id="chatbot-container" class="chatbot-container">
-    <!-- Chatbot header -->
-    <div class="chatbot-header bg-warning">
-        <span class="chatbot-title text-white">SafeSys AI Chatbot</span>
-        <button class="chatbot-close-btn" onclick="toggleChatbot()">Close</button>
+    <div class="container1">
+            <h4 class="text-warning" style="font-weight: 800;">safesysai chatbot</h4>
+        <div class="messages-container" id="messages-container">
+            <!-- Messages will be displayed here -->
+            <p class="bot-message"><b>Bot:</b> Hi! How can I help you today?</p>
+        </div>
+        <div class="footer">
+            <form id="chat-form" method="POST">
+                {% csrf_token %}
+                <div class="input-container" >
+                    <input type="text" class="user-input" id="user-message" name="user_message" placeholder="Enter your message" required>
+                    <button type="submit" class="send-button">Send</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <!-- Chatbot messages -->
-    <div id="chatbot-messages" class="chatbot-messages">
-        <!-- Chatbot messages will be displayed here -->
-    </div>
-    <!-- Chatbot input -->
-    <div class="chatbot-input">
-        <input type="text" id="chatbot-input-field" placeholder="Type your message...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
-</div>
+
+    <script>
+        // JavaScript code to toggle visibility of chatbot container
+        const chatbotContainer = document.querySelector('.container1');
+        const toggleButton = document.getElementById('toggle-chatbot');
+
+        toggleButton.addEventListener('click', () => {
+            chatbotContainer.classList.toggle('active');
+        });
+    </script>
+          </div>
         </div>
     </div>
 </section>
-<!-- JavaScript -->
-<script>
-    // Function to toggle chatbot visibility
-    function toggleChatbot() {
-        var chatbotContainer = document.getElementById('chatbot-container');
-        chatbotContainer.style.display = chatbotContainer.style.display === 'none' ? 'block' : 'none';
-    }
-
-    // Function to send message
-    function sendMessage() {
-        var inputField = document.getElementById('chatbot-input-field');
-        var message = inputField.value;
-        // Logic to send message to the backend or handle it locally
-        // For demonstration, let's just display the message in the chat window
-        var messagesContainer = document.getElementById('chatbot-messages');
-        messagesContainer.innerHTML += '<div class="user-message">' + message + '</div>';
-        // Clear input field after sending message
-        inputField.value = '';
-    }
-</script>
 
 <script>
     // Pause video when not in view
@@ -345,329 +325,398 @@
 </script>
 
 
-<main id="main">
-    <section id="featured-services" class="featured-services" style="margin-top: -80px;background-color: #f6f5f5">
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-text text-center">
+        We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+    </div>
+    <div class="cookie-buttons" style="margin-left: 300px">
+        <button id="accept-cookies" class="btn btn-success">Accept</button>
+        <a href="{% url 'home-url' %}">Cookie Policy</a>
+    </div>
+</div>
+<style>
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top:100px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 10px;
+        box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+    }
+
+    .cookie-text {
+        margin-bottom: 5px;
+    }
+
+    .cookie-buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    #accept-cookies {
+        margin-right: 10px;
+    }
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const cookieBanner = document.getElementById("cookie-banner");
+        const acceptCookiesButton = document.getElementById("accept-cookies");
+
+        // Check if cookies have been accepted previously
+        const cookiesAccepted = localStorage.getItem("cookiesAccepted");
+
+        // If cookies have not been accepted previously, display the cookie banner
+        if (!cookiesAccepted) {
+            cookieBanner.style.display = "block";
+        }
+
+        // Event listener for accepting cookies
+        acceptCookiesButton.addEventListener("click", function() {
+            // Hide the cookie banner
+            cookieBanner.style.display = "none";
+            // Set a flag in localStorage to indicate that cookies have been accepted
+            localStorage.setItem("cookiesAccepted", true);
+        });
+
+        // Add link to cookie policy
+        const cookiePolicyLink = document.getElementById("cookie-policy-link");
+        cookiePolicyLink.setAttribute("href", "/cookie-policy"); // Update the href with the URL of your cookie policy page
+    });
+
+</script>
+
+<style>
+    .service-card {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(255, 165, 0, 0.5); /* Orange box shadow */
+        transition: transform 0.5s ease;
+    }
+
+    .service-item:hover .service-card {
+        transform: translateX(-10px); /* Move to the left on hover */
+    }
+</style>
+
+
+<!-- ======= About Us Section ======= -->
+<section  id="about"  class="about pt-0">
+    <div class="container" data-aos="fade-up">
+
+        <div  class="row gy-4">
+            <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
+                <br><br><br>
+                <video autoplay muted controls class="img-fluid rounded">
+                    <source src="{% static 'videos/video1.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="col-lg-6 content order-last  order-lg-first">
+                <br><br>
+                <h3 class="text-warning">About Us</h3>
+                <p>
+                    SafeSys AI anticipates safety risks, ensuring market relevance. Its adaptable model and customisable modules set a new standard in safety and compliance management.
+                </p>
+
+                <ul>
+                    <li data-aos="fade-up" data-aos-delay="100">
+                        <i class="bi bi-diagram-3 text-warning"></i>
+                        <div>
+                            <h5 class="text-black">SafeSys AI improves oil and gas safety Compliance using AI, IoT, and machine learning</h5>
+                            <p>It offers real-time risk management and predictive maintenance</p>
+                        </div>
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="200">
+                        <i class="bi bi-fullscreen-exit text-warning"></i>
+                        <div>
+                            <h5 class="text-black">Designed for oil companies, safety managers, and compliance officers</h5>
+                            <p>SafeSys AI provides user-friendly dashboards and scalable solutions</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section><!-- End About Us Section -->
+
+
+<section id="featured-services" class="featured-services" style="margin-top: -80px;background-color: #f6f5f5">
+    <div class="section-header">
+        <h2 class="text-warning">Features</h2>
+    </div>
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
+                <div class="service-card">
+                    <div class="icon flex-shrink-0 text-center">
+                        <i class="fas fa-shield-alt text-center text-warning"></i></div>
+                    <div>
+                        <h4 class="title text-center text-black">Enhanced Safety</h4>
+                        <p class="description text-center text-hover-muted">SafeSys AI leverages cutting-edge AI to proactively identify and mitigate safety risks, fostering a safer work environment for your employees</p>
+                        <a href="#hero" class="readmore justify-content-center stretched-link text-black"><span>Learn More</span><i class="bi bi-arrow-right text-black"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Service Item -->
+            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
+                    <div class="icon flex-shrink-0 text-center text-secondary">
+                        <i class="fas fa-chart-line text-center text-warning"></i></div>
+                    <div>
+                        <h4 class="title text-center text-black">Improved Compliance</h4>
+                        <p class="description text-center text-hover-muted">Stay ahead of regulatory changes with real-time data and insights, ensuring your operations adhere to the latest safety and compliance standards</p>
+                        <a href="#hero" class="readmore stretched-link text-info  justify-content-center text-black"><span>Learn More</span><i class="bi bi-arrow-right text-black"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Service Item -->
+            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
+                    <div class="icon flex-shrink-0 text-center">
+
+                        <i class="fas fa-rocket text-center text-warning"></i></div>
+                    <div>
+                        <h4 class="title text-center text-black text-center">Operational Efficiency</h4>
+                        <p class="description text-center text-hover-muted">SafeSys AI's predictive maintenance capabilities help prevent downtime and optimise resource allocation, boosting your overall operational efficiency.</p>
+                        <a href="#hero" class="readmore stretched-link text-info justify-content-center text-black"><span>Learn More</span><i class="bi bi-arrow-right text-black"></i></a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End Service Item -->
+        </div>
+    </div>
+</section>
+<!-- End Featured Services Section -->
+
+
+
+<style>
+    .service-card {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(255, 140, 0, 0.2), 0 0 40px rgba(255, 140, 0, 0.1); /* Orange box shadow */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .service-card:hover {
+        transform: translateX(-5px); /* Move the card slightly to the left on hover */
+    }
+</style>
+<!-- ======= Services Section ======= -->
+<section id="service" class="services pt-0">
+    <div class="container" data-aos="fade-up">
         <div class="section-header">
-            <h2 class="text-warning">Why Choose Us</h2>
+            <h2 class="text-warning">Our Services</h2>
         </div>
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
-                    <div class="service-card">
-                        <div class="icon flex-shrink-0 text-center">
-                            <i class="fas fa-shield-alt text-center text-warning"></i></div>
-                        <div>
-                            <h4 class="title text-center text-black">Enhanced Safety</h4>
-                            <p class="description text-center text-hover-muted">SafeSys AI leverages cutting-edge AI to proactively identify and mitigate safety risks, fostering a safer work environment for your employees</p>
-                            <a href="#hero" class="readmore justify-content-center stretched-link text-black"><span>Learn More</span><i class="bi bi-arrow-right text-black"></i></a>
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card service-card">
+                    <h3><a href="{% url 'register-url' %}" class="stretched-link text-black">Real-Time Safety Risk Management</a></h3>
+                    <p>Gain real-time visibility into operational data and identify potential safety threats before they escalate</p>
+                </div>
+            </div><!-- End Card Item -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card service-card">
+                    <h3><a href="{% url 'register-url' %}" class="stretched-link text-black">Predictive Maintenance & Risk Assessment</a></h3>
+                    <p>Proactively identify equipment issues and predict risks, optimising maintenance schedules and preventing costly downtime</p>
+                </div>
+
+            </div><!-- End Card Item -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card service-card">
+                    <h3><a href="{% url 'register-url' %}" class="stretched-link text-black">Streamlined Compliance Management</a></h3>
+                    <p>Simplify compliance adherence with automated tracking and alerts, ensuring regulatory peace of mind</p>
+                </div>
+            </div><!-- End Card Item -->
+        </div>
+    </div>
+</section><!-- End Services Section -->
+
+<!-- Custom CSS -->
+<style>
+    .team-members .member {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .team-members .member:hover {
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+    }
+
+    .team-members .member img {
+        width: 100%;
+        height: auto;
+        transition: all 0.3s ease;
+    }
+
+    .team-members .member:hover img {
+        transform: scale(1.1);
+    }
+
+    .team-members .member-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    .team-members .member:hover .member-content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .team-members .member-content h4,
+    .team-members .member-content span {
+        color: #fff;
+        margin: 0;
+    }
+
+    .team-members .social {
+        margin-top: 10px;
+    }
+
+    .team-members .social a {
+        color: #fff;
+        margin-right: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .team-members .social a:hover {
+        color: #f39c12;
+    }
+</style>
+<!-- Team Section -->
+<section id="team" class="team pt-0 bg-light">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h2 class="text-warning">Our Team</h2>
+        </div>
+        <div class="row team-members" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="member">
+                    <img src="{% static 'assets1/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                    <div class="member-content">
+                        <h4>Jimy Kee</h4>
+                        <span>Cheif Executive Officer</span>
+                        <div class="social">
+                            <a href="#hero"><i class="bi bi-twitter text-warning"></i></a>
+                            <a href="#hero"><i class="bi bi-facebook text-warning"></i></a>
+                            <a href="#hero"><i class="bi bi-instagram text-warning"></i></a>
+                            <a href="#hero"><i class="bi bi-linkedin text-warning"></i></a>
                         </div>
                     </div>
                 </div>
-                <!-- End Service Item -->
-                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <div class="icon flex-shrink-0 text-center text-secondary">
-                            <i class="fas fa-chart-line text-center text-warning"></i></div>
-                        <div>
-                            <h4 class="title text-center text-black">Improved Compliance</h4>
-                            <p class="description text-center text-hover-muted">Stay ahead of regulatory changes with real-time data and insights, ensuring your operations adhere to the latest safety and compliance standards</p>
-                            <a href="#hero" class="readmore stretched-link text-info  justify-content-center text-black"><span>Learn More</span><i class="bi bi-arrow-right text-black"></i></a>
+            </div><!-- End Team Member -->
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="member">
+                    <img src="{% static 'assets1/img/team/team-2.jpg' %}" class="img-fluid" alt="">
+                    <div class="member-content">
+                        <h4>Sarah Jhinson</h4>
+                        <span>Lead Developer</span>
+                        <div class="social">
+                            <a href="#hero"><i class="bi bi-twitter text-warning"></i></a>
+                            <a href="#hero"><i class="bi bi-facebook text-warning"></i></a>
+                            <a href="#hero"><i class="bi bi-instagram text-warning"></i></a>
+                            <a href="#hero"><i class="bi bi-linkedin text-warning"></i></a>
                         </div>
                     </div>
                 </div>
-                <!-- End Service Item -->
-                <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <div class="icon flex-shrink-0 text-center">
+            </div><!-- End Team Member -->
 
-                            <i class="fas fa-rocket text-center text-warning"></i></div>
-                        <div>
-                            <h4 class="title text-center text-black text-center">Operational Efficiency</h4>
-                            <p class="description text-center text-hover-muted">SafeSys AI's predictive maintenance capabilities help prevent downtime and optimize resource allocation, boosting your overall operational efficiency</p>
-                            <a href="#hero" class="readmore stretched-link text-info  justify-content-center text-black"><span>Learn More</span><i class="bi bi-arrow-right text-black"></i></a>
+            <div class="col-lg-4 col-md-6 d-flex">
+                <div class="member">
+                    <img src="{% static 'assets1/img/team/team-3.jpg' %}" class="img-fluid" alt="">
+                    <div class="member-content">
+                        <h4>Omondi Jeff</h4>
+                        <span>Developer</span>
+                        <div class="social">
+                            <a href="#hero"><i class="bi bi-twitter text-warning"></i></a>
+                            <a href="#hero"><i class="bi bi-facebook text-warning"></i></a>
+                            <a href="#hero"><i class="bi bi-instagram text-warning"></i></a>
+                            <a href="#hero"><i class="bi bi-linkedin text-warning"></i></a>
                         </div>
                     </div>
                 </div>
-                <!-- End Service Item -->
-            </div>
-        </div>
-    </section>
-    <!-- End Featured Services Section -->
-
-    <style>
-        .service-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(255, 165, 0, 0.5); /* Orange box shadow */
-            transition: transform 0.5s ease;
-        }
-
-        .service-item:hover .service-card {
-            transform: translateX(-10px); /* Move to the left on hover */
-        }
-    </style>
+            </div><!-- End Team Member -->
 
 
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about pt-0">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row gy-4">
-                <div class="col-lg-6 position-relative align-self-start order-lg-last order-first">
-                    <br><br><br>
-                    <video autoplay muted controls class="img-fluid rounded">
-                        <source src="{% static 'videos/video1.mp4' %}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="col-lg-6 content order-last  order-lg-first">
-                    <br><br>
-                    <h3 class="text-warning">About Us</h3>
-                    <p>
-                        SafeSys AI anticipates safety risks, ensuring market relevance. Its adaptable model and customizable modules set a new standard in safety and compliance management
-                    </p>
-                    <ul>
-                        <li data-aos="fade-up" data-aos-delay="100">
-                            <i class="bi bi-diagram-3 text-warning"></i>
-                            <div>
-                                <h5 class="text-black">SafeSys AI improves oil and gas safety Compliance using AI, IoT, and machine learning</h5>
-                                <p>It offers real-time risk management and predictive maintenance</p>
-                            </div>
-                        </li>
-                        <li data-aos="fade-up" data-aos-delay="200">
-                            <i class="bi bi-fullscreen-exit text-warning"></i>
-                            <div>
-                                <h5 class="text-black">Designed for oil companies, safety managers, and compliance officers</h5>
-                                <p>SafeSys AI provides user-friendly dashboards and scalable solutions</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
         </div>
-    </section><!-- End About Us Section -->
+
+    </div>
+</section><!-- End Our Team Section -->
 
 
-    <style>
-        .service-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(255, 140, 0, 0.2), 0 0 40px rgba(255, 140, 0, 0.1); /* Orange box shadow */
-            transition: transform 0.3s ease-in-out;
-        }
 
-        .service-card:hover {
-            transform: translateX(-5px); /* Move the card slightly to the left on hover */
-        }
-    </style>
-    <!-- ======= Services Section ======= -->
-    <section id="service" class="services bg-light pt-0">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header">
-                <h2 class="text-warning">Our Services</h2>
-            </div>
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card service-card">
-                        <h3><a href="{% url 'register-url' %}" class="stretched-link text-black">Real-Time Safety Risk Management</a></h3>
-                        <p>Gain real-time visibility into operational data and identify potential safety threats before they escalate</p>
-                    </div>
-                </div><!-- End Card Item -->
+<!-- ======= Frequently Asked Questions Section ======= -->
+<section id="faq" class="faq">
+    <div class="container" data-aos="fade-up">
 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card service-card">
-                        <h3><a href="{% url 'register-url' %}" class="stretched-link text-black">Predictive Maintenance & Risk Assessment</a></h3>
-                        <p>Proactively identify equipment issues and predict risks, optimising maintenance schedules and preventing costly downtime</p>
-                    </div>
-
-                </div><!-- End Card Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card service-card">
-                        <h3><a href="{% url 'register-url' %}" class="stretched-link text-black">Streamlined Compliance Management</a></h3>
-                        <p>Simplify compliance adherence with automated tracking and alerts, ensuring regulatory peace of mind</p>
-                    </div>
-                </div><!-- End Card Item -->
-            </div>
+        <div class="section-header">
+            <h2 class="text-warning">Frequently Asked Questions</h2>
         </div>
-    </section><!-- End Services Section -->
 
-    <!-- Custom CSS -->
-    <style>
-        .team-members .member {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .team-members .member:hover {
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .team-members .member img {
-            width: 100%;
-            height: auto;
-            transition: all 0.3s ease;
-        }
-
-        .team-members .member:hover img {
-            transform: scale(1.1);
-        }
-
-        .team-members .member-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(100%);
-        }
-
-        .team-members .member:hover .member-content {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .team-members .member-content h4,
-        .team-members .member-content span {
-            color: #fff;
-            margin: 0;
-        }
-
-        .team-members .social {
-            margin-top: 10px;
-        }
-
-        .team-members .social a {
-            color: #fff;
-            margin-right: 10px;
-            transition: color 0.3s ease;
-        }
-
-        .team-members .social a:hover {
-            color: #f39c12;
-        }
-    </style>
-    <!-- Team Section -->
-    <section id="team" class="team pt-0 bg-light">
-        <div class="container" data-aos="fade-up">
-            <div class="section-header">
-                <h2 class="text-warning">Our Team</h2>
-            </div>
-            <div class="row team-members" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-4 col-md-6 d-flex">
-                    <div class="member">
-                        <img src="{% static 'assets1/img/team/team-1.jpg' %}" class="img-fluid" alt="">
-                        <div class="member-content">
-                            <h4>Jimy Kee</h4>
-                            <span>Cheif Executive Officer</span>
-                            <div class="social">
-                                <a href="#hero"><i class="bi bi-twitter text-warning"></i></a>
-                                <a href="#hero"><i class="bi bi-facebook text-warning"></i></a>
-                                <a href="#hero"><i class="bi bi-instagram text-warning"></i></a>
-                                <a href="#hero"><i class="bi bi-linkedin text-warning"></i></a>
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-10">
+                <div class="accordion accordion-flush text-info" id="faqlist">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                                <i class="bi bi-question-circle question-icon text-warning"></i>
+                                What is SafeSys AI?
+                            </button>
+                        </h3>
+                        <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                                SafeSys AI is an AI-powered safety and compliance system designed to transform risk management in the oil and gas industry
                             </div>
                         </div>
-                    </div>
-                </div><!-- End Team Member -->
-                <div class="col-lg-4 col-md-6 d-flex">
-                    <div class="member">
-                        <img src="{% static 'assets1/img/team/team-2.jpg' %}" class="img-fluid" alt="">
-                        <div class="member-content">
-                            <h4>Sarah Jhinson</h4>
-                            <span>Lead Developer</span>
-                            <div class="social">
-                                <a href="#hero"><i class="bi bi-twitter text-warning"></i></a>
-                                <a href="#hero"><i class="bi bi-facebook text-warning"></i></a>
-                                <a href="#hero"><i class="bi bi-instagram text-warning"></i></a>
-                                <a href="#hero"><i class="bi bi-linkedin text-warning"></i></a>
+                    </div><!-- # Faq item-->
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq-content-2">
+                                <i class="bi bi-question-circle question-icon text-warning"></i>
+                                Who is SafeSys AI for?
+                            </button>
+                        </h3>
+                        <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                            <div class="accordion-body">
+                                SafeSys AI caters to a wide audience within the oil and gas sector, including oil & gas companies, safety managers, compliance officers, and IT professionals
                             </div>
                         </div>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6 d-flex">
-                    <div class="member">
-                        <img src="{% static 'assets1/img/team/team-3.jpg' %}" class="img-fluid" alt="">
-                        <div class="member-content">
-                            <h4>Omondi Jeff</h4>
-                            <span>Developer</span>
-                            <div class="social">
-                                <a href="#hero"><i class="bi bi-twitter text-warning"></i></a>
-                                <a href="#hero"><i class="bi bi-facebook text-warning"></i></a>
-                                <a href="#hero"><i class="bi bi-instagram text-warning"></i></a>
-                                <a href="#hero"><i class="bi bi-linkedin text-warning"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Team Member -->
-
-
-
-            </div>
-
-        </div>
-    </section><!-- End Our Team Section -->
-
-
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-header">
-                <h2 class="text-warning">Frequently Asked Questions</h2>
-            </div>
-
-            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-10">
-                    <div class="accordion accordion-flush text-info" id="faqlist">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#faq-content-1">
-                                    <i class="bi bi-question-circle question-icon text-warning"></i>
-                                    What is SafeSys AI?
-                                </button>
-                            </h3>
-                            <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                                <div class="accordion-body">
-                                    SafeSys AI is an AI-powered safety and compliance system designed to transform risk management in the oil and gas industry
-                                </div>
-                            </div>
-                        </div><!-- # Faq item-->
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq-content-2">
-                                    <i class="bi bi-question-circle question-icon text-warning"></i>
-                                    Who is SafeSys AI for?
-                                </button>
-                            </h3>
-                            <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                                <div class="accordion-body">
-                                    SafeSys AI caters to a wide audience within the oil and gas sector, including oil & gas companies, safety managers, compliance officers, and IT professionals
-                                </div>
-                            </div>
-                        </div><!-- # Faq item-->
-                    </div>
-
+                    </div><!-- # Faq item-->
                 </div>
-            </div>
 
+            </div>
         </div>
-    </section><!-- End Frequently Asked Questions Section -->
+
+    </div>
+</section><!-- End Frequently Asked Questions Section -->
 
 </main><!-- End #main -->
 
@@ -766,7 +815,6 @@
     </div>
 </section><!-- End Contact Section -->
 
-<!-- ======= Footer ======= -->
 <footer id="footer" class="footer" style="background-color: white">
     <div class="container">
         <div class="row gy-4">
@@ -806,8 +854,8 @@
                 <p>
                     <strong class="text-black">Phone:</strong> +44 7442 923578<br>
                     <strong class="text-black">Email:</strong>
-                        josh@meliandialogue.com<br>
-                        jim.coke@meliandialogue.com
+                    josh@meliandialogue.com<br>
+                    jim.coke@meliandialogue.com
                     <br>
                 </p>
             </div>
@@ -816,15 +864,21 @@
     </div>
 
     <div class="container mt-4">
-        <div class="copyright">
-            &copy; Copyright <strong><span class="text-warning">SafeSysAi</span></strong>. All Rights Reserved
+        <div class="col-md-12 text-center">
+            <p class="text-black"><a href="#" class="text-black">&copy; 2024 SafeSysAi</a></p>
         </div>
-        <div class="credits">
-            Designed by <a class="text-warning" href="">SafeSysAi</a>
+    </div>
+
+    <!-- Terms and Conditions section -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="text-black"><a href="#" class="text-black">Terms of Service</a> | <a href="#" class="text-black">Privacy Policy</a></p>
+            </div>
         </div>
     </div>
 </footer><!-- End Footer -->
-<!-- End Footer -->
+
 <a href="#" class="scroll-top d-flex align-items-center bg-warning justify-content-center">
     <i class="bi bi-arrow-up-short text-white"></i></a>
 <div id="preloader"></div>

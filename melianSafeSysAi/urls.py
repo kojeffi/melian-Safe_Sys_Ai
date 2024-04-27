@@ -11,4 +11,5 @@ urlpatterns = [
     path('user_app/', include('user_app.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('employee_training/', include('employee_training.urls')),
+    path('chat/', include('chat.urls')),
 ]

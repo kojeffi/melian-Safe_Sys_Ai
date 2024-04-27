@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://keenthemes.com/products/saul-html-pro" />
     <meta property="og:site_name" content="Keenthemes | Saul HTML Free" />
     <link rel="canonical" href="https://preview.keenthemes.com/saul-html-free" />
-    <link rel="shortcut icon" href="{% static 'assets1/img/logo-color4.png' %}" />
+    <link rel="shortcut icon" href="{% static 'dashbord/assets/favicon.png' %}" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -397,114 +397,126 @@ else { themeMode = defaultThemeMode; } }
 										<span class="menu-arrow text-warning"></span>
 									</span>
                         <!--end:Menu link-->
-                        <!--begin:Menu sub-->
-                        <div class="menu-sub menu-sub-accordion">
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link active" href="{% url 'dashboard-url' %}">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot bg-warning"></span>
-												</span>
-                                    <span class="menu-title">Home</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot bg-warning"></span>
-												</span>
-                                    <span class="menu-title">Real Time Monitoring
-												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{% url 'dashboard' %}" data-kt-page="pro">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot bg-warning"></span>
-												</span>
-                                    <span class="menu-title">Safety Incident
-												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{% url 'dashboard' %}" data-kt-page="pro">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot bg-warning"></span>
-												</span>
-                                    <span class="menu-title">Equipment Maintenance
-												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot bg-warning"></span>
-												</span>
-                                    <span class="menu-title">Compliance Regulation
-												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{% url 'realtime:anomaly_detection' %}" data-kt-page="pro">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot bg-warning"></span>
-												</span>
-                                    <span class="menu-title">Anomaly Detection
-												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
+                      <!-- HTML Structure -->
+<div class="menu-sub menu-sub-accordion">
+    <!-- Home Menu Item -->
+    <div class="menu-item" id="home-menu-item">
+        <a class="menu-link {% if request.path == 'dashboard-url' %}active{% endif %}" href="{% url 'dashboard-url' %}">
+            <span class="menu-bullet">
+                <span class="bullet bullet-dot bg-warning"></span>
+            </span>
+            <span class="menu-title">Home</span>
+        </a>
+    </div>
 
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{% url 'alerts:create_incident' %}" data-kt-page="pro">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot bg-warning"></span>
-												</span>
-                                    <span class="menu-title">Create Incident
-												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link" href="{% url 'training_resources' %}" data-kt-page="pro">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot bg-warning"></span>
-												</span>
-                                    <span class="menu-title">Training Resources
-												<span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span></span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                        </div>
-                        <!--end:Menu sub-->
+    <!-- Real Time Monitoring Menu Item -->
+    <div class="menu-item" id="realtime-menu-item">
+        <a class="menu-link {% if request.path == 'realtime:predictive_maintenance' %}active{% endif %}" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
+            <span class="menu-bullet">
+                <span class="bullet bullet-dot bg-warning"></span>
+            </span>
+            <span class="menu-title">Real Time Monitoring
+                <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Safety Incident Menu Item -->
+    <div class="menu-item" id="safety-menu-item">
+        <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
+            <span class="menu-bullet">
+                <span class="bullet bullet-dot bg-warning"></span>
+            </span>
+            <span class="menu-title">Safety Incident
+                <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Equipment Maintenance Menu Item -->
+    <div class="menu-item" id="equipment-menu-item">
+        <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
+            <span class="menu-bullet">
+                <span class="bullet bullet-dot bg-warning"></span>
+            </span>
+            <span class="menu-title">Equipment Maintenance
+                <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Compliance Regulation Menu Item -->
+    <div class="menu-item" id="compliance-menu-item">
+        <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
+            <span class="menu-bullet">
+                <span class="bullet bullet-dot bg-warning"></span>
+            </span>
+            <span class="menu-title">Compliance Regulation
+                <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Anomaly Detection Menu Item -->
+    <div class="menu-item" id="anomaly-menu-item">
+        <a class="menu-link {% if request.path == 'realtime:anomaly_detection' %}active{% endif %}"
+           href="{% url 'realtime:anomaly_detection' %}" data-kt-page="pro">
+            <span class="menu-bullet">
+                <span class="bullet bullet-dot bg-warning"></span>
+            </span>
+            <span class="menu-title">Anomaly Detection
+                <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Create Incident Menu Item -->
+    <div class="menu-item" id="create-incident-menu-item">
+        <a class="menu-link {% if request.path == 'alerts:create_incident' %}active{% endif %}" href="{% url 'alerts:create_incident' %}" data-kt-page="pro">
+            <span class="menu-bullet">
+                <span class="bullet bullet-dot bg-warning"></span>
+            </span>
+            <span class="menu-title">Create Incident
+                <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
+            </span>
+        </a>
+    </div>
+
+    <!-- Training Resources Menu Item -->
+    <div class="menu-item" id="training-resources-menu-item">
+        <a class="menu-link {% if request.path == 'training_resources' %}active{% endif %}" href="{% url 'training_resources' %}" data-kt-page="pro">
+            <span class="menu-bullet">
+                <span class="bullet bullet-dot bg-warning"></span>
+            </span>
+            <span class="menu-title">Training Resources
+                <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
+            </span>
+        </a>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Function to handle menu item highlighting
+    function highlightActiveMenuItem() {
+        var currentPath = window.location.pathname;
+        document.querySelectorAll('.menu-item').forEach(function(item) {
+            var link = item.querySelector('.menu-link');
+            var href = link.getAttribute('href');
+            if (currentPath === href) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    // Highlight active menu item on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        highlightActiveMenuItem();
+    });
+</script>
+
                     </div>
                     <!--end:Menu item-->
                     <!--begin:Menu item-->
@@ -567,8 +579,7 @@ else { themeMode = defaultThemeMode; } }
                     <h2 class="fw-bold text-gray-800">Welcome to SafeSysAi</h2>
                     <!--end::Title-->
                     <div class="text-center mb-lg-5 pb-lg-3">
-                        <a href="{% url 'dashboard-url' %}" class="btn btn-sm btn-warning rounded-pill" data-bs-toggle="modal"
-                           data-bs-target="#kt_modal_create_account">Get Started</a>
+                        <a href="{% url 'home-url' %}" class="btn btn-sm btn-warning rounded-pill">Get Started</a>
                     </div>
                 </div>
                 <!--end::Footer-->
@@ -590,9 +601,6 @@ else { themeMode = defaultThemeMode; } }
                             <div class="page-title d-flex flex-column gap-1 me-3 mb-2">
                             </div>
                             <!--end::Page title-->
-                            <!--begin::Actions-->
-                            <a href="{% url 'alerts:create_incident' %}" class="btn btn-sm btn-warning ms-3 px-4 py-3">Create Incident</a>
-                            <!--end::Actions-->
                         </div>
                         <!--end::Toolbar wrapper-->
                     </div>

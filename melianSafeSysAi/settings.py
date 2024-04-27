@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'dashboard',
     'employee_training',
+    'chat',
 ]
 
 BOOTSTRAP5_FORM_RENDERER = 'django.forms.renderers.BuiltinRendering'

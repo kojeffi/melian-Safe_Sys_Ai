@@ -3,15 +3,15 @@
   --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-primary: "Inter", sans-serif;
+  --font-primary: "Roboto", sans-serif;
   --font-secondary: "Poppins", sans-serif;
 }
 
 /* Colors */
 :root {
-  --color-default: slategray;
+  --color-default: #333;
   --color-primary: orange;
-  --color-secondary: gray;
+  --color-secondary: #333;
 }
 
 /* Smooth scroll behavior */
@@ -24,17 +24,15 @@
 --------------------------------------------------------------*/
 body {
   font-family: var(--font-default);
-  color: slategray;
 }
 
 a {
-  color: slategray;
   text-decoration: none;
 }
 
 a:hover {
   color: orange;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 h1,
@@ -66,12 +64,9 @@ section {
   text-transform: uppercase;
   margin-bottom: 20px;
   padding-bottom: 0;
-  color: slategray;
+  color: #333;
   position: relative;
   z-index: 2;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
 }
 
 .section-header h2:after {
@@ -138,12 +133,12 @@ section {
 .breadcrumbs .page-header h2 {
   font-size: 56px;
   font-weight: 500;
-  color: slategray;
+  color: #333;
   font-family: var(--font-secondary);
 }
 
 .breadcrumbs .page-header p {
-  color: slategray;
+  color: #333;
 }
 
 .breadcrumbs nav {
@@ -159,11 +154,11 @@ section {
   padding: 0;
   font-size: 16px;
   font-weight: 600;
-  color: slategray;
+  color: #333;
 }
 
 .breadcrumbs nav ol a {
-  color: slategray;
+  color: #333;
   transition: 0.3s;
 }
 
@@ -201,13 +196,13 @@ section {
 
 .scroll-top i {
   font-size: 24px;
-  color: slategray;
+  color: #333;
   line-height: 0;
 }
 
 .scroll-top:hover {
   background: orange;
-  color: slategray;
+  color: #333;
 }
 
 .scroll-top.active {
@@ -279,7 +274,7 @@ section {
 }
 
 .header.sticked {
-  background: slategrey;
+  background: #f0f0f0;
   padding: 15px 0;
   box-shadow: 0px 2px 20px rgba(14, 29, 52, 0.1);
 }
@@ -293,7 +288,7 @@ section {
   font-size: 30px;
   margin: 0;
   font-weight: 700;
-  color: slategray;
+  color: #333;
   font-family: var(--font-primary);
 }
 
@@ -327,7 +322,7 @@ section {
     font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 400;
-    color: slategrey;
+    color: #333;
     white-space: nowrap;
     transition: 0.3s;
   }
@@ -339,12 +334,7 @@ section {
     margin-left: 5px;
   }
 
-  .navbar a:hover,
-  .navbar .active,
-  .navbar .active:focus,
-  .navbar li:hover>a {
-    color: slategray;
-  }
+
 
   .navbar .get-a-quote,
   .navbar .get-a-quote:focus {
