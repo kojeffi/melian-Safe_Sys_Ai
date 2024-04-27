@@ -34,7 +34,8 @@
       data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
       data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true"
       data-kt-app-toolbar-enabled="true" data-kt-app-aside-enabled="true" data-kt-app-aside-fixed="true"
-      data-kt-app-aside-push-toolbar="true" data-kt-app-aside-push-footer="true" class="app-default">
+      data-kt-app-aside-push-toolbar="true"
+      data-kt-app-aside-push-footer="true" class="app-default" style="background-color: #f0f0f0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
 <!--begin::Theme mode setup on page load-->
 <script>var defaultThemeMode = "light"; var themeMode; if ( document.documentElement )
 { if ( document.documentElement.hasAttribute("data-bs-theme-mode"))
@@ -46,19 +47,19 @@ else { themeMode = defaultThemeMode; } }
         "dark" : "light"; } document.documentElement.setAttribute("data-bs-theme", themeMode); }</script>
 <!--end::Theme mode setup on page load-->
 <!--begin::App-->
-<div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+<div class="d-flex flex-column flex-root app-root" id="kt_app_root" style="background-color: #f0f0f0;">
     <!--begin::Page-->
-    <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+    <div class="app-page flex-column flex-column-fluid" id="kt_app_page" style="background-color: #f0f0f0;">
         <!--begin::Header-->
-        <div id="kt_app_header" class="app-header d-flex flex-column flex-stack">
+        <div id="kt_app_header" class="app-header d-flex flex-column flex-stack" style="background-color: #f0f0f0;">
             <!--begin::Header main-->
-            <div class="d-flex align-items-center flex-stack flex-grow-1">
+            <div class="d-flex align-items-center flex-stack flex-grow-1" style="background-color: #f0f0f0;">
                 <div class="app-header-logo d-flex align-items-center flex-stack px-lg-11 mb-2"
-                     id="kt_app_header_logo">
+                     id="kt_app_header_logo" style="background-color: #f0f0f0;">
                     <!--begin::Sidebar mobile toggle-->
                     <div class="btn btn-icon btn-active-color-primary w-35px h-35px ms-3 me-2
-							 d-flex d-lg-none" id="kt_app_sidebar_mobile_toggle">
-                        <i class="ki-duotone ki-abstract-14 fs-2">
+							 d-flex d-lg-none" id="kt_app_sidebar_mobile_toggle" style="background-color: #f0f0f0;">
+                        <i class="ki-duotone ki-abstract-14 fs-2" style="background-color: #f0f0f0;">
                             <span class="path1"></span>
                             <span class="path2"></span>
                         </i>
@@ -67,15 +68,13 @@ else { themeMode = defaultThemeMode; } }
                     <!--begin::Logo-->
                     <a href="{% url 'home-url' %}" class="logo d-flex align-items-center">
                         <!-- Ensure the image logo is displayed -->
-                        <img height="30px" width="60px" src="{% static 'assets1/img/logo-color4.png' %}" alt="SafeSys AI Logo" style="max-width: 300vw; max-height: 100px;">
-                        <h1 class="text-dark">SafeSysAi</h1>
-                        <!-- Optionally, include a text logo alongside the image logo -->
+                        <img height="40px" width="150px" src="{% static 'dashbord/assets/logo.png' %}" alt="SafeSys AI Logo" style="max-width: 300vw; max-height: 100px;">
                     </a>
                     <!--end::Logo-->
                     <!--begin::Sidebar toggle-->
                     <div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-sm btn-icon
 							 btn-color-warning me-n2 d-none d-lg-flex" data-kt-toggle="true" data-kt-toggle-state="active"
-                         data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
+                         data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize" style="background-color: #f0f0f0;">
                         <i class="ki-duotone ki-exit-left fs-2x rotate-180">
                             <span class="path1"></span>
                             <span class="path2"></span>
@@ -84,7 +83,7 @@ else { themeMode = defaultThemeMode; } }
                     <!--end::Sidebar toggle-->
                 </div>
                 <!--begin::Navbar-->
-                <div class="app-navbar flex-grow-1 justify-content-end" id="kt_app_header_navbar">
+                <div class="app-navbar flex-grow-1 justify-content-end" id="kt_app_header_navbar" style="background-color: #f0f0f0;">
                     <div class="app-navbar-item d-flex align-items-stretch flex-lg-grow-1 me-2 me-lg-0">
                         <!--begin::Search-->
                         <div id="kt_header_search" class="header-search d-flex align-items-center w-lg-350px" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-search-responsive="true" data-kt-menu-trigger="auto" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-start">
@@ -140,7 +139,7 @@ else { themeMode = defaultThemeMode; } }
                                             <!--end::Category title-->
                                             <!--begin::Item-->
                                             <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
-                                            
+
                                                 <!--begin::Title-->
                                                 <div class="d-flex flex-column justify-content-start fw-semibold">
                                                     <span class="fs-6 fw-semibold">Training Resources</span>
@@ -148,14 +147,14 @@ else { themeMode = defaultThemeMode; } }
                                                 <!--end::Title-->
                                             </a>
                                             <!--end::Item-->
-                                            
+
                                         </div>
                                         <!--end::Items-->
                                     </div>
                                     <!--end::Recently viewed-->
                                     <!--begin::Recently viewed-->
                                     <div class="" data-kt-search-element="main">
-                                      
+
                                         <!--begin::Items-->
                                         <div class="scroll-y mh-200px mh-lg-325px">
                                             <!--begin::Item-->
@@ -177,19 +176,19 @@ else { themeMode = defaultThemeMode; } }
                                                 <!--end::Title-->
                                             </div>
                                             <!--end::Item-->
-                                            
+
                                         </div>
                                         <!--end::Items-->
                                     </div>
                                     <!--end::Recently viewed-->
                                 </div>
                                 <!--end::Wrapper-->
-                            
+
                             </div>
                             <!--end::Menu-->
                         </div>
                         <!--end::Search-->
-                        
+
 
                     </div>
 
@@ -376,7 +375,7 @@ else { themeMode = defaultThemeMode; } }
     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
 
         <!--begin::Sidebar-->
-        <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+        <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle" style="background-color: #f0f0f0;">
             <!--begin::Main-->
             <div class="d-flex flex-column justify-content-between h-100 hover-scroll-overlay-y my-2 d-flex flex-column" id="kt_app_sidebar_main" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_header" data-kt-scroll-wrappers="#kt_app_main" data-kt-scroll-offset="5px">
                 <!--begin::Sidebar menu-->
@@ -397,125 +396,125 @@ else { themeMode = defaultThemeMode; } }
 										<span class="menu-arrow text-warning"></span>
 									</span>
                         <!--end:Menu link-->
-                      <!-- HTML Structure -->
-<div class="menu-sub menu-sub-accordion">
-    <!-- Home Menu Item -->
-    <div class="menu-item" id="home-menu-item">
-        <a class="menu-link {% if request.path == 'dashboard-url' %}active{% endif %}" href="{% url 'dashboard-url' %}">
+                        <!-- HTML Structure -->
+                        <div class="menu-sub menu-sub-accordion">
+                            <!-- Home Menu Item -->
+                            <div class="menu-item" id="home-menu-item">
+                                <a class="menu-link {% if request.path == 'dashboard-url' %}active{% endif %}" href="{% url 'dashboard-url' %}">
             <span class="menu-bullet">
                 <span class="bullet bullet-dot bg-warning"></span>
             </span>
-            <span class="menu-title">Home</span>
-        </a>
-    </div>
+                                    <span class="menu-title">Home</span>
+                                </a>
+                            </div>
 
-    <!-- Real Time Monitoring Menu Item -->
-    <div class="menu-item" id="realtime-menu-item">
-        <a class="menu-link {% if request.path == 'realtime:predictive_maintenance' %}active{% endif %}" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
+                            <!-- Real Time Monitoring Menu Item -->
+                            <div class="menu-item" id="realtime-menu-item">
+                                <a class="menu-link {% if request.path == 'realtime:predictive_maintenance' %}active{% endif %}" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
             <span class="menu-bullet">
                 <span class="bullet bullet-dot bg-warning"></span>
             </span>
-            <span class="menu-title">Real Time Monitoring
+                                    <span class="menu-title">Real Time Monitoring
                 <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
             </span>
-        </a>
-    </div>
+                                </a>
+                            </div>
 
-    <!-- Safety Incident Menu Item -->
-    <div class="menu-item" id="safety-menu-item">
-        <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
+                            <!-- Safety Incident Menu Item -->
+                            <div class="menu-item" id="safety-menu-item">
+                                <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
             <span class="menu-bullet">
                 <span class="bullet bullet-dot bg-warning"></span>
             </span>
-            <span class="menu-title">Safety Incident
+                                    <span class="menu-title">Safety Incident
                 <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
             </span>
-        </a>
-    </div>
+                                </a>
+                            </div>
 
-    <!-- Equipment Maintenance Menu Item -->
-    <div class="menu-item" id="equipment-menu-item">
-        <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
+                            <!-- Equipment Maintenance Menu Item -->
+                            <div class="menu-item" id="equipment-menu-item">
+                                <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
             <span class="menu-bullet">
                 <span class="bullet bullet-dot bg-warning"></span>
             </span>
-            <span class="menu-title">Equipment Maintenance
+                                    <span class="menu-title">Equipment Maintenance
                 <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
             </span>
-        </a>
-    </div>
+                                </a>
+                            </div>
 
-    <!-- Compliance Regulation Menu Item -->
-    <div class="menu-item" id="compliance-menu-item">
-        <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
+                            <!-- Compliance Regulation Menu Item -->
+                            <div class="menu-item" id="compliance-menu-item">
+                                <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
             <span class="menu-bullet">
                 <span class="bullet bullet-dot bg-warning"></span>
             </span>
-            <span class="menu-title">Compliance Regulation
+                                    <span class="menu-title">Compliance Regulation
                 <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
             </span>
-        </a>
-    </div>
+                                </a>
+                            </div>
 
-    <!-- Anomaly Detection Menu Item -->
-    <div class="menu-item" id="anomaly-menu-item">
-        <a class="menu-link {% if request.path == 'realtime:anomaly_detection' %}active{% endif %}"
-           href="{% url 'realtime:anomaly_detection' %}" data-kt-page="pro">
+                            <!-- Anomaly Detection Menu Item -->
+                            <div class="menu-item" id="anomaly-menu-item">
+                                <a class="menu-link {% if request.path == 'realtime:anomaly_detection' %}active{% endif %}"
+                                   href="{% url 'realtime:anomaly_detection' %}" data-kt-page="pro">
             <span class="menu-bullet">
                 <span class="bullet bullet-dot bg-warning"></span>
             </span>
-            <span class="menu-title">Anomaly Detection
+                                    <span class="menu-title">Anomaly Detection
                 <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
             </span>
-        </a>
-    </div>
+                                </a>
+                            </div>
 
-    <!-- Create Incident Menu Item -->
-    <div class="menu-item" id="create-incident-menu-item">
-        <a class="menu-link {% if request.path == 'alerts:create_incident' %}active{% endif %}" href="{% url 'alerts:create_incident' %}" data-kt-page="pro">
+                            <!-- Create Incident Menu Item -->
+                            <div class="menu-item" id="create-incident-menu-item">
+                                <a class="menu-link {% if request.path == 'alerts:create_incident' %}active{% endif %}" href="{% url 'alerts:create_incident' %}" data-kt-page="pro">
             <span class="menu-bullet">
                 <span class="bullet bullet-dot bg-warning"></span>
             </span>
-            <span class="menu-title">Create Incident
+                                    <span class="menu-title">Create Incident
                 <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
             </span>
-        </a>
-    </div>
+                                </a>
+                            </div>
 
-    <!-- Training Resources Menu Item -->
-    <div class="menu-item" id="training-resources-menu-item">
-        <a class="menu-link {% if request.path == 'training_resources' %}active{% endif %}" href="{% url 'training_resources' %}" data-kt-page="pro">
+                            <!-- Training Resources Menu Item -->
+                            <div class="menu-item" id="training-resources-menu-item">
+                                <a class="menu-link {% if request.path == 'training_resources' %}active{% endif %}" href="{% url 'training_resources' %}" data-kt-page="pro">
             <span class="menu-bullet">
                 <span class="bullet bullet-dot bg-warning"></span>
             </span>
-            <span class="menu-title">Training Resources
+                                    <span class="menu-title">Training Resources
                 <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
             </span>
-        </a>
-    </div>
-</div>
+                                </a>
+                            </div>
+                        </div>
 
-<!-- JavaScript -->
-<script>
-    // Function to handle menu item highlighting
-    function highlightActiveMenuItem() {
-        var currentPath = window.location.pathname;
-        document.querySelectorAll('.menu-item').forEach(function(item) {
-            var link = item.querySelector('.menu-link');
-            var href = link.getAttribute('href');
-            if (currentPath === href) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
-        });
-    }
+                        <!-- JavaScript -->
+                        <script>
+                            // Function to handle menu item highlighting
+                            function highlightActiveMenuItem() {
+                                var currentPath = window.location.pathname;
+                                document.querySelectorAll('.menu-item').forEach(function(item) {
+                                    var link = item.querySelector('.menu-link');
+                                    var href = link.getAttribute('href');
+                                    if (currentPath === href) {
+                                        item.classList.add('active');
+                                    } else {
+                                        item.classList.remove('active');
+                                    }
+                                });
+                            }
 
-    // Highlight active menu item on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        highlightActiveMenuItem();
-    });
-</script>
+                            // Highlight active menu item on page load
+                            document.addEventListener('DOMContentLoaded', function() {
+                                highlightActiveMenuItem();
+                            });
+                        </script>
 
                     </div>
                     <!--end:Menu item-->
@@ -587,30 +586,7 @@ else { themeMode = defaultThemeMode; } }
             <!--end::Main-->
         </div>
         <!--end::Sidebar-->
-        <!--begin::Main-->
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-            <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid">
-                <!--begin::Toolbar-->
-                <div id="kt_app_toolbar" class="app-toolbar pt-5">
-                    <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
-                        <!--begin::Toolbar wrapper-->
-                        <div class="app-toolbar-wrapper d-flex flex-stack flex-wrap gap-4 w-100">
-                            <!--begin::Page title-->
-                            <div class="page-title d-flex flex-column gap-1 me-3 mb-2">
-                            </div>
-                            <!--end::Page title-->
-                        </div>
-                        <!--end::Toolbar wrapper-->
-                    </div>
-                    <!--end::Toolbar container-->
-                </div>
-                <!--end::Toolbar-->
-            </div>
-            <!--end::Content wrapper-->
-        </div>
-        <!--end:::Main-->
+       
 
         {% block content %}
 
