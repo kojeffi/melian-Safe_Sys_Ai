@@ -7,5 +7,6 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard-url'),
     path('profile/', views.profile, name='profile-url'),
     path('contact/', views.contact, name='contact'),
-    path('change_password/', views.change_password, name='change_password')
+    path('change_password/', views.change_password, name='change_password'),
+    path('chatbot_view/', views.chatbot_view, name='chatbot_view'),
 ]

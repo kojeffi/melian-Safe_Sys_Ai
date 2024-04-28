@@ -195,7 +195,7 @@ else { themeMode = defaultThemeMode; } }
                     <!--begin::Notification-->
                     <div class="d-flex align-items-center">
                         <button class="btn btn-icon btn-active-light-warning  me-3">
-                            <i class="fas fa-bell icon-sm text-warning" style="font-size: 30px">{{ alert_count }}</i>
+                            <i class="fas fa-bell icon-sm text-warning" style="font-size: 20px">{{ alert_count }}</i>
 
                         </button>
                     </div>
@@ -210,10 +210,10 @@ else { themeMode = defaultThemeMode; } }
                              data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
                              data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
                             {% if user.profile.profile_photo %}
-                                <img src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
+                                <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
                             {% else %}
                                 <!-- Placeholder image or default profile photo -->
-                                <img src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
+                                <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
                             {% endif %}
 
                             {#                            <img src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">#}
@@ -228,14 +228,14 @@ else { themeMode = defaultThemeMode; } }
                                     <!--begin::Avatar-->
                                     <div class="symbol symbol-50px me-5">
                                         {% if user.profile.profile_photo %}
-                                            <img src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
+                                            <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
                                         {% else %}
                                             <!-- Placeholder image or default profile photo -->
-                                            <img src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
+                                            <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
                                         {% endif %}
                                         <!--end::Avatar-->
-                                        <p>{{ user.username }}</p>
-                                        <p>{{ user.email }}</p>
+                                        <p class="text-danger">{{ user.username }}</p>
+                                        <p class="text-danger">{{ user.email }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -586,7 +586,7 @@ else { themeMode = defaultThemeMode; } }
             <!--end::Main-->
         </div>
         <!--end::Sidebar-->
-       
+
 
         {% block content %}
 

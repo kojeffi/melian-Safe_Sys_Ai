@@ -24,34 +24,72 @@
 												<!--end::Header-->
 												<!--begin::Body-->
 												<div class="card-body pt-6">
- 
-                                        <!-- Upload Form -->
-                                        <div class="form-card bg-white p-4">
-                                            <form method="post" enctype="multipart/form-data">
-                                                {% csrf_token %}
-                                                <div class="mb-3">
-                                                    {% bootstrap_form form %}
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="fileInput" class="form-label">Choose File</label>
-                                                    <input class="form-control" type="file" id="fileInput" name="file">
-                                                </div>
-                                                <button type="submit" class="btn btn-warning">Upload File and Detect Anomalies</button>
-                                            </form>
-                                        </div>
-                                        <!-- Predictive Maintenance Results -->
-                                        {% if maintenance_results %}
-                                            <hr>
-                                            <div class="form-card bg-white p-4">
-                                                <h2 class="mb-4">Predictive Maintenance Results</h2>
-                                                <ul class="list-group list-group-flush">
-                                                    {% for result in maintenance_results %}
-                                                        <li class="list-group-item">{{ result.equipment_name }} - {{ result.maintenance_description }}</li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </div>
-                                        {% endif %}
-                                    </div>
+
+    <!-- Upload Form -->
+    <div class="form-card bg-white p-4">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                {% bootstrap_form form %}
+            </div>
+            <div class="mb-3">
+                <label for="fileInput" class="form-label">Choose File</label>
+                <input class="form-control" type="file" id="fileInput" name="file">
+            </div>
+            <button type="submit" class="btn btn-warning">Upload File and Detect Anomalies</button>
+        </form>
+    </div>
+
+    <!-- Anomaly Detection Results -->
+    {% if anomaly_results %}
+        <hr>
+        <div class="form-card bg-white p-4">
+            <h2 class="mb-4">Anomaly Detection Results</h2>
+            <ul class="list-group list-group-flush">
+                {% for result in anomaly_results %}
+                    <li class="list-group-item">{{ result.risk_name }} - {{ result.risk_description }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <!-- Incident Prediction Results -->
+    {% if incident_predictions %}
+        <hr>
+        <div class="form-card bg-white p-4">
+            <h2 class="mb-4">Incident Prediction Results</h2>
+            <ul class="list-group list-group-flush">
+                {% for prediction in incident_predictions %}
+                    <li class="list-group-item">{{ prediction.incident_name }} - {{ prediction.prediction }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <!-- Predictive Maintenance Results -->
+    {% if maintenance_results %}
+        <hr>
+        <div class="form-card bg-white p-4">
+            <h2 class="mb-4">Predictive Maintenance Results</h2>
+            <ul class="list-group list-group-flush">
+                {% for result in maintenance_results %}
+                    <li class="list-group-item">{{ result.equipment_name }} - {{ result.maintenance_description }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <!-- Optimized Maintenance Schedule -->
+    {% if optimized_schedule %}
+        <hr>
+        <div class="form-card bg-white p-4">
+            <h2 class="mb-4">Optimized Maintenance Schedule</h2>
+            <p>{{ optimized_schedule }}</p>
+        </div>
+    {% endif %}
+
+</div>
+
 
                                     </div>
                                     <!-- end::Toolbar -->
