@@ -407,7 +407,9 @@ else { themeMode = defaultThemeMode; } }
                                     <span class="menu-title">Home</span>
                                 </a>
                             </div>
-
+                        
+                        
+                        
                             <!-- Real Time Monitoring Menu Item -->
                             <div class="menu-item" id="realtime-menu-item">
                                 <a class="menu-link {% if request.path == 'realtime:predictive_maintenance' %}active{% endif %}" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
@@ -426,36 +428,12 @@ else { themeMode = defaultThemeMode; } }
             <span class="menu-bullet">
                 <span class="bullet bullet-dot bg-warning"></span>
             </span>
-                                    <span class="menu-title">Safety Incident
+                                    <span class="menu-title">Compliance Reports
                 <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
             </span>
                                 </a>
                             </div>
-
-                            <!-- Equipment Maintenance Menu Item -->
-                            <div class="menu-item" id="equipment-menu-item">
-                                <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
-            <span class="menu-bullet">
-                <span class="bullet bullet-dot bg-warning"></span>
-            </span>
-                                    <span class="menu-title">Equipment Maintenance
-                <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
-            </span>
-                                </a>
-                            </div>
-
-                            <!-- Compliance Regulation Menu Item -->
-                            <div class="menu-item" id="compliance-menu-item">
-                                <a class="menu-link {% if request.path == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}" data-kt-page="pro">
-            <span class="menu-bullet">
-                <span class="bullet bullet-dot bg-warning"></span>
-            </span>
-                                    <span class="menu-title">Compliance Regulation
-                <span class="badge badge-pro badge-light-danger fw-semibold fs-8 px-2 py-1 ms-1" data-bs-toggle="tooltip" title="Upgrade to Pro to get this"></span>
-            </span>
-                                </a>
-                            </div>
-
+                        
                             <!-- Anomaly Detection Menu Item -->
                             <div class="menu-item" id="anomaly-menu-item">
                                 <a class="menu-link {% if request.path == 'realtime:anomaly_detection' %}active{% endif %}"
