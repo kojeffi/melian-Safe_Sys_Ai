@@ -112,6 +112,7 @@ DATABASES = {
 database_url = os.environ.get('DATABASE_URL')
 DATABASES["default"] = dj_database_url.parse(database_url)
 
+#postgres://safe_postgresql_user:xo7BlNDwPDk7kOsYOFkKmStCGtMAN0W0@dpg-cob0p18l5elc73b0j9ag-a.oregon-postgres.render.com/safe_postgresql
 
 #postgres://safe_postgresql_user:xo7BlNDwPDk7kOsYOFkKmStCGtMAN0W0@dpg-cob0p18l5elc73b0j9ag-a.oregon-postgres.render.com/safe_postgresql
 #database_url
