@@ -424,7 +424,7 @@
 <div class="cookie-banner">
     <p class="text-black">This website uses cookies to ensure you get the best experience on our website.</p>
     <button class="bg-success text-white" onclick="acceptCookies()">Accept</button>
-    <button class="bg-dark text-white" onclick="learnMore()">Learn More</button>
+{#    <button class="bg-dark text-white" onclick="learnMore()">Learn More</button>#}
 </div>
 
 <!-- Your website content goes here -->
@@ -669,7 +669,7 @@
                 <div class="member">
                     <img src="{% static 'assets1/img/team/team-1.jpg' %}" class="img-fluid" alt="">
                     <div class="member-content">
-                        <h4>Jimy Kee</h4>
+                        <h4>Jimmy Coke</h4>
                         <span>Cheif Executive Officer</span>
                         <div class="social">
                             <a href="#hero"><i class="bi bi-twitter text-warning"></i></a>
@@ -770,7 +770,6 @@
     </div>
 </section><!-- End Frequently Asked Questions Section -->
 
-</main><!-- End #main -->
 
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact bg-light">
@@ -867,60 +866,57 @@
     </div>
 </section><!-- End Contact Section -->
 
-<footer id="footer" class="footer" style="background-color: white">
+<footer id="footer" class="footer" style="background-color: #f5f5f5; padding: 40px 0;">
     <div class="container">
-        <div class="row gy-4">
-            <div class="col-lg-5 col-md-12 footer-info">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 footer-info">
                 <a href="index.html" class="logo d-flex align-items-center">
-                    <span class="text-black">SafeSYSAi</span>
+                    <span class="text-dark" style="font-size: 28px; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">SafeSYSAi</span>
                 </a>
-                <div class="social-links d-flex mt-4">
-                    <a href="#" class="twitter"><i class="bi bi-twitter text-black"></i></a>
-                    <a href="#" class="facebook"><i class="bi bi-facebook text-black"></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-instagram text-black"></i></a>
-                    <a href="#" class="linkedin"><i class="bi bi-linkedin text-black"></i></a>
+                <p class="mt-4 text-dark">Empowering safety and compliance in the oil and gas industry through AI-driven solutions.</p>
+                <div class="social-links mt-4">
+                    <a href="#" class="twitter me-3"><i class="bi bi-twitter text-dark"></i></a>
+                    <a href="#" class="facebook me-3"><i class="bi bi-facebook text-dark"></i></a>
+                    <a href="#" class="instagram me-3"><i class="bi bi-instagram text-dark"></i></a>
+                    <a href="#" class="linkedin me-3"><i class="bi bi-linkedin text-dark"></i></a>
                 </div>
             </div>
 
-            <div class="col-lg-2 col-6 footer-links">
-                <h4 class="text-black">Useful Links</h4>
-                <ul>
-                    <li><a class="text-black" href="#hero">Home</a></li>
-                    <li><a class="text-black" href="#hero">Signin</a></li>
-                    <li><a class="text-black" href="#hero">Signup</a></li>
-                    <li><a href="#">Acceptable Use Notice</a></li>
-                    <li><a href="#">Cookies Policy</a></li>
-                    <li><a href="#">Accessibility</a></li>
+            <div class="col-lg-2 col-md-6 footer-links">
+                <h4 class="text-dark mb-4">Useful Links</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#hero" class="text-dark">Home</a></li>
+                    <li><a href="#hero" class="text-dark">Signin</a></li>
+                    <li><a href="#hero" class="text-dark">Signup</a></li>
                 </ul>
             </div>
 
-            <div class="col-lg-2 col-6 footer-links">
-                <h4 class="text-black">Our Services</h4>
-                <ul>
-                    <li><a class="text-black" href="#service">Real-Time Safety Risk Management</a></li>
-                    <li><a class="text-black" href="#service">Predictive Maintenance & Risk Assessment</a></li>
-                    <li><a class="text-black" href="#service">Streamlined Compliance Management</a></li>
-                    <li><a class="text-black" href="#service">AI-Driven Training & Incident Management</a></li>
+            <div class="col-lg-2 col-md-6 footer-links">
+                <h4 class="text-dark mb-4">Our Services</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#service" class="text-dark">Real-Time Safety Risk Management</a></li>
+                    <li><a href="#service" class="text-dark">Predictive Maintenance & Risk Assessment</a></li>
+                    <li><a href="#service" class="text-dark">Streamlined Compliance Management</a></li>
+                    <li><a href="#service" class="text-dark">AI-Driven Training & Incident Management</a></li>
                 </ul>
             </div>
 
-            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                <h4 class="text-black">Contact Us</h4>
-                <p>
-                    <strong class="text-black">Phone:</strong> +44 7442 923578<br>
-                    <strong class="text-black">Email:</strong>
-                    josh@meliandialogue.com<br>
-                    jim.coke@meliandialogue.com
-                    <br>
+            <div class="col-lg-4 col-md-6 footer-contact">
+                <h4 class="text-dark mb-4">Contact Us</h4>
+                <p class="text-dark">
+                    <strong>Phone:</strong> +44 7442 923578<br>
+                    <strong>Email:</strong> <a href="mailto:josh@meliandialogue.com" class="text-dark">josh@meliandialogue.com</a><br>
+                    <strong></strong> <a href="mailto:jim.coke@meliandialogue.com" class="text-dark">jim.coke@meliandialogue.com</a>
                 </p>
             </div>
-
         </div>
     </div>
 
     <div class="container mt-4">
-        <div class="col-md-12 text-center">
-            <p class="text-black"><a href="#" class="text-black">&copy; 2024 SafeSysAi</a></p>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="text-dark">&copy; 2024 SafeSysAi. All rights reserved.</p>
+            </div>
         </div>
     </div>
 
@@ -928,11 +924,88 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-12 text-center">
-                <p class="text-black"><a href="#" class="text-black">Terms of Service</a> | <a href="#" class="text-black">Privacy Policy</a></p>
+                <p class="text-dark">
+                    <a href="#" class="text-dark" onclick="showTerms()" 
+                       style="text-decoration: none; font-weight: bold;">Terms of Service | Privacy Policy | Accessibility | Acceptable Use Notice</a></p>
             </div>
         </div>
     </div>
-</footer><!-- End Footer -->
+</footer>
+
+<!-- Terms and Conditions popup -->
+<div id="termsPopup" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="hideTerms()" style="font-size: 28px; font-weight: bold;">&times;</span>
+        <div class="container">
+            <h1 class="text-center mb-4" style="font-size: 32px; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">SafeSys AI Terms and Conditions</h1>
+            <h2 class="text-center mb-3" style="font-size: 24px; font-weight: bold;">Terms of Service</h2>
+            <p style="line-height: 1.8; margin-bottom: 30px;">SafeSys AI is an AI-driven safety and compliance management system specifically designed for the oil and gas sector, aiming to revolutionise how safety risks and compliance are managed in real-time. This system leverages artificial intelligence to enhance workplace safety, optimise operational efficiency, and ensure adherence to regulatory standards, thereby becoming an essential tool for industry leaders. SafeSys AI is intended for oil and gas companies, safety managers, compliance officers, and IT professionals in the energy sector. It is to be used for monitoring, predicting, and managing safety risks and compliance issues within the oil and gas industry.</p>
+
+            <h2 class="text-center mb-3" style="font-size: 24px; font-weight: bold;">Privacy Policy</h2>
+            <p style="line-height: 1.8;">Our privacy policy outlines how we collect, use, disclose, and safeguard your information when you use our service. By using SafeSys AI, you consent to the terms and conditions outlined in this policy.</p>
+
+            <h2 class="text-center mb-3" style="font-size: 24px; font-weight: bold;">Acceptable Use Notice</h2>
+            <p style="line-height: 1.8;">This Acceptable Use Notice governs your use of SafeSys AI. By using our service, you agree to comply with this notice. The notice outlines acceptable and unacceptable uses of our service, including prohibited activities.</p>
+
+            <h2 class="text-center mb-3" style="font-size: 24px; font-weight: bold;">Accessibility</h2>
+            <p style="line-height: 1.8;">We are committed to ensuring accessibility for all users, including those with disabilities. SafeSys AI is designed to be accessible and user-friendly, with features that support accessibility standards and guidelines.</p>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    /* Add your CSS styles here */
+    /* Example CSS styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    function showTerms() {
+        document.getElementById('termsPopup').style.display = 'block';
+    }
+
+    function hideTerms() {
+        document.getElementById('termsPopup').style.display = 'none';
+    }
+</script>
+
+
 
 <a href="#" class="scroll-top d-flex align-items-center bg-warning justify-content-center">
     <i class="bi bi-arrow-up-short text-white"></i></a>
