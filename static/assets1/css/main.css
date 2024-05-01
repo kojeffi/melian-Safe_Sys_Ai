@@ -483,7 +483,7 @@ section {
 
   .navbar .get-a-quote,
   .navbar .get-a-quote:focus {
-    background: #f0f0f0;
+    background: blue;
     padding: 8px 20px;
     border-radius: 4px;
     margin: 15px;
@@ -492,8 +492,8 @@ section {
 
   .navbar .get-a-quote:hover,
   .navbar .get-a-quote:focus:hover {
-    color: slategray;
-    background: #f0f0f0;
+    color: white;
+    background: blue;
   }
 
   .navbar .dropdown ul,
