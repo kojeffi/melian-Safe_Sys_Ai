@@ -72,6 +72,15 @@
         <div class="d-flex flex-column flex-lg-row-fluid py-10">
             <!--begin::Content-->
             <div class="d-flex flex-center flex-column flex-column-fluid">
+            
+{#            {% if messages %}#}
+{#  <ul class="messages">#}
+{#    {% for message in messages %}#}
+{#      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>#}
+{#    {% endfor %}#}
+{#  </ul>#}
+{#{% endif %}#}
+
                 <!--begin::Wrapper-->
                 {% if messages %}
                     <div class="messages text-success">

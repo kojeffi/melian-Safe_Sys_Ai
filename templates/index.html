@@ -239,14 +239,15 @@
                 <div style="height: 50px;"></div>
                 <!-- Chatbot Container -->
                 <div class="chatbot-container">
-                    <div class="chatbot-icon" onclick="toggleChatbot()">
+                
+                    <div class="chatbot-icon  bg-warning" onclick="toggleChatbot()">
                         <i class="fas fa-comment-alt"></i>
-                        <span class="chatbot-status">Chatbot is ready to help you</span>
+                        <span class="chatbot-status bg-warning">Chatbot is ready to help you</span>
                     </div>
                     <div class="chatbot-form-container">
                         {% if message %}
                             <div class="message-container">
-                                <h3 class="text-warning text-center mb-4"><i class="fas fa-comment-alt"></i> SafeSysAi Chatbot</h3>
+                                <h3 class="text-orange text-center mb-4"><i class="fas fa-comment-alt"></i> SafeSysAi Chatbot</h3>
                                 <p class="text-dark"><b>You:</b> {{ message.user_message }}</p>
                                 <p class="text-success"><b>Bot:</b> {{ message.bot_response }}</p>
                             </div>
@@ -385,16 +386,11 @@
 </script>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
     .cookie-banner {
         position: fixed;
         bottom: 0;
-        left: 0;
-        width: 100%;
+        left: 30px;
+        width: 60%;
         background-color: #fff;
         color: #fff;
         padding: 10px 20px;
@@ -421,10 +417,10 @@
 </style>
 
 <!-- Cookie Banner -->
-<div class="cookie-banner">
+<div class="cookie-banner bg-light">
     <p class="text-black">This website uses cookies to ensure you get the best experience on our website.</p>
     <button class="bg-success text-white" onclick="acceptCookies()">Accept</button>
-{#    <button class="bg-dark text-white" onclick="learnMore()">Learn More</button>#}
+    <button class="bg-dark text-white" onclick="learnMore()">Learn More</button>
 </div>
 
 <!-- Your website content goes here -->
@@ -470,7 +466,6 @@
                 </video>
             </div>
             <div class="col-lg-6 content order-last  order-lg-first">
-                <br><br>
                 <h3 class="text-warning">About Us</h3>
                 <p>
                     SafeSys AI anticipates safety risks, ensuring market relevance. Its adaptable model and customisable modules set a new standard in safety and compliance management.

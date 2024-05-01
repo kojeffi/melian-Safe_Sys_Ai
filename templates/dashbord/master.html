@@ -206,18 +206,17 @@ else { themeMode = defaultThemeMode; } }
 
                     <div class="app-navbar-item ms-3 ms-lg-4 me-lg-2" id="kt_header_user_menu_toggle">
                         <!--begin::Menu wrapper-->
-                        <div class="cursor-pointer symbol symbol-30px symbol-lg-40px"
-                             data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-                             data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                            {% if user.profile.profile_photo %}
-                                <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
-                            {% else %}
-                                <!-- Placeholder image or default profile photo -->
-                                <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
-                            {% endif %}
+                       <div class="cursor-pointer symbol symbol-30px symbol-lg-40px"
+     data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+     data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+    {% if user.profile.profile_photo %}
+       <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
+    {% else %}
+        <!-- Placeholder image or default profile photo -->
+        <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
+    {% endif %}
+</div>
 
-                            {#                            <img src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">#}
-                        </div>
                         <!--begin::User account menu-->
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded
                         menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
@@ -234,8 +233,8 @@ else { themeMode = defaultThemeMode; } }
                                             <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
                                         {% endif %}
                                         <!--end::Avatar-->
-                                        <p class="text-danger">{{ user.username }}</p>
-                                        <p class="text-danger">{{ user.email }}</p>
+                                        <p class="text-success">{{ user.username }}</p>
+                                        <p class="text-success">{{ user.email }}</p>
                                     </div>
                                 </div>
                             </div>
