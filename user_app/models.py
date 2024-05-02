@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.dispatch import receiver
 from PIL import Image
 
 class Profile(models.Model):
@@ -11,17 +10,14 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username
 
-@receiver(models.signals.post_save, sender=Profile)
-def resize_profile_photo(sender, instance, created, **kwargs):
-    if instance.profile_photo:
-        img = Image.open(instance.profile_photo.path)
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            img.save(instance.profile_photo.path)
-
-
-from django.db import models
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.profile_photo:
+            img = Image.open(self.profile_photo.path)
+            if img.height > 300 or img.width > 300:
+                output_size = (300, 300)
+                img.thumbnail(output_size)
+                img.save(self.profile_photo.path)
 
 class Message(models.Model):
     user_message = models.CharField(max_length=200)
