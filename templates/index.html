@@ -178,7 +178,7 @@
                         {% endif %}
                         <form method="POST" class="message-form" action="{% url 'chatbot_view' %}">
                             {% csrf_token %}
-                            <input type="text" name="user_message" class="form-control rounded mb-2" placeholder="Type your message here" autocomplete="on" style="background-color: #f0f0f0">
+                            <input type="text" name="user_message" class="form-control rounded mb-2" placeholder="Type here..." autocomplete="on" style="background-color: #f0f0f0">
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-paper-plane"></i> Send</button>
                         </form>
