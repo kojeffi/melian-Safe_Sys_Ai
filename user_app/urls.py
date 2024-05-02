@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('register/', views.register, name='register-url'),
@@ -10,3 +12,7 @@ urlpatterns = [
     path('change_password/', views.change_password, name='change_password'),
     path('chatbot_view/', views.chatbot_view, name='chatbot_view'),
 ]
+
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

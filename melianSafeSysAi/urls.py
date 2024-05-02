@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 from . import views as my_views
 
@@ -12,3 +14,7 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('employee_training/', include('employee_training.urls')),
 ]
+
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
