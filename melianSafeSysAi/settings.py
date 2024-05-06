@@ -1,4 +1,5 @@
 
+
 """
 Django settings for melianSafeSysAi project.
 
@@ -57,7 +58,7 @@ INSTALLED_APPS = [
 
 BOOTSTRAP5_FORM_RENDERER = 'django.forms.renderers.BuiltinRendering'
 
-cRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Set your authentication backend
