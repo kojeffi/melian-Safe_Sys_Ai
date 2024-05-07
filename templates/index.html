@@ -43,8 +43,7 @@
             position: relative; /* Add relative positioning */
         }
 
-        nav ul li a.active::after,
-        nav ul li a:hover::after {
+        nav ul li a.active::after{
             content: "";
             position: absolute;
             left: 18px;
@@ -93,7 +92,7 @@
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a href="{% url 'home-url' %}" class="active">Home</a></li>
+                <li><a href="{% url 'home-url' %}" class="text-warning active">Home</a></li>
                 <li><a class="" href="#about">About</a></li>
                 <li><a class="" href="#featured-services">Features</a></li>
                 <li><a class="" href="#service">Services</a></li>
@@ -143,7 +142,7 @@
 </script>
 
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="hero bg-light d-flex align-items-center" style="padding-top:-60px;">
+<section id="hero" class="hero bg-light d-flex align-items-center">
     <div class="container">
         <video autoplay muted loop id="hero-video">
             <source src="{% static 'videos/video1.mp4' %}" type="video/mp4">
@@ -155,9 +154,8 @@
                 <br><br><br>
                 <h4 data-aos="fade-up" class="text-info welcome-text" style="font-weight: 800"><b>Welcome to SafeSys AI</b>
                 </h4>
-                <h6 class="text-warning" style="font-weight: 800;">Revolutionising Safety and Compliance in Oil & Gas</h6>
-                <h6  class="text-warning" style="font-weight: 800;">SafeSys AI leverages cutting-edge AI to empower oil and gas
-                    companies with real-time safety risk management and compliance assurance</h6>
+                <h6 class="text-warning">Revolutionising Safety and Compliance in Oil & Gas<br>
+                SafeSys AI leverages cutting-edge AI to empower oil and gas companies with real-time safety risk management and compliance assurance</h6>
                 <br>
               <a href="{% url 'register-url' %}"><button type="submit" class="btn btn-primary">Get Started</button></a>
                 <!-- Adjust vertical spacing as needed -->
@@ -191,14 +189,6 @@
 </section>
 <!-- CSS Styling -->
 <style>
-     body {
-        font-family: 'Segoe UI',Roboto, Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f8f9fa;
-        color: #333;
-    }
-
     /* Hero Section */
     #hero {
         position: relative;
