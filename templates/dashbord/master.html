@@ -226,12 +226,14 @@ else { themeMode = defaultThemeMode; } }
                                 <div class="menu-content d-flex align-items-center px-3">
                                     <!--begin::Avatar-->
                                     <div class="symbol symbol-50px me-5">
-                                        {% if user.profile.profile_photo %}
-                                            <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
-                                        {% else %}
-                                            <!-- Placeholder image or default profile photo -->
-                                            <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
-                                        {% endif %}
+                                     {% if user.profile.profile_photo %}
+    <img class="rounded-circle" 
+         src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
+{% else %}
+    <!-- Placeholder image or default profile photo -->
+    <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
+{% endif %}
+
                                         <!--end::Avatar-->
                                         <p class="text-success">{{ user.username }}</p>
                                         <p class="text-success">{{ user.email }}</p>
@@ -407,9 +409,9 @@ else { themeMode = defaultThemeMode; } }
                                     <span class="menu-title">Home</span>
                                 </a>
                             </div>
-                        
-                        
-                        
+
+
+
                             <!-- Real Time Monitoring Menu Item -->
                             <div class="menu-item" id="realtime-menu-item">
                                 <a class="menu-link {% if request.path == 'realtime:predictive_maintenance' %}active{% endif %}" href="{% url 'realtime:predictive_maintenance' %}" data-kt-page="pro">
@@ -433,7 +435,7 @@ else { themeMode = defaultThemeMode; } }
             </span>
                                 </a>
                             </div>
-                        
+
                             <!-- Anomaly Detection Menu Item -->
                             <div class="menu-item" id="anomaly-menu-item">
                                 <a class="menu-link {% if request.path == 'realtime:anomaly_detection' %}active{% endif %}"

@@ -1,10 +1,9 @@
-import dj_database_url
 import os
+import dj_database_url
+import django_heroku
 
 from pathlib import Path
-
 from django.conf.global_settings import DATABASES
-from django.core.checks import database
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'dashboard',
     'employee_training',
+    'storages',
 ]
 
 BOOTSTRAP5_FORM_RENDERER = 'django.forms.renderers.BuiltinRendering'
@@ -95,9 +95,10 @@ DATABASES = {
     }
 }
 
-
+# Correcting the database configuration for Heroku deployment
 database_url = os.environ.get('DATABASE_URL')
-DATABASES["default"] = dj_database_url.parse(database_url)
+if database_url:
+    DATABASES["default"] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -151,6 +152,11 @@ else:
     STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
+# Setting up media file handling
+
+# Media files (user uploaded files)
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = 'dashboard-url'
 LOGIN_URL = 'login-url'
@@ -164,4 +170,5 @@ EMAIL_HOST = 'smtp.gmail.com'  # Gmail SMTP server
 EMAIL_PORT = 587  # TLS port for Gmail SMTP
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'omondijeff88@gmail.com'  # Your Gmail email address
-EMAIL_HOST_PASSWORD = 'ddkk mbap tbre lfpf'  # Your Gmail email password
+EMAIL_HOST_PASSWORD = 'ddkkmbaptbrelfpf'  # Your Gmail email password
+

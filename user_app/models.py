@@ -4,13 +4,14 @@ from PIL import Image
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_photo = models.ImageField(upload_to='static/assets1/img/profile_photos/', blank=True, null=True)
+    profile_photo = models.ImageField(upload_to='profile_photos/', blank=True, null=True)
     about = models.TextField(blank=True)
+
     def __str__(self):
         return self.user.username
 
     def save(self, *args, **kwargs):
-        super(Profile,self).save(*args, **kwargs)
+        super(Profile, self).save(*args, **kwargs)
         if self.profile_photo:
             img = Image.open(self.profile_photo.path)
             if img.height > 462 or img.width > 340:
