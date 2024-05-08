@@ -13,4 +13,4 @@ urlpatterns = [
     path('user_app/', include('user_app.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('employee_training/', include('employee_training.urls')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
