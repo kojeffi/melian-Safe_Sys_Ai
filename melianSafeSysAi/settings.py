@@ -225,6 +225,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'dashboard',
     'employee_training',
+    'storages',
 
 ]
 
