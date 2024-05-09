@@ -3,37 +3,52 @@
 {% block content %}
     {% load static %}
     {% load django_bootstrap5 %}
-    	<!--begin::Content-->
-							<div id="kt_app_content" class="app-content flex-column-fluid">
-								<!--begin::Content container-->
-								<div id="kt_app_content_container" class="app-container container-fluid">
-									<!--begin::Row-->
-									<div class="row gx-5 gx-xl-10">
-										<!--begin::Col-->
-										<div class="col-xxl-6 mb-5 mb-xl-10">
-											<!--begin::Chart widget 8-->
-											<div class="card card-flush h-xl-100">
-												<!--begin::Header-->
-												<div class="card-header pt-5">
-													<!--begin::Title-->
-													<h3 class="card-title align-items-start flex-column">
-														<span class="card-label fw-bold text-dark">Update Your Profile</span>
-													</h3>
-													<!--end::Title-->
-												
-												</div>
-												<!--end::Header-->
-												<!--begin::Body-->
-												<div class="card-body pt-6">
+    <!--begin::Content-->
+    <div id="kt_app_content" class="app-content flex-column-fluid">
+        <!--begin::Content container-->
+        <div id="kt_app_content_container" class="app-container container-fluid">
+            <!--begin::Row-->
+            <div class="row gx-5 gx-xl-10">
+                <!--begin::Col-->
+                <div class="col-xxl-6 mb-5 mb-xl-10">
+                    <!--begin::Chart widget 8-->
+                    <div class="card card-flush h-xl-100">
+                        <!--begin::Header-->
+                        <div class="card-header pt-5">
+                            <!--begin::Title-->
+                            <h3 class="card-title align-items-start flex-column">
+                                <span class="card-label fw-bold text-dark">Update Your Profile</span>
+                            </h3>
+                            <!--end::Title-->
+
+                        </div>
+                        <!--end::Header-->
+                        <!--begin::Body-->
+                        <div class="card-body pt-6">
+                            <div class="symbol symbol-50px me-5">
+                                {% if user.profile.profile_photo %}
+                                    <img class="rounded-circle"
+                                         src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
+                                {% else %}
+                                    <!-- Placeholder image or default profile photo -->
+                                    <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
+                                {% endif %}
+
+                                <!--end::Avatar-->
+                                <p class="text-success">{{ user.username }}</p>
+                                <p class="text-success">{{ user.email }}</p>
+                                <p class="text-success">{{ user.profile.about }}</p>
+                            </div>
+
                             <!-- Profile Form -->
                             <form method="post" enctype="multipart/form-data" class="p-5">
                                 {% csrf_token %}
-                                 <div class="mb-3">
-                                {% bootstrap_form form %}
-                                 </div>
-                                 <div class="mb-3">
-                                <button class="btn btn-warning rounded-pill mt-3">Update Profile</button>
-                                 </div>
+                                <div class="mb-3">
+                                    {% bootstrap_form form %}
+                                </div>
+                                <div class="mb-3">
+                                    <button class="btn btn-warning rounded-pill mt-3">Update Profile</button>
+                                </div>
                             </form>
                             <!-- End of Profile Form -->
                         </div>
@@ -46,6 +61,6 @@
             <!-- end::Content -->
         </div>
         <!-- end::Content wrapper -->
-        </div>
+    </div>
     <!-- end::Main -->
 {% endblock %}
