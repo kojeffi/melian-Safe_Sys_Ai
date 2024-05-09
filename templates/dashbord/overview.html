@@ -33,11 +33,10 @@
                                     <!-- Placeholder image or default profile photo -->
                                     <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
                                 {% endif %}
-
                                 <!--end::Avatar-->
-                                <p class="text-success">{{ user.username }}</p>
-                                <p class="text-success">{{ user.email }}</p>
-                                <p class="text-success">{{ user.profile.about }}</p>
+                                <p class="text-success"><strong>Name:</strong>{{ user.username }}</p>
+                                <p class="text-success"><strong>Email:</strong>{{ user.email }}</p>
+                                <p class="text-success"><strong>About Me:</strong>{{ user.profile.about }}</p>
                             </div>
 
                             <!-- Profile Form -->
