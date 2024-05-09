@@ -51,10 +51,6 @@ INSTALLED_APPS = [
     'dashboard',
     'employee_training',
     'storages',
-<<<<<<< HEAD
-=======
-
->>>>>>> b386c15004050905007d96c8dad6daa81687dde7
 ]
 
 BOOTSTRAP5_FORM_RENDERER = 'django.forms.renderers.BuiltinRendering'
@@ -204,8 +200,4 @@ EMAIL_HOST = 'smtp.gmail.com'  # Gmail SMTP server
 EMAIL_PORT = 587  # TLS port for Gmail SMTP
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'omondijeff88@gmail.com'  # Your Gmail email address
-<<<<<<< HEAD
 EMAIL_HOST_PASSWORD = 'ddkkmbaptbrelfpf'  # Your Gmail email password
-=======
-EMAIL_HOST_PASSWORD = 'ddkk mbap tbre lfpf'  # Your Gmail email password
->>>>>>> b386c15004050905007d96c8dad6daa81687dde7
