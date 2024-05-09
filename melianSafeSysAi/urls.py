@@ -13,4 +13,8 @@ urlpatterns = [
     path('user_app/', include('user_app.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('employee_training/', include('employee_training.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+# Add media URL patterns to serve profile photos during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
