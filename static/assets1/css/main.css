@@ -1677,16 +1677,16 @@ section {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
-  width: 100%;
-  max-height:200vh;
-  background-color: var(--color-secondary);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  padding: 120px 0 60px 0;
-  color: rgba(255, 255, 255, 0.8);
-}
+/*.hero {*/
+/*  width: 100%;*/
+/*  max-height:200vh;*/
+/*  background-color: var(--color-secondary);*/
+/*  background-size: cover;*/
+/*  background-position: center;*/
+/*  position: relative;*/
+/*  padding: 0;*/
+/*  color: rgba(255, 255, 255, 0.8);*/
+/*}*/
 
 .hero h2 {
   margin-bottom: 20px;

@@ -88,10 +88,23 @@ def contact(request):
 def chatbot_view(request):
     if request.method == 'POST':
         user_message = request.POST['user_message']
-        bot_response = "Sorry, I can't understand."
-        # Bot response logic here...
+        bot_response = generate_bot_response(user_message)  # Call a function to generate bot responses
         message = Message.objects.create(user_message=user_message, bot_response=bot_response)
 
         return render(request, 'index.html', {'message': message})
     else:
         return render(request, 'index.html', {})
+
+def generate_bot_response(user_message):
+    # Example bot responses based on user messages
+    if 'hello' in user_message.lower():
+        return "Hi there! How can I assist you today?"
+    elif 'help' in user_message.lower():
+        return "Sure, I'm here to help. What do you need assistance with?"
+    elif 'how are you' in user_message.lower():
+        return "I'm just a bot, but thanks for asking! How can I assist you?"
+    elif 'bye' in user_message.lower():
+        return "Goodbye! Feel free to return if you have more questions."
+    else:
+        return "Sorry, I didn't understand that. Can you please rephrase your question?"
+
