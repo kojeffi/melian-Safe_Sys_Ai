@@ -3,15 +3,15 @@
   --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-primary: "Roboto", sans-serif;
+  --font-primary: "Inter", sans-serif;
   --font-secondary: "Poppins", sans-serif;
 }
 
 /* Colors */
 :root {
-  --color-default: #333;
-  --color-primary: orange;
-  --color-secondary: #333;
+  --color-default: #0a0d13;
+  --color-primary: #0d42ff;
+  --color-secondary: #151f2e;
 }
 
 /* Smooth scroll behavior */
@@ -24,15 +24,17 @@
 --------------------------------------------------------------*/
 body {
   font-family: var(--font-default);
+  color: var(--color-default);
 }
 
 a {
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 a:hover {
-  color: orange;
-  text-decoration: underline;
+  color: #406aff;
+  text-decoration: none;
 }
 
 h1,
@@ -64,9 +66,12 @@ section {
   text-transform: uppercase;
   margin-bottom: 20px;
   padding-bottom: 0;
-  color: #333;
+  color: #001973;
   position: relative;
   z-index: 2;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
 }
 
 .section-header h2:after {
@@ -75,7 +80,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #f0f0f0;
+  background: var(--color-primary);
   left: 0;
   right: 0;
   bottom: 0;
@@ -125,7 +130,7 @@ section {
 
 .breadcrumbs .page-header:before {
   content: "";
-  background-color: #ffffff;
+  background-color: rgba(14, 29, 52, 0.8);
   position: absolute;
   inset: 0;
 }
@@ -133,16 +138,16 @@ section {
 .breadcrumbs .page-header h2 {
   font-size: 56px;
   font-weight: 500;
-  color: #333;
+  color: #fff;
   font-family: var(--font-secondary);
 }
 
 .breadcrumbs .page-header p {
-  color: #333;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .breadcrumbs nav {
-  background-color: #f0f0f0;
+  background-color: #f3f6fc;
   padding: 20px 0;
 }
 
@@ -154,11 +159,11 @@ section {
   padding: 0;
   font-size: 16px;
   font-weight: 600;
-  color: #333;
+  color: var(--color-secondary);
 }
 
 .breadcrumbs nav ol a {
-  color: #333;
+  color: var(--color-primary);
   transition: 0.3s;
 }
 
@@ -173,7 +178,7 @@ section {
 .breadcrumbs nav ol li+li::before {
   display: inline-block;
   padding-right: 10px;
-  color: slategray;
+  color: #4278cc;
   content: "/";
 }
 
@@ -187,7 +192,7 @@ section {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background: #f0f0f0;
+  background: var(--color-primary);
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -196,13 +201,13 @@ section {
 
 .scroll-top i {
   font-size: 24px;
-  color: #333;
+  color: #fff;
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background: orange;
-  color: #333;
+  background: rgba(13, 66, 255, 0.8);
+  color: #fff;
 }
 
 .scroll-top.active {
@@ -260,7 +265,7 @@ section {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
-    transition-delay: 0s !important;
+    transition-delay: 0 !important;
   }
 }
 
@@ -270,11 +275,11 @@ section {
 .header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 .header.sticked {
-  background: #f0f0f0;
+  background: rgba(14, 29, 52, 0.9);
   padding: 15px 0;
   box-shadow: 0px 2px 20px rgba(14, 29, 52, 0.1);
 }
@@ -288,10 +293,9 @@ section {
   font-size: 30px;
   margin: 0;
   font-weight: 700;
-  color: #333;
+  color: #fff;
   font-family: var(--font-primary);
 }
-
 
 /*--------------------------------------------------------------
 # Desktop Navigation
@@ -322,7 +326,7 @@ section {
     font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 400;
-    color: #333;
+    color: rgba(255, 255, 255, 0.6);
     white-space: nowrap;
     transition: 0.3s;
   }
@@ -334,21 +338,26 @@ section {
     margin-left: 5px;
   }
 
-
+  .navbar a:hover,
+  .navbar .active,
+  .navbar .active:focus,
+  .navbar li:hover>a {
+    color: #fff;
+  }
 
   .navbar .get-a-quote,
   .navbar .get-a-quote:focus {
-    background: #f0f0f0;
+    background: var(--color-primary);
     padding: 8px 20px;
     margin-left: 30px;
     border-radius: 4px;
-    color: slategray;
+    color: #fff;
   }
 
   .navbar .get-a-quote:hover,
   .navbar .get-a-quote:focus:hover {
-    color: slategray;
-    background: #f0f0f0;
+    color: #fff;
+    background: #2756ff;
   }
 
   .navbar .dropdown ul {
@@ -361,7 +370,7 @@ section {
     z-index: 99;
     opacity: 0;
     visibility: hidden;
-    background: #f0f0f0;
+    background: #fff;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
     transition: 0.3s;
     border-radius: 4px;
@@ -376,7 +385,7 @@ section {
     font-size: 15px;
     text-transform: none;
     font-weight: 400;
-    color: slategray;
+    color: var(--color-secondary);
   }
 
   .navbar .dropdown ul a i {
@@ -386,7 +395,7 @@ section {
   .navbar .dropdown ul a:hover,
   .navbar .dropdown ul .active:hover,
   .navbar .dropdown ul li:hover>a {
-    color: slategray;
+    color: var(--color-primary);
   }
 
   .navbar .dropdown:hover>ul {
@@ -447,7 +456,7 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: #f0f0f0;
+    background: rgba(14, 29, 52, 0.9);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -462,7 +471,7 @@ section {
     font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 500;
-    color: slategray;
+    color: rgba(255, 255, 255, 0.7);
     white-space: nowrap;
     transition: 0.3s;
   }
@@ -478,22 +487,22 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: slategray;
+    color: #fff;
   }
 
   .navbar .get-a-quote,
   .navbar .get-a-quote:focus {
-    background: blue;
+    background: var(--color-primary);
     padding: 8px 20px;
     border-radius: 4px;
     margin: 15px;
-    color: #f0f0f0;
+    color: #fff;
   }
 
   .navbar .get-a-quote:hover,
   .navbar .get-a-quote:focus:hover {
-    color: white;
-    background: blue;
+    color: #fff;
+    background: rgba(13, 66, 255, 0.8);
   }
 
   .navbar .dropdown ul,
@@ -503,7 +512,7 @@ section {
     padding: 10px 0;
     margin: 10px 20px;
     transition: all 0.5s ease-in-out;
-    border: 1px solid orange;
+    border: 1px solid #19335c;
   }
 
   .navbar .dropdown>.dropdown-active,
@@ -512,7 +521,7 @@ section {
   }
 
   .mobile-nav-show {
-    color: slategray;
+    color: #fff;
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -522,7 +531,7 @@ section {
   }
 
   .mobile-nav-hide {
-    color: slategray;
+    color: #fff;
     font-size: 32px;
     cursor: pointer;
     line-height: 0;
@@ -545,7 +554,7 @@ section {
     content: "";
     position: fixed;
     inset: 0;
-    background: #f0f0f0;
+    background: rgba(14, 29, 52, 0.8);
     z-index: 9996;
   }
 }
@@ -564,7 +573,7 @@ section {
 }
 
 .featured-services .service-item .icon i {
-  color: slategray;
+  color: #001f8d;
   font-size: 48px;
   transition: 0.3s;
 }
@@ -574,27 +583,27 @@ section {
 }
 
 .featured-services .service-item:hover .icon i {
-  color: slategray;
+  color: var(--color-primary);
 }
 
 .featured-services .service-item .title {
   font-weight: 700;
   margin-bottom: 10px;
   font-size: 20px;
-  color: slategray;
+  color: var(--color-secondary);
   transition: 0.3s;
 }
 
 .featured-services .service-item .description {
   font-size: 15px;
-  color: slategray;
+  color: #132848;
   margin-bottom: 10px;
 }
 
 .featured-services .service-item .readmore {
   display: flex;
   align-items: center;
-  color: slategray;
+  color: var(--color-secondary);
   transition: 0.3s;
   font-weight: 700;
   font-size: 14px;
@@ -607,7 +616,7 @@ section {
 .featured-services .service-item:hover .title,
 .featured-services .service-item:hover .readmore,
 .featured-services .service-item:hover .icon i {
-  color: slategray;
+  color: var(--color-primary);
 }
 
 /*--------------------------------------------------------------
@@ -617,7 +626,7 @@ section {
   font-weight: 700;
   font-size: 32px;
   font-family: var(--font-secondary);
-  color: slategray;
+  color: #001f8d;
 }
 
 .about .content ul {
@@ -634,7 +643,7 @@ section {
 .about .content ul i {
   flex-shrink: 0;
   font-size: 48px;
-  color: slategray;
+  color: var(--color-primary);
   margin-right: 20px;
   line-height: 0;
 }
@@ -642,7 +651,7 @@ section {
 .about .content ul h5 {
   font-size: 18px;
   font-weight: 700;
-  color: slategray;
+  color: #19335c;
 }
 
 .about .content ul p {
@@ -656,7 +665,7 @@ section {
 .about .play-btn {
   width: 94px;
   height: 94px;
-  background: #f0f0f0;
+  background: radial-gradient(var(--color-primary) 50%, rgba(13, 66, 255, 0.4) 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -672,10 +681,12 @@ section {
   height: 120px;
   animation-delay: 0s;
   animation: pulsate-btn 2s;
+  animation-direction: forwards;
   animation-iteration-count: infinite;
+  animation-timing-function: steps;
   opacity: 1;
   border-radius: 50%;
-  border: 5px solid orange;
+  border: 5px solid rgba(13, 66, 255, 0.7);
   top: -15%;
   left: -15%;
   background: rgba(198, 16, 0, 0);
@@ -691,7 +702,7 @@ section {
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 15px solid orange;
+  border-left: 15px solid #fff;
   z-index: 100;
   transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
@@ -707,14 +718,14 @@ section {
   border: none;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 15px solid orange;
+  border-left: 15px solid #fff;
   z-index: 200;
   animation: none;
   border-radius: 0;
 }
 
 .about .play-btn:hover:after {
-  border-left: 15px solid orange;
+  border-left: 15px solid var(--color-primary);
   transform: scale(20);
 }
 
@@ -760,11 +771,12 @@ section {
 }
 
 .services .card a {
-  color: slategray;
+  color: #001973;
+  transition: 0.3;
 }
 
 .services .card a:hover {
-  color: slategray;
+  color: var(--color-primary);
 }
 
 .services .card p {
@@ -782,7 +794,7 @@ section {
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action {
-  background: #f0f0f0;
+  background: linear-gradient(rgba(14, 29, 52, 0.6), rgba(14, 29, 52, 0.8)), url("../img/cta-bg.jpg") center center;
   background-size: cover;
   padding: 100px 0;
 }
@@ -794,13 +806,13 @@ section {
 }
 
 .call-to-action h3 {
-  color: slategray;
+  color: #fff;
   font-size: 28px;
   font-weight: 700;
 }
 
 .call-to-action p {
-  color: slategray;
+  color: #fff;
 }
 
 .call-to-action .cta-btn {
@@ -813,13 +825,13 @@ section {
   border-radius: 5px;
   transition: 0.5s;
   margin: 10px;
-  border: 2px solid orange;
+  border: 2px solid #fff;
   color: #fff;
 }
 
 .call-to-action .cta-btn:hover {
-  background: #f0f0f0;
-  border: 2px solid orange;
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 /*--------------------------------------------------------------
@@ -842,7 +854,7 @@ section {
 .features .features-item h3 {
   font-weight: 600;
   font-size: 26px;
-  color: slategray;
+  color: #001973;
 }
 
 .features .features-item ul {
@@ -861,7 +873,7 @@ section {
 .features .features-item ul i {
   font-size: 20px;
   padding-right: 4px;
-  color: slategray;
+  color: var(--color-primary);
 }
 
 .features .features-item p:last-child {
@@ -873,7 +885,7 @@ section {
 --------------------------------------------------------------*/
 .pricing .pricing-item {
   padding: 60px 40px;
-  box-shadow: 0 3px 20px -2px orange;
+  box-shadow: 0 3px 20px -2px rgba(108, 117, 125, 0.15);
   background: #fff;
   height: 100%;
   border-top: 4px solid #fff;
@@ -884,12 +896,12 @@ section {
   font-weight: 600;
   margin-bottom: 15px;
   font-size: 20px;
-  color: slategray;
+  color: var(--color-secondary);
 }
 
 .pricing h4 {
   font-size: 48px;
-  color: slategray;
+  color: var(--color-primary);
   font-weight: 400;
   font-family: var(--font-primary);
   margin-bottom: 25px;
@@ -900,14 +912,14 @@ section {
 }
 
 .pricing h4 span {
-  color: slategray;
+  color: rgba(108, 117, 125, 0.8);
   font-size: 18px;
 }
 
 .pricing ul {
   padding: 20px 0;
   list-style: none;
-  color: slategray;
+  color: #6c757d;
   text-align: left;
   line-height: 20px;
 }
@@ -919,7 +931,7 @@ section {
 }
 
 .pricing ul i {
-  color: slategray;
+  color: #059652;
   font-size: 24px;
   padding-right: 3px;
 }
@@ -940,26 +952,26 @@ section {
   display: inline-block;
   padding: 12px 35px;
   border-radius: 4px;
-  color: slategray;
+  color: var(--color-primary);
   transition: none;
   font-size: 16px;
   font-weight: 500;
   font-family: var(--font-primary);
   transition: 0.3s;
-  border: 1px solid orange;
+  border: 1px solid var(--color-primary);
 }
 
 .pricing .buy-btn:hover {
-  background: #f0f0f0;
+  background: var(--color-primary);
   color: #fff;
 }
 
 .pricing .featured {
-  border-top-color: orange;
+  border-top-color: var(--color-primary);
 }
 
 .pricing .featured .buy-btn {
-  background: #f0f0f0;
+  background: var(--color-primary);
   color: #fff;
 }
 
@@ -1005,7 +1017,7 @@ section {
   font-weight: 600;
   border: 0;
   font-size: 18px;
-  color: slategray;
+  color: var(--color-default);
   text-align: left;
   background: rgba(14, 29, 52, 0.03);
   border-radius: 5px;
@@ -1016,7 +1028,7 @@ section {
 }
 
 .faq .accordion-button:not(.collapsed) {
-  color: slategray;
+  color: var(--color-primary);
   border-bottom: 0;
   box-shadow: none;
 }
@@ -1026,7 +1038,7 @@ section {
   top: 14px;
   left: 25px;
   font-size: 20px;
-  color: slategray;
+  color: var(--color-primary);
 }
 
 .faq .accordion-button:after {
@@ -1047,6 +1059,7 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
   padding: 80px 0;
+  background: url("../img/testimonials-bg.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -1056,7 +1069,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: #ffffff;
+  background: rgba(14, 29, 52, 0.7);
 }
 
 .testimonials .section-header {
@@ -1104,7 +1117,7 @@ section {
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: slategray;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 26px;
   line-height: 0;
 }
@@ -1162,7 +1175,7 @@ section {
 .stats-counter .stats-item span {
   font-size: 48px;
   display: block;
-  color: slategray;
+  color: var(--color-secondary);
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -1175,7 +1188,7 @@ section {
   display: block;
   width: 25px;
   height: 3px;
-  background: #f0f0f0;
+  background: var(--color-primary);
   left: 0;
   right: 0;
   bottom: 0;
@@ -1188,7 +1201,7 @@ section {
   font-family: var(--font-primary);
   font-size: 15px;
   font-weight: 500;
-  color: slategray;
+  color: var(--color-secondary);
 }
 
 /*--------------------------------------------------------------
@@ -1198,7 +1211,7 @@ section {
   text-align: center;
   margin-bottom: 20px;
   background: #fff;
-  border: 1px solid orange;
+  border: 1px solid rgba(14, 29, 52, 0.15);
 }
 
 .team .member img {
@@ -1219,14 +1232,14 @@ section {
   font-style: italic;
   display: block;
   font-size: 13px;
-  color: slategray;
+  color: #6c757d;
 }
 
 .team .member p {
   padding-top: 10px;
   font-size: 14px;
   font-style: italic;
-  color: slategray;
+  color: #6c757d;
 }
 
 .team .member .social {
@@ -1239,7 +1252,7 @@ section {
 }
 
 .team .member .social a:hover {
-  color: slategray;
+  color: var(--color-primary);
 }
 
 .team .member .social i {
@@ -1251,7 +1264,7 @@ section {
 # Horizontal Pricing Section
 --------------------------------------------------------------*/
 .horizontal-pricing .pricing-item {
-  box-shadow: 0 3px 20px -2px orange;
+  box-shadow: 0 3px 20px -2px rgba(108, 117, 125, 0.15);
   padding-bottom: 30px;
   background: #fff;
   height: 100%;
@@ -1262,12 +1275,12 @@ section {
   font-weight: 700;
   margin-bottom: 0;
   font-size: 24px;
-  color: slategray;
+  color: var(--color-secondary);
 }
 
 .horizontal-pricing h4 {
   font-size: 48px;
-  color: slategray;
+  color: var(--color-primary);
   font-weight: 400;
   font-family: var(--font-primary);
   margin-bottom: 25px;
@@ -1298,7 +1311,7 @@ section {
 }
 
 .horizontal-pricing ul i {
-  color: slategray;
+  color: #059652;
   font-size: 24px;
   padding-right: 3px;
 }
@@ -1319,9 +1332,9 @@ section {
   display: inline-block;
   padding: 12px 40px;
   border-radius: 4px;
-  color: orange;
-  background-color: #f0f0f0;
-  border: 2px solid orange;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
   transition: none;
   font-size: 16px;
   font-weight: 500;
@@ -1330,12 +1343,12 @@ section {
 }
 
 .horizontal-pricing .buy-btn:hover {
-  background: #f0f0f0;
-  border-color: orange;
+  background: #406aff;
+  border-color: #406aff;
 }
 
 .horizontal-pricing .featured {
-  background: #f0f0f0;
+  background: var(--color-primary);
 }
 
 .horizontal-pricing .featured h3,
@@ -1345,18 +1358,18 @@ section {
 .horizontal-pricing .featured ul .na,
 .horizontal-pricing .featured ul i,
 .horizontal-pricing .featured ul .na i {
-  color: slategray;
+  color: #fff;
 }
 
 .horizontal-pricing .featured .buy-btn {
-  background: #f0f0f0;
-  color: slategray;
-  border-color: orange;
+  background: var(--color-primary);
+  color: #fff;
+  border-color: #fff;
 }
 
 .horizontal-pricing .featured .buy-btn:hover {
   background: #fff;
-  color: slategray;
+  color: var(--color-primary);
 }
 
 /*--------------------------------------------------------------
@@ -1403,7 +1416,7 @@ section {
 .get-a-quote .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #f0f0f0;
+  background: #df1529;
   text-align: left;
   padding: 15px;
   margin-bottom: 24px;
@@ -1412,8 +1425,8 @@ section {
 
 .get-a-quote .php-email-form .sent-message {
   display: none;
-  color: slategray;
-  background: #f0f0f0;
+  color: #fff;
+  background: #059652;
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -1435,7 +1448,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid orange;
+  border: 3px solid #059652;
   border-top-color: #fff;
   animation: animate-loading 1s linear infinite;
 }
@@ -1450,7 +1463,7 @@ section {
 
 .get-a-quote .php-email-form input:focus,
 .get-a-quote .php-email-form textarea:focus {
-  border-color: orange;
+  border-color: var(--color-primary);
 }
 
 .get-a-quote .php-email-form input {
@@ -1462,16 +1475,16 @@ section {
 }
 
 .get-a-quote .php-email-form button[type=submit] {
-  background: orange;
+  background: var(--color-primary);
   border: 0;
   padding: 10px 30px;
-  color: slategray;
+  color: #fff;
   transition: 0.4s;
   border-radius: 4px;
 }
 
 .get-a-quote .php-email-form button[type=submit]:hover {
-  background: #f0f0f0;
+  background: rgba(13, 66, 255, 0.8);
 }
 
 @keyframes animate-loading {
@@ -1493,8 +1506,8 @@ section {
 
 .contact .info-item i {
   font-size: 20px;
-  background: #f0f0f0;
-  color: slategray;
+  background: var(--color-primary);
+  color: #fff;
   width: 44px;
   height: 44px;
   display: flex;
@@ -1510,19 +1523,19 @@ section {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: slategray;
+  color: var(--color-secondary);
 }
 
 .contact .info-item p {
   padding: 0;
   margin-bottom: 0;
   font-size: 14px;
-  color: slategray;
+  color: rgba(14, 29, 52, 0.8);
 }
 
 .contact .php-email-form {
   width: 100%;
-  background: #f0f0f0;
+  background: #fff;
 }
 
 .contact .php-email-form .form-group {
@@ -1532,7 +1545,7 @@ section {
 .contact .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #ffffff;
+  background: #df1529;
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -1545,7 +1558,7 @@ section {
 .contact .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #ffffff;
+  background: #059652;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1565,7 +1578,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid orange;
+  border: 3px solid #059652;
   border-top-color: #fff;
   animation: animate-loading 1s linear infinite;
 }
@@ -1586,7 +1599,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #f0f0f0;
+  background: var(--color-primary);
   border: 0;
   padding: 10px 35px;
   color: #fff;
@@ -1595,7 +1608,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #f0f0f0;
+  background: rgba(13, 66, 255, 0.8);
 }
 
 @keyframes animate-loading {
@@ -1613,7 +1626,7 @@ section {
 --------------------------------------------------------------*/
 .service-details .services-list {
   padding: 10px 30px;
-  border: 1px solid orange;
+  border: 1px solid #d3dff3;
   margin-bottom: 20px;
 }
 
@@ -1621,7 +1634,7 @@ section {
   display: block;
   line-height: 1;
   padding: 8px 0 8px 15px;
-  border-left: 3px solid orange;
+  border-left: 3px solid #c2cbdf;
   margin: 20px 0;
   color: var(--color-secondary);
   transition: 0.3s;
@@ -1629,11 +1642,11 @@ section {
 
 .service-details .services-list a.active {
   font-weight: 700;
-  border-color: orange;
+  border-color: var(--color-primary);
 }
 
 .service-details .services-list a:hover {
-  border-color: orange;
+  border-color: var(--color-primary);
 }
 
 .service-details .services-img {
@@ -1643,13 +1656,13 @@ section {
 .service-details h3 {
   font-size: 28px;
   font-weight: 700;
-  color: slategray;
+  color: var(--color-secondary);
 }
 
 .service-details h4 {
   font-size: 20px;
   font-weight: 700;
-  color: slategray;
+  color: var(--color-secondary);
 }
 
 .service-details p {
@@ -1671,22 +1684,23 @@ section {
 .service-details ul i {
   font-size: 20px;
   margin-right: 8px;
-  color: slategray;
+  color: var(--color-primary);
 }
 
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-/*.hero {*/
-/*  width: 100%;*/
-/*  max-height:200vh;*/
-/*  background-color: var(--color-secondary);*/
-/*  background-size: cover;*/
-/*  background-position: center;*/
-/*  position: relative;*/
-/*  padding: 0;*/
-/*  color: rgba(255, 255, 255, 0.8);*/
-/*}*/
+.hero {
+  width: 100%;
+  min-height: 50vh;
+  background-color: var(--color-secondary);
+  /*background-image: url("../img/hero-bg.png");*/
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 120px 0 60px 0;
+  color: rgba(255, 255, 255, 0.8);
+}
 
 .hero h2 {
   margin-bottom: 20px;
@@ -1774,14 +1788,15 @@ section {
   font-size: 15px;
   font-weight: 600;
 }
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 .footer {
   font-size: 14px;
-  background-color: #f0f0f0;
+  background-color: var(--color-secondary);
   padding: 50px 0;
-  color: slategray;
+  color: white;
 }
 
 .footer .footer-info .logo {
@@ -1798,7 +1813,7 @@ section {
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 1px;
-  color: slategray;
+  color: #fff;
   font-family: var(--font-primary);
 }
 
@@ -1814,16 +1829,16 @@ section {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid orange;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 16px;
-  color: slategray;
+  color: rgba(255, 255, 255, 0.7);
   margin-right: 10px;
   transition: 0.3s;
 }
 
 .footer .social-links a:hover {
-  color: slategray;
-  border-color: orange;
+  color: #fff;
+  border-color: #fff;
 }
 
 .footer h4 {
@@ -1845,7 +1860,7 @@ section {
 
 .footer .footer-links ul i {
   padding-right: 2px;
-  color: slategray;
+  color: rgba(13, 66, 255, 0.8);
   font-size: 12px;
   line-height: 0;
 }
@@ -1861,14 +1876,14 @@ section {
 }
 
 .footer .footer-links ul a {
-  color: slategray;
+  color: rgba(255, 255, 255, 0.6);
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
 }
 
 .footer .footer-links ul a:hover {
-  color: slategray;
+  color: #fff;
 }
 
 .footer .footer-contact p {
@@ -1886,5 +1901,5 @@ section {
 }
 
 .footer .credits a {
-  color: slategray;
+  color: #fff;
 }
