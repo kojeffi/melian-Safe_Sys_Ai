@@ -1,8 +1,18 @@
+/**
+* Template Name: Logis
+* Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
+* Updated: Mar 17 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
 
+/*--------------------------------------------------------------
+# Set main reusable colors and fonts using CSS variables
+# Learn more about CSS variables at https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+--------------------------------------------------------------*/
+/* Fonts */
 :root {
-  --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
-  "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: "Inter", sans-serif;
   --font-secondary: "Poppins", sans-serif;
 }
@@ -11,7 +21,7 @@
 :root {
   --color-default: #0a0d13;
   --color-primary: #0d42ff;
-  --color-secondary: #151f2e;
+  --color-secondary: #0e1d34;
 }
 
 /* Smooth scroll behavior */
@@ -25,6 +35,8 @@
 body {
   font-family: var(--font-default);
   color: var(--color-default);
+  background-color: rgba(14, 29, 52, 0.8);
+
 }
 
 a {
@@ -276,6 +288,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
+ background: rgba(14, 29, 52, 0.9);
 }
 
 .header.sticked {
@@ -290,7 +303,7 @@ section {
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 40px;
   margin: 0;
   font-weight: 700;
   color: #fff;
@@ -347,8 +360,8 @@ section {
 
   .navbar .get-a-quote,
   .navbar .get-a-quote:focus {
-    background: var(--color-primary);
-    padding: 8px 20px;
+     background: linear-gradient(to right, #2869c3, #065c97, #d510ed);
+    padding: 10px 18px;
     margin-left: 30px;
     border-radius: 4px;
     color: #fff;
@@ -357,7 +370,7 @@ section {
   .navbar .get-a-quote:hover,
   .navbar .get-a-quote:focus:hover {
     color: #fff;
-    background: #2756ff;
+     background: linear-gradient(to right, #d510ed, #2869c3);
   }
 
   .navbar .dropdown ul {
@@ -389,7 +402,7 @@ section {
   }
 
   .navbar .dropdown ul a i {
-    font-size: 12px;
+    font-size: 24px;
   }
 
   .navbar .dropdown ul a:hover,
@@ -492,7 +505,7 @@ section {
 
   .navbar .get-a-quote,
   .navbar .get-a-quote:focus {
-    background: var(--color-primary);
+     background: linear-gradient(to right, #d510ed, #2869c3);
     padding: 8px 20px;
     border-radius: 4px;
     margin: 15px;
@@ -502,7 +515,7 @@ section {
   .navbar .get-a-quote:hover,
   .navbar .get-a-quote:focus:hover {
     color: #fff;
-    background: rgba(13, 66, 255, 0.8);
+   background: linear-gradient(to right, #d510ed, #2869c3);
   }
 
   .navbar .dropdown ul,
@@ -1059,7 +1072,6 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
   padding: 80px 0;
-  background: url("../img/testimonials-bg.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -1599,7 +1611,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: var(--color-primary);
+     background: linear-gradient(to right, #d510ed, #2869c3);
   border: 0;
   padding: 10px 35px;
   color: #fff;
@@ -1608,7 +1620,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: rgba(13, 66, 255, 0.8);
+     background: linear-gradient(to right, #d510ed, #2869c3);
 }
 
 @keyframes animate-loading {
@@ -1692,9 +1704,8 @@ section {
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 50vh;
-  background-color: var(--color-secondary);
-  /*background-image: url("../img/hero-bg.png");*/
+ height: 115vh;
+  background: linear-gradient(to right, #01142e, #01142e, #065c97, #d510ed);
   background-size: cover;
   background-position: center;
   position: relative;
