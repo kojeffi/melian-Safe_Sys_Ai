@@ -3,68 +3,65 @@
 {% block content %}
     {% load static %}
     {% load django_bootstrap5 %}
-    <!--begin::Content-->
-    <div id="kt_app_content" class="app-content flex-column-fluid">
-        <!--begin::Content container-->
-        <div id="kt_app_content_container" class="app-container container-fluid">
-            <!--begin::Row-->
-            <div class="row gx-5 gx-xl-10">
-                <!--begin::Col-->
-                <div class="col-xxl-6 mb-5 mb-xl-10">
-                    <!--begin::Chart widget 8-->
-                    <div class="card card-flush h-xl-100">
-                        <!--begin::Header-->
-                        <div class="card-header pt-5">
-                            <!--begin::Title-->
-                            <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bold text-dark">Update Your Profile</span>
-                            </h3>
-                            <!--end::Title-->
+    <div class="card card-flush h-xl-100" style="margin-top:-10px;">
 
-                        </div>
-                        <!--end::Header-->
-                        <!--begin::Body-->
-                        <div class="card-body pt-6">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="symbol symbol-50px me-5">
-                                    {% if user.profile.profile_photo %}
-                                        <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
-                                    {% else %}
-                                        <!-- Placeholder image or default profile photo -->
-                                        <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
-                                    {% endif %}
-                                </div>
-                                <div>
-                                    <h5 class="card-title mb-0">{{ user.username }}</h5>
-                                    <p class="card-text text-muted">{{ user.email }}</p>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <p class="card-text"><strong>About Me:</strong> {{ user.profile.about }}</p>
-                            </div>
 
-                            <!-- Profile Form -->
-                            <form method="post" enctype="multipart/form-data" class="p-5 border border-secondary rounded">
-                                {% csrf_token %}
-                                <div class="mb-3">
-                                    {% bootstrap_form form %}
-                                </div>
-                                <div class="mb-3">
-                                    <button class="btn btn-warning rounded-pill">Update Profile</button>
-                                </div>
-                            </form>
-                            <!-- End of Profile Form -->
-                        </div>
-
-                        <!-- end::Card header -->
-                    </div>
-                    <!-- end::Details View -->
-                </div>
-                <!-- end::Content container -->
-            </div>
-            <!-- end::Content -->
+        <div class="card-header pt-5">
+            <!--begin::Title-->
+            
+                  <h3 class="card-title align-items-start flex-column">
+                <span class="card-label fw-bold text-dark">My Personal Information</span>
+            </h3>
         </div>
-        <!-- end::Content wrapper -->
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body pt-6">
+            <div class="d-flex align-items-center mb-4">
+                <div class="symbol symbol-50px me-5">
+                    {% if user.profile.profile_photo %}
+                        <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
+                    {% else %}
+                        <!-- Placeholder image or default profile photo -->
+                        <img class="rounded-circle" src="{% static 'assets1/img/team/team-2.jpg' %}" alt="Default Profile Photo">
+                    {% endif %}
+                </div>
+                <div>
+                    <h5 class="card-title mb-0">{{ user.username }}</h5>
+                    <p class="card-text text-muted">{{ user.email }}</p>
+                </div>
+            </div>
+            <div class="mb-4">
+                <p class="card-text"><strong>About Me:</strong> {{ user.profile.about }}</p>
+            </div>
+        
+        
+        <div class="card-header pt-5">
+            <!--begin::Title-->
+            
+                  <h3 class="card-title align-items-start flex-column">
+                <span class="card-label fw-bold text-dark">Update Your Profile</span>
+            </h3>
+        </div>
+
+                  <h3 class="card-title align-items-start flex-column">
+                <span class="card-label fw-bold text-dark"></span>
+            </h3>
+            <!--end::Title-->
+            <!-- Profile Form -->
+            <form method="post" enctype="multipart/form-data" class="p-5 border border-secondary rounded">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {% bootstrap_form form %}
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-warning rounded-pill learn text-white">Update Profile</button>
+                </div>
+            </form>
+            <!-- End of Profile Form -->
+        </div>
+
+        <!-- end::Card header -->
     </div>
-    <!-- end::Main -->
+    <!-- end::Details View -->
+
 {% endblock %}

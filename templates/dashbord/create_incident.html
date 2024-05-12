@@ -2,155 +2,136 @@
 {% block content %}
     {% load static %}
     {% load django_bootstrap5 %}
-    	<!--begin::Content-->
-							<div id="kt_app_content" class="app-content flex-column-fluid">
-								<!--begin::Content container-->
-								<div id="kt_app_content_container" class="app-container container-fluid">
-									<!--begin::Row-->
-									<div class="row gx-5 gx-xl-10">
-										<!--begin::Col-->
-										<div class="col-xxl-6 mb-5 mb-xl-10">
-											<!--begin::Chart widget 8-->
-											<div class="card card-flush h-xl-100">
-												<!--begin::Header-->
-												<div class="card-header pt-5">
-													<!--begin::Title-->
-													<h3 class="card-title align-items-start flex-column">
-														<span class="card-label fw-bold text-dark">Create incident</span>
-													</h3>
-													<!--end::Title-->
-												
-												</div>
-												<!--end::Header-->
-												<!--begin::Body-->
-												<div class="card-body pt-6">
-        <style>
-            /* CSS for modern form */
-            .modern-form {
-                max-width: 400px;
-                margin: 0 auto;
-            }
+    <!--begin::Content-->
+    <div class="card card-flush h-xl-100" style="margin-top:-10px;">
 
-            .form-label {
-                font-weight: bold;
-            }
 
-            .form-group {
-                margin-bottom: 20px;
-            }
+        <div class="card-header pt-5">
+            <!--begin::Title-->
+            <h3 class="card-title align-items-start flex-column">
+                <span class="card-label fw-bold text-dark">Create incident</span>
+            </h3>
+            <!--end::Title-->
 
-            .form-control {
-                width: 100%;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                transition: border-color 0.3s ease;
-            }
-
-            .form-control:focus {
-                outline: none;
-                border-color: #007bff;
-            }
-
-            .btn-warning {
-                background-color: #ffc107;
-                color: #000;
-                border: none;
-                border-radius: 5px;
-                padding: 10px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-            }
-
-            .btn-warning:hover {
-                background-color: #ffa000;
-            }
-
-            /* Hover effect for cards */
-            .card-toolbar:hover .form-card {
-                transform: translateY(-5px);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-
-            /* Background color for cards */
-            .form-card {
-                background-color: #fff;
-                border-radius: 8px;
-                padding: 20px;
-                margin-bottom: 20px;
-                transition: transform 0.3s ease;
-            }
-        </style>
-
-        <div class="form-card bg-light">
-            <form method="post" class="modern-form">
-                <br>
-                <br>
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="id_description" class="form-label">Description</label>
-                    <input type="text" id="id_description" name="description" class="form-control" placeholder="Enter description">
-                </div>
-                <div class="form-group">
-                    <label for="id_location" class="form-label">Location</label>
-                    <input type="text" id="id_location" name="location" class="form-control" placeholder="Enter location">
-                </div>
-                <div class="form-group">
-                    <label for="id_severity" class="form-label">Severity</label>
-                    <select id="id_severity" name="severity" class="form-control">
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-warning btn-block">Submit</button>
-            </form>
         </div>
-        <!--end::Toolbar-->
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body pt-6">
+            <style>
+                /* CSS for modern form */
+                .modern-form {
+                    max-width: 400px;
+                    margin: 0 auto;
+                }
 
-        <div class="table-responsive">
-            <h1 class="mt-5 text-center">Alerts Created</h1>
-            <table class="table table-bordered table-hover">
-                <thead class="thead-dark">
+                .form-label {
+                    font-weight: bold;
+                }
+
+                .form-group {
+                    margin-bottom: 20px;
+                }
+
+                .form-control {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    transition: border-color 0.3s ease;
+                }
+
+                .form-control:focus {
+                    outline: none;
+                    border-color: #007bff;
+                }
+
+                .btn-warning {
+                    background-color: #ffc107;
+                    color: #000;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+
+                .btn-warning:hover {
+                    background-color: #ffa000;
+                }
+
+                /* Hover effect for cards */
+                .card-toolbar:hover .form-card {
+                    transform: translateY(-5px);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+
+                /* Background color for cards */
+                .form-card {
+                    background-color: #fff;
+                    border-radius: 8px;
+                    padding: 20px;
+                    margin-bottom: 20px;
+                    transition: transform 0.3s ease;
+                }
+            </style>
+
+            <div class="form-card bg-light">
+                <form method="post" class="modern-form">
+                    <br>
+                    <br>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_description" class="form-label">Description</label>
+                        <input type="text" id="id_description" name="description" class="form-control" placeholder="Enter description">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_location" class="form-label">Location</label>
+                        <input type="text" id="id_location" name="location" class="form-control" placeholder="Enter location">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_severity" class="form-label">Severity</label>
+                        <select id="id_severity" name="severity" class="form-control">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-block">Submit</button>
+                </form>
+            </div>
+            <!--end::Toolbar-->
+
+            <div class="table-responsive">
+                <h1 class="mt-5 text-center">Alerts Created</h1>
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
                     <tr>
                         <th>Description</th>
                         <th>Date</th>
                         <th>Location</th>
                         <th>Severity</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     {% for incident in incidents %}
-                    <tr>
-                        <td>{{ incident.description }}</td>
-                        <td>{{ incident.date }}</td>
-                        <td>{{ incident.location }}</td>
-                        <td>{{ incident.severity }}</td>
-                    </tr>
+                        <tr>
+                            <td>{{ incident.description }}</td>
+                            <td>{{ incident.date }}</td>
+                            <td>{{ incident.location }}</td>
+                            <td>{{ incident.severity }}</td>
+                        </tr>
                     {% empty %}
-                    <tr>
-                        <td colspan="4">No incidents found.</td>
-                    </tr>
+                        <tr>
+                            <td colspan="4">No incidents found.</td>
+                        </tr>
                     {% endfor %}
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
-
+        <!--end::Header-->
     </div>
-    <!--end::Header-->
-</div>
 
 
-                                    </div>
-                                    <!--end::Content container-->
-                                </div>
-                                <!--end::Content-->
-                            </div>
-                            <!--end::Content wrapper-->
-                          
-                        </div>
-                        <!--end:::Main-->
-                    </div>
-                    <!--end::Wrapper-->
-                <!--end::Page-->
 {% endblock %} 
