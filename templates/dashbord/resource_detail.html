@@ -3,12 +3,12 @@
     {% load static %}
     {% load django_bootstrap5 %}
     <!--begin::Content-->
-    <div class="card card-flush h-xl-100" style="margin-top:-10px;background-image: url('{% static 'assets1/img/ai.jpeg' %}'); background-size: cover;">
+    <div class="card card-flush h-xl-100" style="margin-top:-10px">
         <!--begin::Header-->
         <div class="card-header pt-5">
             <!--begin::Title-->
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label fw-bold text-white">Resource Details</span>
+                <span class="card-label fw-bold text-black">Resource Details</span>
             </h3>
             <!--end::Title-->
 
@@ -17,9 +17,9 @@
         <!--begin::Body-->
         <div class="card-body pt-6 rounded">
             <div class="container text-center" style="margin-top: 200px">
-                <p class="text-white"><strong>Description:</strong> {{ resource.description }}</p>
-                <p class="text-white"><strong>Category:</strong> {{ resource.category }}</p>
-                <p class="text-white"><strong>URL:</strong> <a href="{{ resource.url }}" target="_blank">{{ resource.url }}</a></p>
+                <p class="text-black"><strong>Description:</strong> {{ resource.description }}</p>
+                <p class="text-black"><strong>Category:</strong> {{ resource.category }}</p>
+                <p class="text-black"><strong>URL:</strong> <a href="{{ resource.url }}" target="_blank">{{ resource.url }}</a></p>
                 <a href="{% url 'training_resources' %}" class="btn btn-primary text-white learn">Back to Training Resources</a>
             </div>
         </div>
