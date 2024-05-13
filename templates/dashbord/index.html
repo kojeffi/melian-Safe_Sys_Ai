@@ -16,13 +16,13 @@
         <div class="card-body pt-6">
             <section class="features row justify-content-center gap-4 mt-5">
                 <div class="row">
-                    <div class="col-md-6 mb-6">
-                        <!-- Real Time Anomaly Detection -->
-                        <a href="{% url 'realtime:anomaly_detection' %}" class="text-decoration-none col-lg-4 col-md-6 col-sm-12">
+                  <div class="col-md-6">
+                        <!-- Predictive Maintenance -->
+                        <a href="{% url 'realtime:predictive_maintenance' %}" class="text-decoration-none col-lg-4 col-md-6 col-sm-12">
                             <div class="feature card bg-light text-dark border-0 p-4">
-                                <i class="fas fa-shield-alt fa-3x mb-3 text-center h1  gradient-text text-primary" style="font-size: 30px"></i>
+                                <i class="fas fa-tools fa-3x mb-3  gradient-text text-center text-primary" style="font-size: 30px"></i>
                                 <h3 class="fs-4 fw-bold text-center" style="font-size: 30px">Real Time Monitoring</h3>
-                                <p class="fs-6 text-center">Stay ahead of potential risks with our intelligent alert system.</p>
+                                <p class="fs-6 text-center">Leverage machine learning to forecast equipment failures and prevent downtime.</p>
                             </div>
                         </a>
                     </div>
@@ -39,16 +39,17 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <!-- Predictive Maintenance -->
-                        <a href="{% url 'realtime:predictive_maintenance' %}" class="text-decoration-none col-lg-4 col-md-6 col-sm-12">
+                      <div class="col-md-6 mb-6">
+                        <!-- Real Time Anomaly Detection -->
+                        <a href="{% url 'realtime:anomaly_detection' %}" class="text-decoration-none col-lg-4 col-md-6 col-sm-12">
                             <div class="feature card bg-light text-dark border-0 p-4">
-                                <i class="fas fa-tools fa-3x mb-3  gradient-text text-center text-primary" style="font-size: 30px"></i>
+                                <i class="fas fa-shield-alt fa-3x mb-3 text-center h1  gradient-text text-primary" style="font-size: 30px"></i>
                                 <h3 class="fs-4 fw-bold text-center" style="font-size: 30px">Anomaly Detection</h3>
-                                <p class="fs-6 text-center">Leverage machine learning to forecast equipment failures and prevent downtime.</p>
+                                <p class="fs-6 text-center">Stay ahead of potential risks with our intelligent alert system.</p>
                             </div>
                         </a>
                     </div>
+                    
                     <div class="col-md-6">
                         <a href="{% url 'training_resources' %}" class="text-decoration-none col-lg-4 col-md-6 col-sm-12">
                             <div class="feature card bg-light text-dark border-0 p-4">
