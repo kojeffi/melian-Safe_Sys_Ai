@@ -11,4 +11,5 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('change_password/', views.change_password, name='change_password'),
     path('chatbot_view/', views.chatbot_view, name='chatbot_view'),
+    path('subscribe/', views.subscribe, name='subscribe'),
 ]

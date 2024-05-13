@@ -108,3 +108,36 @@ def generate_bot_response(user_message):
     else:
         return "Sorry, I didn't understand that. Can you please rephrase your question?"
 
+
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from .models import Subscription
+from django.core.mail import send_mail
+
+
+def subscribe(request):
+    if request.method == 'POST':
+        # Handle form submission
+        email = request.POST.get('email')
+
+        # Check if the email already exists in the database
+        if not Subscription.objects.filter(email=email).exists():
+            # Save the email to the database
+            subscription = Subscription(email=email)
+            subscription.save()
+
+            # Send email confirmation
+            subject = 'Subscription Confirmation'
+            message = 'Thank you for subscribing!'
+            sender_email = 'omondijeff88@gmail.com'  # Your email address
+            recipient_list = [email]
+            send_mail(subject, message, sender_email, recipient_list)
+
+            # Render the subscription form with a success message
+            return render(request, 'index.html', {'success_message': 'Thank you for subscribing!'})
+        else:
+            # Email already exists, render the form with an error message
+            return render(request, 'index.html', {'error_message': 'Email already subscribed!'})
+    else:
+        # If the request method is GET, render the subscription form
+        return render(request, 'index.html')
