@@ -119,12 +119,20 @@
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <h4 class="text-white">Terms and Conditions of Use</h4>
+              <h2>Terms and Conditions of Use</h2>
               <p> </p>
             </div>
           </div>
         </div>
       </div>
+         <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'home-url' %}">Home</a></li>
+            <li class="text-white">Terms and Conditions of Use</li>
+          </ol>
+        </div>
+      </nav>
     </div><!-- End Breadcrumbs -->
 
   <!-- ======= About Us Section ======= -->
@@ -161,7 +169,9 @@
 <div class="acceptable-use-notice">
             <h3 class="text-black mb-3">Terms of Website Use</h3>
             <p>
-                These terms of use (together with the documents referred to in it) tell you the terms of use on which you may make use of the Afr website www.safesysai.com (our Website), whether as a guest or a registered user. Use of our Website includes accessing, browsing, or registering to use our Website.
+                These terms of use (together with the documents referred to in it) tell you the terms of use on which 
+                you may make use of the Afr website <a class="text-primary" href="www.safesysai.com">www.safesysai.com</a> (our Website), whether as a guest or a registered user. 
+                Use of our Website includes accessing, browsing, or registering to use our Website.
             </p>
             <p>
                 Please read these terms of use carefully before you start to use our Website, as these will apply to your use of our Website. In particular, please read the Limitation of Liability section below. You may print a copy of these terms for future reference.
@@ -181,7 +191,7 @@
             </ul>
             <h4 class="text-black mt-4">Information about Us</h4>
             <p>
-                www.safesysai.com is a Website operated by SafeSys AI Limited ("we"). We are registered in England and Wales under company number 15398624 and have our registered office at 4 Durham Workspace, Abbey Road, Pity Me, Durham DH1 5JZ.
+                <a class="text-primary" href="www.safesysai.com">www.safesysai.com</a> is a Website operated by SafeSys AI Limited ("we"). We are registered in England and Wales under company number 15398624 and have our registered office at 4 Durham Workspace, Abbey Road, Pity Me, Durham DH1 5JZ.
             </p>
             <h4 class="text-black mt-4">Our Website and Terms of Use</h4>
             <p>
@@ -194,7 +204,7 @@
             </p>
             <h4 class="text-black mt-4">Your Account and Password</h4>
               <p class="text-black">
-                  If you choose, or you are provided with, a user identification code, password or any other piece of information as part of our security procedures, you must treat such information as confidential. You must not disclose it to any third-party. If you know or suspect that anyone other than you knows your user identification code or password, you must promptly notify us at support@safesysai.com.
+                  If you choose, or you are provided with, a user identification code, password or any other piece of information as part of our security procedures, you must treat such information as confidential. You must not disclose it to any third-party. If you know or suspect that anyone other than you knows your user identification code or password, you must promptly notify us at <a class="text-primary" href="mailto:support@safesysai.com" class="text-white">support@safesysai.com</a>
 We have the right to disable any user identification code or password, whether chosen by you or allocated by us, at any time, if in our reasonable opinion, you have failed to comply with any of the provisions of these terms of use
 
               </p>
@@ -503,8 +513,8 @@ Thank you for visiting our Website.
                             <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                         </div>
                         <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
+{#                            <div class="loading">Loading</div>#}
+{#                            <div class="error-message"></div>#}
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                         <div class="text-center"><button type="submit">Send Message</button></div>

@@ -140,6 +140,13 @@ section {
   background-repeat: no-repeat;
 }
 
+    /*font-size: 50px;*/
+    /*    width: auto;*/
+    /*    background-image: linear-gradient(to right, #2869c3, #065c97, #d510ed);*/
+    /*    -webkit-background-clip: text; !* For Safari/Chrome/iOS *!*/
+    /*    background-clip: text;*/
+    /*    color: transparent;*/
+
 .breadcrumbs .page-header:before {
   content: "";
   background-color: rgba(14, 29, 52, 0.8);
@@ -150,7 +157,12 @@ section {
 .breadcrumbs .page-header h2 {
   font-size: 56px;
   font-weight: 500;
-  color: #fff;
+        width: auto;
+  background-clip: text;
+        color: transparent;
+  -webkit-background-clip: text;
+   background-image: linear-gradient(to right, #2869c3, #065c97, #d510ed);
+  /*color: #fff;*/
   font-family: var(--font-secondary);
 }
 

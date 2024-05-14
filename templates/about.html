@@ -93,6 +93,32 @@
   
   <main id="main">
 
+      
+      <style>
+    .learn{
+        background: linear-gradient(to right, #2869c3, #065c97, #d510ed);
+        padding: 10px 18px;
+        margin-left: 30px;
+        border-radius: 4px;
+        color: #fff;
+    }
+
+    .learn:hover{
+        color: #fff;
+        background: linear-gradient(to right, #d510ed, #2869c3);
+    }
+
+    .gradient-text {
+        font-size: 50px;
+        width: auto;
+        background-image: linear-gradient(to right, #2869c3, #065c97, #d510ed);
+        -webkit-background-clip: text; /* For Safari/Chrome/iOS */
+        background-clip: text;
+        color: transparent;
+    }
+
+</style>
+
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" style=" background-color: rgba(14, 29, 52, 0.8);">
       <div class="page-header d-flex align-items-center" 
@@ -100,12 +126,20 @@
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <h2>About Us</h2>
+              <h2 class="gradient-text">About Us</h2>
               <p></p>
             </div>
           </div>
         </div>
       </div>
+         <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'home-url' %}">Home</a></li>
+            <li class="text-white">About</li>
+          </ol>
+        </div>
+      </nav>
     </div><!-- End Breadcrumbs -->
 
     
@@ -113,9 +147,6 @@
     <!-- ======= About Us Section ======= -->
     <section  id="about"  class="about pt-0" style=" background-color: rgba(14, 29, 52, 0.8);">
         <div class="container">
-            <div class="section-header">
-                <h2 class="text-white">About Us</h2>
-            </div>
             <div  class="row gy-4">
                 <div class="col-lg-6 content order-last order-lg-first  ">
                     <br><br>
@@ -384,8 +415,8 @@
                             <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                         </div>
                         <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
+{#                            <div class="loading">Loading</div>#}
+{#                            <div class="error-message"></div>#}
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                         <div class="text-center"><button type="submit">Send Message</button></div>

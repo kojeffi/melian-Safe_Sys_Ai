@@ -108,6 +108,14 @@
                 </div>
             </div>
         </div>
+         <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'home-url' %}">Home</a></li>
+            <li class="text-white">Acceptable Use Notice</li>
+          </ol>
+        </div>
+      </nav>
     </div><!-- End Breadcrumbs -->
 
 
@@ -144,10 +152,9 @@
         }
     </style>
 <div class="acceptable-use-notice">
-    <h2>Acceptable Use Notice</h2>
-    <p>This acceptable use notice sets out the terms between you and us under which you may access our website www.safesysai.com (our site). This acceptable use notice applies to all users of, and visitors to, our site.</p>
+    <p>This acceptable use notice sets out the terms between you and us under which you may access our website <a class="text-primary" href="www.safesysai.com">www.safesysai.com</a> (our site). This acceptable use notice applies to all users of, and visitors to, our site.</p>
     <p>Your use of our site means that you accept, and agree to abide by, all the terms and notices in this acceptable use notice, which supplement our terms of website use.</p>
-    <p>www.safesysai.com is a site operated by SafeSys AI (we or us). We are registered in England and Wales under company number 15398624 and we have our registered office at 4 Durham Workspace, Abbey Road, Pity Me, Durham DH1 5JZ.</p>
+    <p><a class="text-primary" href="www.safesysai.com">www.safesysai.com</a> is a site operated by SafeSys AI (we or us). We are registered in England and Wales under company number 15398624 and we have our registered office at 4 Durham Workspace, Abbey Road, Pity Me, Durham DH1 5JZ.</p>
     <h3>Prohibited uses</h3>
     <p>You may use our site only for lawful purposes. You may not use our site:</p>
     <ol>
@@ -456,8 +463,8 @@
                             <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                         </div>
                         <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
+{#                            <div class="loading">Loading</div>#}
+{#                            <div class="error-message"></div>#}
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                         <div class="text-center"><button type="submit">Send Message</button></div>

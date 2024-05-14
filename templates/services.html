@@ -106,6 +106,14 @@
                 </div>
             </div>
         </div>
+         <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'home-url' %}">Home</a></li>
+            <li class="text-white">Services</li>
+          </ol>
+        </div>
+      </nav>
     </div><!-- End Breadcrumbs -->
 
 
@@ -126,9 +134,7 @@
     <!-- ======= Services Section ======= -->
     <section id="service" class="services pt-0" >
         <div class="container" data-aos="fade-up">
-            <div class="section-header">
-                <h2 class="text-white">Our Services</h2>
-            </div>
+            <br>
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card">
@@ -399,8 +405,8 @@
                             <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                         </div>
                         <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
+{#                            <div class="loading">Loading</div>#}
+{#                            <div class="error-message"></div>#}
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                         <div class="text-center"><button type="submit">Send Message</button></div>
