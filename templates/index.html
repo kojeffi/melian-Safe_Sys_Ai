@@ -116,6 +116,7 @@
 
 <!-- Chatbot Container -->
 <div class="chatbot-container">
+    
     <div class="chatbot-icon" onclick="toggleChatbot()">
         <i class="fas fa-comment-alt"></i>
     </div>
@@ -131,7 +132,8 @@
         {% endif %}
         <form method="POST" class="message-form" action="{% url 'chatbot_view' %}">
             {% csrf_token %}
-            <input type="text" name="user_message" class="form-control rounded mb-2" placeholder="Type your message..." autocomplete="off">
+            <input type="text" name="user_message" class="form-control rounded mb-2" 
+            placeholder="Type your message..." autocomplete="off">
             <button type="submit" class="btn btn-primary">
                 <i class="fas fa-paper-plane"></i>
             </button>
@@ -316,14 +318,17 @@
 <div class="cookie-banner" id="cookie-banner">
     <h3 class="text-black">Cookies Policy</h3>
     <p class="text-black">
-        Cookies are small text files that are placed on your computer by websites that you visit. They are widely used in order to make websites work, or work more efficiently, as well as to provide information to the owners of the site. Our aim in using Cookies is to be able to make the site better for you.
-        The cookies may identify the following information when you use our website:
-        technical information, including the Internet protocol (IP) address used to connect your computer to the Internet, your login information, browser type and version, time zone setting, browser plug-in types and versions, operating system type, version and platform, device type, version or serial number, screen resolution and number of CPU cores;
-        information about your visit, including the full Uniform Resource Locators (URL) clickstream to, through and from our site (including date and time stamps)
-        products you viewed or searched for;
-        page response times, download errors, length of visits to certain pages, page interaction information (such as scrolling, clicks, and mouse-overs)
-        and methods used to browse away from the page and any phone number used to call our customer service number.
-    </p>
+        Cookies are small text files that are placed on your computer by websites that you visit. They are widely used in order to make websites work, or work more efficiently, as well as to provide information to the owners of the site. Our aim in using Cookies is to be able to make the site better for you.</p>
+        <p class="text-black">The cookies may identify the following information when you use our website:</p>
+        <p class="text-black">technical information, including the Internet protocol (IP) address used to 
+        connect your computer to the Internet, your login information, browser type and version, 
+        time zone setting, browser plug-in types and versions, operating system type, version and 
+        platform, device type, version or serial number, screen resolution and number of CPU cores;</p>
+        <p class="text-black">information about your visit, including the full Uniform Resource Locators (URL) clickstream to, through and from our site (including date and time stamps)
+        products you viewed or searched for;</p>
+        <p class="text-black">page response times, download errors, length of visits to certain pages, page interaction information (such as scrolling, clicks, and mouse-overs)
+            and methods used to browse away from the page and any phone number used to call our customer service number.</p>
+   
     <button class="bg-success text-white" onclick="acceptCookies()">Accept</button>
     <button class="bg-dark text-white" onclick="learnMore()">Learn More</button>
 </div>
@@ -368,7 +373,8 @@
 </script>
 
 <main id="main">
-    <section id="featured-services" class="featured-services" style="margin-top: -80px;background-color: rgba(14, 29, 52, 0.8)">
+    <section id="featured-services" class="featured-services" 
+    style="margin-top: -80px;background-color: rgba(14, 29, 52, 0.8)">
         <div class="row gy-4" style="padding-left: 40px;padding-right:40px">
 
             <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">

@@ -22,7 +22,7 @@ urlpatterns = [
     path('privacy/', my_views.privacy, name='privacy-url'),
     path('services/', my_views.services, name='services-url'),
     path('terms/', my_views.terms, name='terms-url'),
-    path('contact/', contact, name='contact'),
+    path('contact/', contact, name='contact-url'),
 ]
 
 # Add media URL patterns to serve profile photos during development
