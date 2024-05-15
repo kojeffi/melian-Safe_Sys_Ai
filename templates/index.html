@@ -116,21 +116,22 @@
 
 <!-- Chatbot Container -->
 <div class="chatbot-container">
-    <div class="chatbot-icon bg-primary" onclick="toggleChatbot()">
+    <div class="chatbot-icon" onclick="toggleChatbot()">
         <i class="fas fa-comment-alt"></i>
     </div>
     <div class="chatbot-form-container">
         {% if message %}
             <div class="message-container">
                 <h4 class="text-primary text-center mb-4"><i class="fas fa-comment-alt"></i> SafeSysAi Chatbot</h4>
-                <p class="text-dark"><b>You:</b> {{ message.user_message }}</p>
-                <p class="text-success"><b>Bot:</b> {{ message.bot_response }}</p>
+                <div class="chat-message">
+                    <p class="text-dark"><b>You:</b> {{ message.user_message }}</p>
+                    <p class="text-success"><b>Bot:</b> {{ message.bot_response }}</p>
+                </div>
             </div>
         {% endif %}
         <form method="POST" class="message-form" action="{% url 'chatbot_view' %}">
             {% csrf_token %}
-            <input type="text" name="user_message" class="form-control rounded mb-2"
-                   placeholder="Type here..." autocomplete="off">
+            <input type="text" name="user_message" class="form-control rounded mb-2" placeholder="Type your message..." autocomplete="off">
             <button type="submit" class="btn btn-primary">
                 <i class="fas fa-paper-plane"></i>
             </button>
@@ -142,51 +143,63 @@
 <style>
     /* Chatbot Styling */
     .chatbot-container {
-        position: relative;
-        max-width: 350px;
-        margin-top: 80px;
-    }
-
-    .chatbot-icon {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #007bff;
+        z-index: 1000;
+    }
+
+    .chatbot-icon {
+        background: linear-gradient(135deg, #42a5f5 0%, #007bff 100%);
         color: #fff;
         border-radius: 50%;
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        z-index: 1000;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        animation: bounce 2s infinite;
     }
 
     .chatbot-icon:hover {
-        background-color: #0056b3;
+        background: linear-gradient(135deg, #007bff 0%, #42a5f5 100%);
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
     }
 
     .chatbot-form-container {
         display: none;
         position: fixed;
-        bottom: 100px;
+        bottom: 80px;
         right: 20px;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 15px;
         padding: 20px;
-        max-width: 300px;
+        max-width: 350px;
         z-index: 999;
         transition: all 0.3s ease;
         transform: translateY(20px);
+        opacity: 0;
     }
 
     .chatbot-form-container.active {
         display: block;
         transform: translateY(0);
+        opacity: 1;
     }
 
     .chatbot-form-container form {
@@ -197,44 +210,75 @@
     .chatbot-form-container input[type="text"] {
         flex: 1;
         padding: 10px;
-        border: none;
-        border-bottom: 2px solid #007bff;
+        border: 2px solid #007bff;
+        border-radius: 20px;
         outline: none;
         margin-right: 10px;
         font-size: 16px;
         color: #333;
+        transition: border-color 0.3s ease;
     }
 
     .chatbot-form-container input[type="text"]:focus {
-        border-bottom-color: #0056b3;
+        border-color: #42a5f5;
     }
 
     .chatbot-form-container button {
-        background-color: #007bff;
+        background: linear-gradient(135deg, #42a5f5 0%, #007bff 100%);
         color: #fff;
         border: none;
-        padding: 10px;
+        padding: 10px 15px;
         border-radius: 50%;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
 
     .chatbot-form-container button:hover {
-        background-color: #0056b3;
+        background: linear-gradient(135deg, #007bff 0%, #42a5f5 100%);
     }
 
     .message-container {
         margin-bottom: 10px;
     }
 
+    .message-container h4 {
+        margin-bottom: 20px;
+    }
+
+    .chat-message {
+        background-color: #e9ecef;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .chat-message p {
+        margin: 0;
+    }
+
+    /* Smooth expansion effect */
+    .chatbot-form-container {
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
 </style>
+
 <!-- JavaScript -->
 <script>
     function toggleChatbot() {
         var chatbotForm = document.querySelector('.chatbot-form-container');
         chatbotForm.classList.toggle('active');
     }
+
+    // Close the chatbot if clicked outside
+    document.addEventListener('click', function(event) {
+        var chatbotForm = document.querySelector('.chatbot-form-container');
+        var chatbotIcon = document.querySelector('.chatbot-icon');
+        if (!chatbotForm.contains(event.target) && !chatbotIcon.contains(event.target)) {
+            chatbotForm.classList.remove('active');
+        }
+    });
 </script>
+
 
 <style>
     .cookie-banner {
