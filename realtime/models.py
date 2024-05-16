@@ -1,6 +1,4 @@
-# models.py
 from django.db import models
-
 
 class SafetyRisk(models.Model):
     risk_name = models.CharField(max_length=255)

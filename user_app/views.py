@@ -6,6 +6,12 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm, UserProfileForm
 from .models import Profile, Message
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from .models import Subscription
+from django.core.mail import send_mail
+
+
 
 def register(request):
     if request.method == 'POST':
@@ -96,7 +102,6 @@ def chatbot_view(request):
         return render(request, 'index.html', {})
 
 def generate_bot_response(user_message):
-    # Example bot responses based on user messages
     if 'hello' in user_message.lower():
         return "Hi there! How can I assist you today?"
     elif 'help' in user_message.lower():
@@ -108,11 +113,6 @@ def generate_bot_response(user_message):
     else:
         return "Sorry, I didn't understand that. Can you please rephrase your question?"
 
-
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from .models import Subscription
-from django.core.mail import send_mail
 
 
 def subscribe(request):

@@ -32,8 +32,6 @@
         data-aos="fade-down" data-aos-duration="1000">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
         <a href="#" class="logo d-flex align-items-center" style="text-decoration:none">
-            {#            <!-- Uncomment the line below if you also wish to use an image logo -->#}
-            {#            <!-- <img src="assets/img/" alt=""> -->#}
             <h1>SafeSysAi</h1>
         </a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -65,58 +63,29 @@
     </div>
 </header><!-- End Header -->
 
-
-<style>
-    .learn{
-        background: linear-gradient(to right, #2869c3, #065c97, #d510ed);
-        padding: 10px 18px;
-        margin-left: 30px;
-        border-radius: 4px;
-        color: #fff;
-    }
-
-    .learn:hover{
-        color: #fff;
-        background: linear-gradient(to right, #d510ed, #2869c3);
-    }
-
-    .gradient-text {
-        font-size: 50px;
-        width: auto;
-        background-image: linear-gradient(to right, #2869c3, #065c97, #d510ed);
-        -webkit-background-clip: text; /* For Safari/Chrome/iOS */
-        background-clip: text;
-        color: transparent;
-    }
-
-</style>
-
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero d-flex align-items-center" data-aos="fade-up"
          data-aos-delay="200" data-aos-duration="1000">
-
-    <div class="row gy-4 d-flex justify-content-between" style="padding-left: 40px;">
+         <div class="container">
+    <div class="row gy-4 d-flex justify-content-between">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
             <h2>Welcome to <span class="gradient-text top-50"  style="font-size: 50px;width: auto;">SafeSysAI</span></h2>
             <p style="font-size: 20px;width:auto;">SafeSys AI leverages cutting-edge AI to empower oil and gas companies with real-time safety risk management and compliance assurance</p>
             <a class="get-a-quote btn-success text-white" href="{% url 'register-url' %}">
                 <button type="submit" class="btn btn-primary learn " style="margin-left:-4px;">Learn More
                     <i class="fas fa-arrow-circle-right" style="font-size:30px"></i></button></a>
-
         </div>
-
-        <div class="col-lg-5 order-1 hero-img order-lg-2 ">
-            <img width="100%" src="{% static 'assets1/img/man.png' %}"
+        <div class="col-lg-5 order-1 order-lg-2 ">
+            <img width="100%" height="400vh" src="{% static 'assets1/img/Trends-in-Oil-and-Gas-Industries-in-2023.jpeg' %}"
                  class="img-fluid mb-3 mb-lg-0 justify-content-lg-end bottom-0" alt="">
         </div>
-
+    </div>
     </div>
 </section><!-- End Hero Section -->
 
 
 <!-- Chatbot Container -->
 <div class="chatbot-container">
-    
     <div class="chatbot-icon" onclick="toggleChatbot()">
         <i class="fas fa-comment-alt"></i>
     </div>
@@ -142,178 +111,6 @@
 </div>
 <!-- End Chatbot Container -->
 
-<style>
-    /* Chatbot Styling */
-    .chatbot-container {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-    }
-
-    .chatbot-icon {
-        background: linear-gradient(135deg, #42a5f5 0%, #007bff 100%);
-        color: #fff;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        animation: bounce 2s infinite;
-    }
-
-    .chatbot-icon:hover {
-        background: linear-gradient(135deg, #007bff 0%, #42a5f5 100%);
-    }
-
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-        }
-        40% {
-            transform: translateY(-10px);
-        }
-        60% {
-            transform: translateY(-5px);
-        }
-    }
-
-    .chatbot-form-container {
-        display: none;
-        position: fixed;
-        bottom: 80px;
-        right: 20px;
-        background: #fff;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        border-radius: 15px;
-        padding: 20px;
-        max-width: 350px;
-        z-index: 999;
-        transition: all 0.3s ease;
-        transform: translateY(20px);
-        opacity: 0;
-    }
-
-    .chatbot-form-container.active {
-        display: block;
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .chatbot-form-container form {
-        display: flex;
-        align-items: center;
-    }
-
-    .chatbot-form-container input[type="text"] {
-        flex: 1;
-        padding: 10px;
-        border: 2px solid #007bff;
-        border-radius: 20px;
-        outline: none;
-        margin-right: 10px;
-        font-size: 16px;
-        color: #333;
-        transition: border-color 0.3s ease;
-    }
-
-    .chatbot-form-container input[type="text"]:focus {
-        border-color: #42a5f5;
-    }
-
-    .chatbot-form-container button {
-        background: linear-gradient(135deg, #42a5f5 0%, #007bff 100%);
-        color: #fff;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .chatbot-form-container button:hover {
-        background: linear-gradient(135deg, #007bff 0%, #42a5f5 100%);
-    }
-
-    .message-container {
-        margin-bottom: 10px;
-    }
-
-    .message-container h4 {
-        margin-bottom: 20px;
-    }
-
-    .chat-message {
-        background-color: #e9ecef;
-        padding: 10px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
-
-    .chat-message p {
-        margin: 0;
-    }
-
-    /* Smooth expansion effect */
-    .chatbot-form-container {
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-</style>
-
-<!-- JavaScript -->
-<script>
-    function toggleChatbot() {
-        var chatbotForm = document.querySelector('.chatbot-form-container');
-        chatbotForm.classList.toggle('active');
-    }
-
-    // Close the chatbot if clicked outside
-    document.addEventListener('click', function(event) {
-        var chatbotForm = document.querySelector('.chatbot-form-container');
-        var chatbotIcon = document.querySelector('.chatbot-icon');
-        if (!chatbotForm.contains(event.target) && !chatbotIcon.contains(event.target)) {
-            chatbotForm.classList.remove('active');
-        }
-    });
-</script>
-
-
-<style>
-    .cookie-banner {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #ccc;
-        color: #ccc;
-        padding: 10px 20px;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-        z-index: 9999;
-        text-align: center;
-    }
-    .cookie-banner p {
-        margin: 0;
-    }
-    .cookie-banner button {
-        background-color: green;
-        color: #333;
-        border: none;
-        padding: 8px 20px;
-        font-size: 16px;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-left: 10px;
-    }
-    .cookie-banner button:hover {
-        background-color: blue;
-    }
-</style>
-
-<!-- Cookie Banner -->
 <!-- Cookie Banner -->
 <div class="cookie-banner" id="cookie-banner">
     <h3 class="text-black">Cookies Policy</h3>
@@ -333,54 +130,16 @@
     <button class="bg-dark text-white" onclick="learnMore()">Learn More</button>
 </div>
 
-<!-- Your website content goes here -->
-
-<script>
-    // Function to check if the user has accepted cookies
-    function checkCookieAccepted() {
-        return document.cookie.includes('cookiesAccepted=true');
-    }
-
-    // Function to set the cookie
-    function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    }
-
-    // Function to handle accepting cookies
-    function acceptCookies() {
-        setCookie('cookiesAccepted', true, 365); // Set cookie for 365 days
-        document.getElementById('cookie-banner').style.display = 'none'; // Hide the banner
-    }
-
-    // Function to handle "Learn More" button click
-    function learnMore() {
-        // Redirect to your privacy policy page or another page with more information about cookies
-        window.location.href = '{% url 'home-url' %}';
-    }
-
-    // Check if cookies are accepted when the page loads
-    window.onload = function () {
-        if (checkCookieAccepted()) {
-            document.getElementById('cookie-banner').style.display = 'none'; // Hide the banner if cookies are accepted
-        }
-    };
-</script>
 
 <main id="main">
     <section id="featured-services" class="featured-services" 
-    style="margin-top: -80px;background-color: rgba(14, 29, 52, 0.8)">
-        <div class="row gy-4" style="padding-left: 40px;padding-right:40px">
-
+    style="margin-top: -40px;background-color: rgba(14, 29, 52, 0.8)">
+    <div class="container">
+        <div class="row gy-4">
             <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
                 <div>
                     <div class="flex-shrink-0 h1"><i class="fas fa-shield-alt gradient-text"></i></div>
-                    <h4 class="title text-white" style="font-size: 30px">Real-Time Safety Insights</h4>
+                    <h4 class="title text-white" style="font-size: 20px">Real-Time Safety Insights</h4>
                     <p class="description text-white">SafeSys AI provides user-friendly dashboards delivering real-time safety and compliance data, empowering you to make informed decisions promptly.</p>
                     <a href="#hero" class="readmore stretched-link text-white"><span>Learn More</span><i class="  text-white bi bi-arrow-right"></i></a>
                 </div>
@@ -388,20 +147,21 @@
             <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
                 <div>
                     <div class="flex-shrink-0 h1"><i class="fas fa-chart-line gradient-text"></i></div>
-                    <h4 class="title text-white" style="font-size: 30px">Proactive Risk Mitigation</h4>
+                    <h4 class="title text-white" style="font-size: 20px">Proactive Risk Mitigation</h4>
                     <p class="description text-white">Utilise AI-driven predictive analytics to identify potential hazards and compliance issues before they escalate, ensuring a safer operational environment.</p>
                     <a href="#hero" class="readmore stretched-link text-white "><span>Learn More</span><i class="text-white  bi bi-arrow-right"></i></a>
                 </div>
             </div><div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div>
                 <div class="h1 flex-shrink-0"><i class="fas fa-rocket gradient-text"></i></div>
-                <h4 class="title text-white" style="font-size: 30px">Streamlined Compliance</h4>
+                <h4 class="title text-white" style="font-size: 20px">Streamlined Compliance</h4>
                 <p class="description text-white">SafeSys AI simplifies compliance management by providing real-time updates on regulatory changes and automating compliance checks.</p>
                 <a href="#hero" class="readmore stretched-link text-white"><span>Learn More</span><i class=" text-white bi bi-arrow-right"></i></a>
             </div>
-        </div></div>
+        </div>
+    </div>
+    </div>
     </section>
-
 
     <!-- ======= About Us Section ======= -->
     <section  id="about"  class="about pt-0" style=" background-color: rgba(14, 29, 52, 0.8);">
@@ -413,7 +173,7 @@
                 <div class="col-lg-6 content order-last order-lg-first  ">
                     <br><br>
                     <img class="img-responsive img-fluid rounded" height="400vh"
-                         width="100%" src="{% static 'assets1/img/about-2.jpg' %}" alt="">
+                         width="100%" src="{% static 'assets1/img/download (5).jpeg' %}" alt="">
                     <br><br>
                 </div>
                 <div class="col-lg-6 content position-relative align-self-start order-lg-last order-first">
@@ -421,7 +181,6 @@
                     <p class="text-white">
                         SafeSys AI anticipates safety risks, ensuring market relevance. Its adaptable model and customisable modules set a new standard in safety and compliance management.
                     </p>
-
                     <ul>
                         <li data-aos="fade-up" data-aos-delay="100">
                             <i class="bi bi-diagram-3 text-white"></i>
@@ -441,17 +200,13 @@
                     </ul>
                 </div>
             </div>
-
         </div>
     </section><!-- End About Us Section -->
-
-
 
 
     <style>
         .card {
             background-color: #fff;
-            padding: 20px;
             border-radius: 30px;
             box-shadow: 0 4px 8px rgba(28, 139, 218, 0.2), 0 0 40px rgba(103, 119, 218, 0.1); /* Orange box shadow */
             transition: transform 0.3s ease-in-out;
@@ -672,7 +427,7 @@
                     </div></div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="{% static 'assets1/img/faq.jpg' %}" class="img-fluid rounded" alt="Image description">
+                    <img height="100vh" width="100%" src="{% static 'assets1/img/faq.jpg' %}" class="img-fluid rounded" alt="Image description">
                 </div>
             </div>
 
@@ -692,7 +447,7 @@
                         <div>
                             <h4 class="text-white">Location:</h4>
                             <p class="text-white">4 Durham Workspace<br>
-                                PityMe, Durham DH1 5GG, UK</p>
+                                PityMe, Durham DH1 5JZ, UK</p>
                         </div>
                     </div><!-- End Info Item -->
 
@@ -752,17 +507,10 @@
 
                             form.addEventListener('submit', function(event) {
                                 event.preventDefault();
-
-                                // Here you can add code to submit the form via AJAX if needed.
-                                // After successful submission, display the success message.
-                                // For simplicity, I'm just showing/hiding the message without AJAX.
                                 successMessage.style.display = 'block';
                             });
                         });
                     </script>
-
-
-
                 </div><!-- End Contact Form -->
             </div>
         </div>
@@ -895,6 +643,60 @@
 
     // Add scroll event listener to highlight active navigation link
     window.addEventListener('scroll', highlightNavLink);
+</script>
+
+<!-- JavaScript -->
+<script>
+    function toggleChatbot() {
+        var chatbotForm = document.querySelector('.chatbot-form-container');
+        chatbotForm.classList.toggle('active');
+    }
+
+    // Close the chatbot if clicked outside
+    document.addEventListener('click', function(event) {
+        var chatbotForm = document.querySelector('.chatbot-form-container');
+        var chatbotIcon = document.querySelector('.chatbot-icon');
+        if (!chatbotForm.contains(event.target) && !chatbotIcon.contains(event.target)) {
+            chatbotForm.classList.remove('active');
+        }
+    });
+</script>
+
+<script>
+    // Function to check if the user has accepted cookies
+    function checkCookieAccepted() {
+        return document.cookie.includes('cookiesAccepted=true');
+    }
+
+    // Function to set the cookie
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    // Function to handle accepting cookies
+    function acceptCookies() {
+        setCookie('cookiesAccepted', true, 365); // Set cookie for 365 days
+        document.getElementById('cookie-banner').style.display = 'none'; // Hide the banner
+    }
+
+    // Function to handle "Learn More" button click
+    function learnMore() {
+        // Redirect to your privacy policy page or another page with more information about cookies
+        window.location.href = '{% url 'home-url' %}';
+    }
+
+    // Check if cookies are accepted when the page loads
+    window.onload = function () {
+        if (checkCookieAccepted()) {
+            document.getElementById('cookie-banner').style.display = 'none'; // Hide the banner if cookies are accepted
+        }
+    };
 </script>
 </body>
 </html>

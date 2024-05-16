@@ -1,7 +1,6 @@
 from django import forms
 from .models import SafetyRisk, ComplianceRegulation, EquipmentMaintenance
 
-
 class SafetyRiskForm(forms.ModelForm):
     class Meta:
         model = SafetyRisk
@@ -18,7 +17,6 @@ class SafetyRiskForm(forms.ModelForm):
             'risk_level': 'Select the severity level of the safety risk.',
             'risk_category': 'Choose a category to classify the safety risk.'
         }
-
 
 class ComplianceRegulationForm(forms.ModelForm):
     class Meta:

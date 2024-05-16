@@ -315,7 +315,7 @@ section {
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 40px;
   margin: 0;
   font-weight: 700;
   color: #fff;
@@ -1926,3 +1926,334 @@ section {
 .footer .credits a {
   color: #fff;
 }
+
+
+
+
+/* added styling */
+    .learn{
+        background: linear-gradient(to right, #2869c3, #065c97, #d510ed);
+        padding: 10px 18px;
+        margin-left: 30px;
+        border-radius: 4px;
+        color: #fff;
+    }
+
+    .learn:hover{
+        color: #fff;
+        background: linear-gradient(to right, #d510ed, #2869c3);
+    }
+
+    .gradient-text {
+        font-size: 50px;
+        width: auto;
+        background-image: linear-gradient(to right, #2869c3, #065c97, #d510ed);
+        -webkit-background-clip: text; /* For Safari/Chrome/iOS */
+        background-clip: text;
+        color: transparent;
+    }
+
+    .learn{
+        background: linear-gradient(to right, #2869c3, #065c97, #d510ed);
+        padding: 10px 18px;
+        margin-left: 30px;
+        border-radius: 4px;
+        color: #fff;
+    }
+
+    .learn:hover{
+        color: #fff;
+        background: linear-gradient(to right, #d510ed, #2869c3);
+    }
+
+    .gradient-text {
+        font-size: 40px;
+        width: auto;
+        background-image: linear-gradient(to right, #2869c3,  #d510ed);
+        -webkit-background-clip: text; /* For Safari/Chrome/iOS */
+        background-clip: text;
+        color: transparent;
+    }
+        /* CSS styles for the Acceptable Use Notice */
+        .acceptable-use-notice {
+            font-family: Arial, sans-serif; /* Choose a modern font */
+            font-size: 16px; /* Adjust font size */
+            line-height: 1.6; /* Adjust line height for readability */
+            color: #333; /* Choose a dark color for text */
+            background-color: #f9f9f9; /* Light background color */
+            padding: 20px; /* Add padding for spacing */
+            border-radius: 10px; /* Add rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            margin: 20px auto; /* Center the content */
+            max-width: 800px; /* Limit width for better readability */
+        }
+        
+
+        .acceptable-use-notice p {
+            margin-bottom: 15px; /* Add space between paragraphs */
+        }
+
+        .acceptable-use-notice ol {
+            margin-bottom: 15px; /* Add space between ordered list items */
+        }
+
+        .acceptable-use-notice ol li {
+            margin-bottom: 5px; /* Add space between list items */
+        }
+    .acceptable-use-notice {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.acceptable-use-notice h3 {
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.acceptable-use-notice p {
+    margin-bottom: 15px;
+}
+
+.acceptable-use-notice ol,
+.acceptable-use-notice ul {
+    margin: 10px 0 15px 20px;
+}
+
+.acceptable-use-notice li {
+    margin-bottom: 10px;
+}
+
+.acceptable-use-notice a.text-primary {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.acceptable-use-notice a.text-primary:hover {
+    text-decoration: underline;
+}
+
+    /* Chatbot Styling */
+    .chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .chatbot-icon {
+        background: linear-gradient(135deg, #42a5f5 0%, #007bff 100%);
+        color: #fff;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        animation: bounce 2s infinite;
+    }
+
+    .chatbot-icon:hover {
+        background: linear-gradient(135deg, #007bff 0%, #42a5f5 100%);
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+
+    .chatbot-form-container {
+        display: none;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 15px;
+        padding: 20px;
+        max-width: 350px;
+        z-index: 999;
+        transition: all 0.3s ease;
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    .chatbot-form-container.active {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .chatbot-form-container form {
+        display: flex;
+        align-items: center;
+    }
+
+    .chatbot-form-container input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        border: 2px solid #007bff;
+        border-radius: 20px;
+        outline: none;
+        margin-right: 10px;
+        font-size: 16px;
+        color: #333;
+        transition: border-color 0.3s ease;
+    }
+
+    .chatbot-form-container input[type="text"]:focus {
+        border-color: #42a5f5;
+    }
+
+    .chatbot-form-container button {
+        background: linear-gradient(135deg, #42a5f5 0%, #007bff 100%);
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .chatbot-form-container button:hover {
+        background: linear-gradient(135deg, #007bff 0%, #42a5f5 100%);
+    }
+
+    .message-container {
+        margin-bottom: 10px;
+    }
+
+    .message-container h4 {
+        margin-bottom: 20px;
+    }
+
+    .chat-message {
+        background-color: #e9ecef;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .chat-message p {
+        margin: 0;
+    }
+
+    /* Smooth expansion effect */
+    .chatbot-form-container {
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+/* styling for cookies */
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ccc;
+        color: #ccc;
+        padding: 10px 20px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        text-align: center;
+    }
+    .cookie-banner p {
+        margin: 0;
+    }
+    .cookie-banner button {
+        background-color: green;
+        color: #333;
+        border: none;
+        padding: 8px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+    .cookie-banner button:hover {
+        background-color: blue;
+    }
+
+  
+    .learn{
+        background: linear-gradient(to right, #2869c3, #065c97, #d510ed);
+        padding: 10px 18px;
+        margin-left: 30px;
+        border-radius: 4px;
+        color: #fff;
+    }
+
+    .learn:hover{
+        color: #fff;
+        background: linear-gradient(to right, #d510ed, #2869c3);
+    }
+
+    .gradient-text {
+        font-size: 40px;
+        width: auto;
+        background-image: linear-gradient(to right, #2869c3, #d510ed);
+        -webkit-background-clip: text; /* For Safari/Chrome/iOS */
+        background-clip: text;
+        color: transparent;
+    }
+    
+    /* CSS */
+.cool-paragraph {
+    font-family: "Arial", sans-serif; /* Choose a modern font */
+    font-size: 18px; /* Adjust font size */
+    color: #333; /* Choose a dark color for text */
+    line-height: 1.6; /* Adjust line height for readability */
+    text-align: justify; /* Justify text for a clean look */
+    padding: 10px; /* Add padding for breathing space */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.cool-paragraph:hover {
+    background-color: #e9e9e9; /* Darken background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+
+        /* CSS styles for the Acceptable Use Notice */
+        .acceptable-use-notice {
+            font-family: Arial, sans-serif; /* Choose a modern font */
+            font-size: 16px; /* Adjust font size */
+            line-height: 1.6; /* Adjust line height for readability */
+            padding: 20px; /* Add padding for spacing */
+            border-radius: 10px; /* Add rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            margin: 20px auto; /* Center the content */
+            max-width: 800px; /* Limit width for better readability */
+        }
+        
+
+        .acceptable-use-notice p {
+            margin-bottom: 15px; /* Add space between paragraphs */
+            text-decoration: whitesmoke;
+        }
+
+        .acceptable-use-notice ol {
+            margin-bottom: 15px; /* Add space between ordered list items */
+        }
+
+        .acceptable-use-notice ol li {
+            margin-bottom: 5px; /* Add space between list items */
+        }

@@ -1,14 +1,10 @@
 {% extends 'dashbord/master.html' %}
-
 {% block content %}
     {% load static %}
     {% load django_bootstrap5 %}
     <div class="card card-flush h-xl-100" style="margin-top:-10px;">
-
-
         <div class="card-header pt-5">
             <!--begin::Title-->
-            
                   <h3 class="card-title align-items-start flex-column">
                 <span class="card-label fw-bold text-dark">My Personal Information</span>
             </h3>
@@ -33,16 +29,12 @@
             <div class="mb-4">
                 <p class="card-text"><strong>About Me:</strong> {{ user.profile.about }}</p>
             </div>
-        
-        
         <div class="card-header pt-5">
             <!--begin::Title-->
-            
                   <h3 class="card-title align-items-start flex-column">
                 <span class="card-label fw-bold text-dark">Update Your Profile</span>
             </h3>
         </div>
-
                   <h3 class="card-title align-items-start flex-column">
                 <span class="card-label fw-bold text-dark"></span>
             </h3>
@@ -59,9 +51,7 @@
             </form>
             <!-- End of Profile Form -->
         </div>
-
         <!-- end::Card header -->
     </div>
     <!-- end::Details View -->
-
 {% endblock %}

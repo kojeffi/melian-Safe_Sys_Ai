@@ -1,14 +1,21 @@
 from django.shortcuts import render
+from django.core.mail import send_mail
+from django.http import JsonResponse
+from django.shortcuts import render
 
 
 def home(request):
     return render(request, 'index.html')
+
 def about(request):
     return render(request, 'about.html')
+
 def acceptable(request):
     return render(request, 'acceptable.html')
+
 def accessibility(request):
     return render(request, 'accessibility.html')
+
 def contact(request):
     return render(request, 'contact.html')
 
@@ -25,11 +32,6 @@ def terms(request):
     return render(request, 'terms.html')
 
 
-
-from django.core.mail import send_mail
-from django.http import JsonResponse
-from django.shortcuts import render
-
 def contact(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -42,7 +44,7 @@ def contact(request):
             subject,
             message,
             email,
-            ['omondijeff88@gmail.com'],  # Change this to your email address
+            ['omondijeff88@gmail.com'], # Change this to your email address
             fail_silently=False,
         )
         return JsonResponse({'success': True})

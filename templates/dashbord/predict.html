@@ -3,22 +3,17 @@
     {% load static %}
     {% load django_bootstrap5 %}
     <!--begin::Content-->
-
     <div class="card card-flush h-xl-100" style="margin-top:-10px;">
-
-
         <div class="card-header pt-5">
             <!--begin::Title-->
             <h3 class="card-title align-items-start flex-column">
                 <span class="card-label fw-bold text-dark">Real Time Monitoring</span>
             </h3>
             <!--end::Title-->
-
         </div>
         <!--end::Header-->
         <!--begin::Body-->
         <div class="card-body pt-6">
-
             <!-- Upload Form -->
             <div class="form-card bg-white p-4">
                 <form method="post" enctype="multipart/form-data">
@@ -33,7 +28,6 @@
                     <button type="submit" class="btn btn-warning text-white learn">Upload File and Predict Maintenance</button>
                 </form>
             </div>
-
             <!-- Anomaly Detection Results -->
             {% if anomaly_results %}
                 <hr>
@@ -46,7 +40,6 @@
                     </ul>
                 </div>
             {% endif %}
-
             <!-- Incident Prediction Results -->
             {% if incident_predictions %}
                 <hr>
@@ -59,7 +52,6 @@
                     </ul>
                 </div>
             {% endif %}
-
             <!-- Predictive Maintenance Results -->
             {% if maintenance_results %}
                 <hr>
@@ -72,7 +64,6 @@
                     </ul>
                 </div>
             {% endif %}
-
             <!-- Optimized Maintenance Schedule -->
             {% if optimized_schedule %}
                 <hr>
@@ -81,13 +72,8 @@
                     <p>{{ optimized_schedule }}</p>
                 </div>
             {% endif %}
-
         </div>
-
-
     </div>
     <!-- end::Toolbar -->
-
-
     <!-- end::Main -->
 {% endblock %}

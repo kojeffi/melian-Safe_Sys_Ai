@@ -40,6 +40,6 @@ def dashboard(request):
         'safety_incident_form': safety_incident_form,
         'compliance_regulation_form': compliance_regulation_form,
         'equipment_maintenance_form': equipment_maintenance_form,
-        'alert_count': alert_count,  # Pass alert count to template context
+        'alert_count': alert_count,  #Pass alert count to template context
     }
     return render(request, 'dashbord/dashboard.html', context)

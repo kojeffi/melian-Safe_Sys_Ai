@@ -27,6 +27,33 @@
     <link href="{% static 'dashbord/assets/css/style.bundle.css' %}" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
     <script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
+   
+    <style>
+        .learn{
+            background: linear-gradient(to right, #2869c3, #065c97, #d510ed);
+            padding: 10px 18px;
+            margin-left: 30px;
+            border-radius: 4px;
+            color: #fff;
+        }
+
+        .learn:hover{
+            color: #fff;
+            background: linear-gradient(to right, #d510ed, #2869c3);
+        }
+
+        .gradient-text {
+            font-size: 30px;
+            width: auto;
+            background-image: linear-gradient(to right, #2869c3, #065c97, #d510ed);
+            -webkit-background-clip: text; /* For Safari/Chrome/iOS */
+            background-clip: text;
+            color: transparent;
+        }
+
+    </style>
+
+
 </head>
 
 <!--begin::Body-->
@@ -64,35 +91,9 @@ else { themeMode = defaultThemeMode; } }
                             <span class="path2"></span>
                         </i>
                     </div>
-                    <style>
-                        .learn{
-                            background: linear-gradient(to right, #2869c3, #065c97, #d510ed);
-                            padding: 10px 18px;
-                            margin-left: 30px;
-                            border-radius: 4px;
-                            color: #fff;
-                        }
-
-                        .learn:hover{
-                            color: #fff;
-                            background: linear-gradient(to right, #d510ed, #2869c3);
-                        }
-
-                        .gradient-text {
-                            font-size: 30px;
-                            width: auto;
-                            background-image: linear-gradient(to right, #2869c3, #065c97, #d510ed);
-                            -webkit-background-clip: text; /* For Safari/Chrome/iOS */
-                            background-clip: text;
-                            color: transparent;
-                        }
-
-                    </style>
                     <!--end::Sidebar mobile toggle-->
                     <!--begin::Logo-->
                     <a href="#" class="logo d-flex align-items-center" style="text-decoration:none">
-                        {#            <!-- Uncomment the line below if you also wish to use an image logo -->#}
-                        {#            <!-- <img src="assets/img/" alt=""> -->#}
                         <h1 class="text-white">SafeSysAi</h1>
                     </a>
                     <!--end::Logo-->
@@ -225,8 +226,6 @@ else { themeMode = defaultThemeMode; } }
                             <!--end::Menu-->
                         </div>
                         <!--end::Search-->
-
-
                     </div>
 
                     <!--begin::Notification-->
@@ -234,11 +233,8 @@ else { themeMode = defaultThemeMode; } }
                         <button class="btn btn-icon   me-3">
                             <i class="fas fa-bell icon-sm text-primary" style="font-size: 20px">
                                 {{ alert_count }}</i>
-
                         </button>
                     </div>
-
-
                     <!--end::Notification-->
                     <!--begin::User menu-->
 
@@ -644,7 +640,7 @@ else { themeMode = defaultThemeMode; } }
                     <!--end::Description-->
                     <!--begin::Illustration-->
                     <img class="mx-auto h-150px rounded h-lg-175px mb-4" 
-                         src="{% static 'assets1/img/ai2.jpeg' %}" alt="SafeSysAi Illustration" />
+                         src="{% static 'assets1/img/download (6).jpeg' %}" alt="SafeSysAi Illustration" />
                     <!--end::Illustration-->
                     <div class="text-center mb-lg-5 pb-lg-3">
                         <!-- Ensure the URL is correct and matches the URL pattern in your Django project -->
@@ -703,10 +699,10 @@ else { themeMode = defaultThemeMode; } }
             <!--begin::Menu-->
             <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
                 <li class="menu-item">
-                    <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2 text-white">About</a>
+                    <a href="{% url 'about-url' %}" target="_blank" class="menu-link px-2 text-white">About</a>
                 </li>
                 <li class="menu-item">
-                    <a href="{% url 'home-url' %}" target="_blank" class="menu-link px-2 text-white">Support</a>
+                    <a href="{% url 'contact-url' %}" target="_blank" class="menu-link px-2 text-white">Support</a>
                 </li>
             </ul>
             <!--end::Menu-->

@@ -6,4 +6,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard', dashboard, name='dashboard'),
 ]
-

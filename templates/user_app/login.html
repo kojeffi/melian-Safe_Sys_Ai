@@ -63,7 +63,7 @@
                 <!--end::Header-->
                 <!--begin::Illustration-->
                 <div class="d-none d-lg-block rounded d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain
-                 bgi-position-y-bottom min-h-100px min-h-lg-350px" style="background-image: url({% static 'assets1/img/about-2.jpg' %})"></div>
+                 bgi-position-y-bottom min-h-100px min-h-lg-350px" style="background-image: url({% static 'assets1/img/Trends-in-Oil-and-Gas-Industries-in-2023.jpeg' %})"></div>
                 
                  <!--end::Illustration-->
             </div>
@@ -94,14 +94,18 @@
                     </div>
                 {% endif %}
                 <div class="w-lg-500px p-10 p-lg-15 mx-auto">
-                        <!--begin::Title-->
-                        <h1 class="text-dark mb-3">Sign In to SafeSysAi</h1>
-                        <!--end::Title-->
-                        <!--begin::Link-->
-                        <div class="text-gray-400 fw-semibold fs-4">New Here?
-                            <a href="{% url 'register-url' %}" class="link-primary fw-bold">Create an Account</a>
-                        </div>
-                        <!--end::Link-->
+                    <!--begin::Heading-->
+								<div class="text-center mb-10">
+									<!--begin::Title-->
+									<h1 class="text-dark mb-3">Sign In to SafeSysAi</h1>
+									<!--end::Title-->
+									<!--begin::Link-->
+									<div class="text-gray-400 fw-semibold fs-4">New Here?
+									<a href="{%url 'register-url' %}" class="link-primary fw-bold">Create an Account</a></div>
+									<!--end::Link-->
+								</div>
+								<!--begin::Heading-->
+
                     <br><br>
                             <form method="post">
                                 {% csrf_token %}

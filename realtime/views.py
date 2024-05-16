@@ -6,6 +6,15 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import IsolationForest, RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
+from django.shortcuts import render
+from .forms import EquipmentMaintenanceForm
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from django.shortcuts import render, redirect
+from .forms import SafetyRiskForm, ComplianceRegulationForm, EquipmentMaintenanceForm
+from .models import SafetyRisk, ComplianceRegulation, EquipmentMaintenance
+
 
 
 def anomaly_detection(request):
@@ -47,13 +56,6 @@ def anomaly_detection(request):
     else:
         form = SafetyRiskForm()
     return render(request, 'dashbord/realtime.html', {'form': form})
-
-
-from django.shortcuts import render
-from .forms import EquipmentMaintenanceForm
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
 
 
 def predictive_maintenance(request):
@@ -103,12 +105,6 @@ def anomaly_results_api(request):
         # Fetch anomaly detection results from the database
         anomaly_results = AnomalyResult.objects.all().values('label', 'value')
         return JsonResponse(list(anomaly_results), safe=False)
-
-
-# views.py
-from django.shortcuts import render, redirect
-from .forms import SafetyRiskForm, ComplianceRegulationForm, EquipmentMaintenanceForm
-from .models import SafetyRisk, ComplianceRegulation, EquipmentMaintenance
 
 
 def real(request):

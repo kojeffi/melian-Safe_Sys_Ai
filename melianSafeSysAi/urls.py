@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
 from . import views as my_views
 from .views import contact
 
@@ -24,7 +23,5 @@ urlpatterns = [
     path('terms/', my_views.terms, name='terms-url'),
     path('contact/', contact, name='contact-url'),
 ]
-
-# Add media URL patterns to serve profile photos during development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
