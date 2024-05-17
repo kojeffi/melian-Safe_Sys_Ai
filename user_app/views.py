@@ -22,7 +22,7 @@ def register(request):
 @login_required
 def dashboard(request):
     user = request.user
-    return render(request, 'dashboard/index.html', {'username': user.username, 'email': user.email})
+    return render(request, 'dashbord/index.html', {'username': user.username, 'email': user.email})
 
 @login_required
 def change_password(request):
@@ -33,7 +33,7 @@ def change_password(request):
             return redirect('profile-url')
     else:
         form = UserProfileForm(instance=request.user.profile)
-    return render(request, 'dashboard/change_password.html', {'form': form})
+    return render(request, 'dashbord/change_password.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -56,7 +56,7 @@ def profile(request):
             return redirect('profile-url')
     else:
         form = UserProfileForm(instance=request.user.profile)
-    return render(request, 'dashboard/profile.html', {'form': form})
+    return render(request, 'dashbord/profile.html', {'form': form})
 
 def contact(request):
     if request.method == 'POST':
