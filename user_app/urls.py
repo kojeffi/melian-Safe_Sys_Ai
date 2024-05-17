@@ -13,6 +13,3 @@ urlpatterns = [
     path('chatbot_view/', views.chatbot_view, name='chatbot_view'),
     path('subscribe/', views.subscribe, name='subscribe'),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -5,13 +5,7 @@ from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm, UserProfileForm
-from .models import Profile, Message
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from .models import Subscription
-from django.core.mail import send_mail
-
-
+from .models import Profile, Message, Subscription
 
 def register(request):
     if request.method == 'POST':
@@ -28,20 +22,18 @@ def register(request):
 @login_required
 def dashboard(request):
     user = request.user
-    username = user.username
-    email = user.email
-    return render(request, 'dashbord/index.html', {'username': username, 'email': email})
+    return render(request, 'dashboard/index.html', {'username': user.username, 'email': user.email})
 
 @login_required
 def change_password(request):
     if request.method == 'POST':
-        form = UserProfileForm(request.POST)
+        form = UserProfileForm(request.POST, instance=request.user.profile)
         if form.is_valid():
             form.save()
             return redirect('profile-url')
     else:
-        form = UserProfileForm()
-    return render(request, 'dashbord/index.html', {'form': form})
+        form = UserProfileForm(instance=request.user.profile)
+    return render(request, 'dashboard/change_password.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -57,20 +49,14 @@ def user_login(request):
 
 @login_required
 def profile(request):
-    user = request.user
-    try:
-        profile = user.profile
-    except Profile.DoesNotExist:
-        profile = Profile.objects.create(user=user)
-
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, instance=profile)
+        form = UserProfileForm(request.POST, request.FILES, instance=request.user.profile)
         if form.is_valid():
             form.save()
             return redirect('profile-url')
     else:
-        form = UserProfileForm(instance=profile)
-    return render(request, 'dashbord/overview.html', {'form': form})
+        form = UserProfileForm(instance=request.user.profile)
+    return render(request, 'dashboard/profile.html', {'form': form})
 
 def contact(request):
     if request.method == 'POST':
@@ -79,7 +65,6 @@ def contact(request):
         subject = request.POST.get('subject')
         message = request.POST.get('message')
 
-        # Send email
         send_mail(
             subject,
             message,
@@ -94,12 +79,10 @@ def contact(request):
 def chatbot_view(request):
     if request.method == 'POST':
         user_message = request.POST['user_message']
-        bot_response = generate_bot_response(user_message)  # Call a function to generate bot responses
+        bot_response = generate_bot_response(user_message)
         message = Message.objects.create(user_message=user_message, bot_response=bot_response)
-
         return render(request, 'index.html', {'message': message})
-    else:
-        return render(request, 'index.html', {})
+    return render(request, 'index.html')
 
 def generate_bot_response(user_message):
     if 'hello' in user_message.lower():
@@ -113,31 +96,19 @@ def generate_bot_response(user_message):
     else:
         return "Sorry, I didn't understand that. Can you please rephrase your question?"
 
-
-
 def subscribe(request):
     if request.method == 'POST':
-        # Handle form submission
         email = request.POST.get('email')
-
-        # Check if the email already exists in the database
         if not Subscription.objects.filter(email=email).exists():
-            # Save the email to the database
             subscription = Subscription(email=email)
             subscription.save()
-
-            # Send email confirmation
-            subject = 'Subscription Confirmation'
-            message = 'Thank you for subscribing!'
-            sender_email = 'omondijeff88@gmail.com'  # Your email address
-            recipient_list = [email]
-            send_mail(subject, message, sender_email, recipient_list)
-
-            # Render the subscription form with a success message
+            send_mail(
+                'Subscription Confirmation',
+                'Thank you for subscribing!',
+                'omondijeff88@gmail.com',  # Your email address
+                [email]
+            )
             return render(request, 'index.html', {'success_message': 'Thank you for subscribing!'})
         else:
-            # Email already exists, render the form with an error message
             return render(request, 'index.html', {'error_message': 'Email already subscribed!'})
-    else:
-        # If the request method is GET, render the subscription form
-        return render(request, 'index.html')
+    return render(request, 'index.html')
