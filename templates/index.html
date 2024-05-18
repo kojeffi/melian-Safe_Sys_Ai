@@ -269,63 +269,115 @@
         </div>
     </section><!-- End About Us Section -->
 
-
-    <style>
-        .card {
-            background-color: #fff;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(28, 139, 218, 0.2), 0 0 40px rgba(103, 119, 218, 0.1); /* Orange box shadow */
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .card:hover {
-            transform: translateX(-5px); /* Move the card slightly to the left on hover */
-        }
-    </style>
-
-    <!-- ======= Services Section ======= -->
-    <section id="service" class="services pt-0" >
+        <style>
+     
+            /* Services Section Styles */
+            #service {
+                background: rgba(14, 29, 52, 0.9);
+                padding: 50px 0;
+                color: #fff;
+            }
+    
+            .services_section_2 .box_main {
+                /* background-color: #065c97; */
+                border-radius: 20px;
+                padding: 40px 20px;
+                margin-top: 30px;
+                transition: all 0.3s ease;
+            }
+    
+            .services_section_2 .box_main:hover {
+                background: rgba(14, 29, 52, 0.9);
+                box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
+            }
+    
+            .services_section_2 .box_main.active {
+                background: rgba(14, 29, 52, 0.9);
+                box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
+            }
+    
+            .services_section_2 .service_icon {
+                font-size: 50px;
+                color: #fda51a;
+                margin-bottom: 20px;
+            }
+    
+            .services_section_2 .development_text {
+                font-size: 18px;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+    
+            .services_section_2 .services_text {
+                font-size: 16px;
+                color: #cfd8dc;
+                margin-bottom: 20px;
+            }
+    
+            .services_section_2 .readmore_bt a {
+                color: #fda51a;
+                font-weight: bold;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+    
+            .services_section_2 .readmore_bt a:hover {
+                color: #ffffff;
+            }
+        </style>
+    <!-- services section start -->
+    <section id="service" class="services pt-0">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
                 <h2 class="text-white">Our Services</h2>
             </div>
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                        <div class="card-img">
-
+            <div class="services_section layout_padding">
+                <div class="container-fluid">
+                    <div class="services_section_2">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="box_main active">
+                                    <div class="service_icon"><i class="fas fa-tools gradient-text"></i></div>
+                                    <h4 class="development_text">Predictive Maintenance & Risk Assessment</h4>
+                                    <p class="services_text">Proactively identify equipment issues and predict risks, optimising maintenance schedules and preventing costly downtime</p>
+                                 
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="box_main">
+                                    <div class="service_icon"><i class="fas fa-chart-line gradient-text"></i></div>
+                                    <h4 class="development_text">Real-Time Safety Risk Management</h4>
+                                    <p class="services_text">Gain real-time visibility into operational data and identify potential safety threats before they escalate</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="box_main">
+                                    <div class="service_icon"><i class="fas fa-building gradient-text"></i></div>
+                                    <h4 class="development_text">Proactive Risk Mitigation</h4>
+                                    <p class="services_text">Utilise AI-driven predictive analytics to 
+                                        identify potential hazards and compliance issues before they escalate, 
+                                        ensuring a safer operational environment.</p>
+                                </div>
+                            </div>
+                          
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="box_main">
+                                    <div class="service_icon"><i class="fas fa-clipboard-check gradient-text"></i></div>
+                                    <h4 class="development_text">Streamlined Compliance Management</h4>
+                                    <p class="services_text">Simplify compliance adherence with automated tracking and alerts, ensuring regulatory peace of mind</p>
+                                    
+                                </div>
+                            </div>
                         </div>
-                        <h3><a href="#hero" class="stretched-link">Real-Time Safety Risk Management</a></h3>
-                        <p>Gain real-time visibility into operational data and identify
-                            potential safety threats before they escalate</p>
                     </div>
-                </div><!-- End Card Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card">
-                        <div class="card-img">
-                        </div>
-                        <h3><a href="#hero" class="stretched-link">Predictive Maintenance & Risk Assessment</a></h3>
-                        <p>Proactively identify equipment issues and predict risks,
-                            optimising maintenance schedules and preventing costly downtime</p>
-                    </div>
-                </div><!-- End Card Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card">
-                        <div class="card-img">
-
-                        </div>
-                        <h3><a href="#hero" class="stretched-link">Streamlined Compliance Management</a></h3>
-                        <p>Simplify compliance adherence with automated tracking and alerts,
-                            ensuring regulatory peace of mind</p>
-                    </div>
-                </div><!-- End Card Item -->
+                </div>
             </div>
-
         </div>
-    </section><!-- End Services Section -->
-
+    </section>
+    <!-- services section end -->
+    
 
     <section id="testimonials" class="testimonials" style=" background-color: rgba(14, 29, 52, 0.8)">
         <div class="container">
