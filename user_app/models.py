@@ -1,11 +1,8 @@
-
-
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from PIL import Image
-from django.db import models
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -16,13 +13,16 @@ class Profile(models.Model):
         return self.user.username
 
     def save(self, *args, **kwargs):
-        super(Profile, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
         if self.profile_photo:
-            img = Image.open(self.profile_photo.path)
-            if img.height > 462 or img.width > 340:
-                output_size = (462, 340)
-                img.thumbnail(output_size)
-                img.save(self.profile_photo.path)
+            try:
+                img = Image.open(self.profile_photo.path)
+                if img.height > 462 or img.width > 340:
+                    output_size = (462, 340)
+                    img.thumbnail(output_size)
+                    img.save(self.profile_photo.path)
+            except FileNotFoundError:
+                pass
 
 class Message(models.Model):
     user_message = models.CharField(max_length=200)
@@ -41,12 +41,9 @@ def create_profile(sender, instance, created, **kwargs):
 def save_profile(sender, instance, **kwargs):
     instance.profile.save()
 
-
 class Subscription(models.Model):
     email = models.EmailField(unique=True)
     subscribed_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.email
-
-
