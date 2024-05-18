@@ -3,6 +3,7 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from PIL import Image
+import os
 import logging
 
 logger = logging.getLogger(__name__)
@@ -19,13 +20,15 @@ class Profile(models.Model):
         super(Profile, self).save(*args, **kwargs)
         if self.profile_photo:
             try:
-                img = Image.open(self.profile_photo.path)
-                if img.height > 462 or img.width > 340:
-                    output_size = (462, 340)
-                    img.thumbnail(output_size)
-                    img.save(self.profile_photo.path)
-            except FileNotFoundError:
-                logger.warning(f"Profile photo file not found: {self.profile_photo.path}. Using default image.")
+                # Check if the file exists before opening
+                if os.path.exists(self.profile_photo.path):
+                    img = Image.open(self.profile_photo.path)
+                    if img.height > 462 or img.width > 340:
+                        output_size = (462, 340)
+                        img.thumbnail(output_size)
+                        img.save(self.profile_photo.path)
+                else:
+                    logger.warning(f"Profile photo file not found: {self.profile_photo.path}. Using default image.")
             except Exception as e:
                 logger.error(f"Error processing profile photo {self.profile_photo.path}: {e}")
 
