@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS",'').split(" ")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 # Application definition
 
 INSTALLED_APPS = [
@@ -110,7 +110,7 @@ DATABASES = {
 
 
 database_url = os.environ.get('DATABASE_URL')
-DATABASES["default"] = dj_database_url.parse('postgres://safe_postgresql_user:xo7BlNDwPDk7kOsYOFkKmStCGtMAN0W0@dpg-cob0p18l5elc73b0j9ag-a.oregon-postgres.render.com/safe_postgresql')
+DATABASES["default"] = dj_database_url.parse('database_url')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
