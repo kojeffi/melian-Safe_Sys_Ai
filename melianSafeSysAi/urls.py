@@ -22,7 +22,7 @@ urlpatterns = [
     path('services/', my_views.services, name='services-url'),
     path('terms/', my_views.terms, name='terms-url'),
     path('contact/', contact, name='contact-url'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # Serving static files during development
 if settings.DEBUG:
