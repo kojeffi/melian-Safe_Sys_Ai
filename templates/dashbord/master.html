@@ -243,8 +243,8 @@ else { themeMode = defaultThemeMode; } }
                         <div class="cursor-pointer symbol symbol-30px symbol-lg-40px"
                              data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
                              data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                            {% if profile.profile_photo %}
-                                <img class="rounded-circle" src="{{ profile.profile_photo.url }}" alt="Profile Photo">
+                            {% if user.profile.profile_photo %}
+                                <img class="rounded-circle" src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
                             {% else %}
                                 <!-- Placeholder image or default profile photo -->
                                 <img class="rounded-circle" src="{% static 'assets1/img/avitor1.png' %}" alt="Default Profile Photo">
@@ -260,9 +260,9 @@ else { themeMode = defaultThemeMode; } }
                                 <div class="menu-content d-flex align-items-center px-3">
                                   <!--begin::Avatar-->
 <div class="symbol symbol-50px me-5">
-    {% if profile.profile_photo %}
+    {% if user.profile.profile_photo %}
         <img class="rounded-circle"
-             src="{{ profile.profile_photo.url }}" alt="Profile Photo">
+             src="{{ user.profile.profile_photo.url }}" alt="Profile Photo">
     {% else %}
         <!-- Placeholder image or default profile photo -->
         <img class="rounded-circle" src="{% static 'assets1/img/avitor1.png' %}" alt="Default Profile Photo">
@@ -270,7 +270,7 @@ else { themeMode = defaultThemeMode; } }
     <!--end::Avatar-->
     <p class="text-dark">{{ user.username }}</p>
     <p class="text-dark">{{ user.email }}</p>
-    <p class="text-dark">{{ profile.about }}</p>
+    <p class="text-dark">{{ user.profile.about }}</p>
 </div>
 
                                 </div>
